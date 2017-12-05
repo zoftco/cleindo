@@ -1,0 +1,74 @@
+<div class="modal fade" id="editvisitamodal" data-backdrop="false" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                 <button type="button" class="close canceledit" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                 <h4>Visita</h4>
+            </div>
+            <div class="modal-body">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" id="visitaEditLugar">
+                                <label class="control-label">Lugar</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                                    <input name="lugar" type="text" class="form-control" value="{lugar}">
+                                </div>
+                            </div>
+                            <div class="form-group" id="visitaEditDireccion">
+                                <label class="control-label">Dirección</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input name="direccion" type="text" class="form-control" value="{direccion}">
+                                </div>
+                            </div>
+                            <div class="form-group" id="visitaEditContacto">
+                                <label class="control-label">Contacto</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input name="contacto" type="text" class="form-control" value="{contacto}">
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" id="visitaEditFecha">Fecha</label>
+                                 <div class='input-group date' id='datetimepicker1'>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <input name="fecha" type="text" class="form-control" value="{fecha}">
+                                </div>
+                            </div>
+                            <div class="form-group" id="visitaEditTelefono">
+                                <label class="control-label">Teléfono</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
+                                    <input name="telefono" type="text" class="form-control" value="{telefono}">
+                                </div>
+                            </div>
+                            <div class="form-group" id="visitaEditCupo">
+                                <label class="control-label">Cupo</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
+                                    <input name="cupo" type="text" class="form-control" value="{cupo}">
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div style="text-align: right">
+                        <button id="saveedited" type="button" class="btn btn-primary" data-id="{id}"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                        <button type="button" class="btn btn-danger canceledit">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            locale: 'es',
+            format: 'YYYY-MM-DD HH:mm'
+        });
+    });
+    </script>
+</div>
