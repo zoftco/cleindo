@@ -19,12 +19,16 @@
 		</ul>
 	</div>
 </section> -->
-
+<div style="text-align: center;margin-bottom:10px;">
+    <p>SIGUENOS EN</p>
+    <p>
+        <a href="https://www.facebook.com/CleinAleiiaf/" class="fa fa-facebook"></a>
+        <a href="https://www.instagram.com/cleinrd2018/" class="fa fa-instagram"></a>
+    </p>
+</div>
 <footer>
 	<div class="container">
-		<div class="foot_izq">
-			<p>CLEIN República Dominicana 2018</p>
-		</div>
+
 
 		<!-- <div class="foot_der">
 			<ul class="foot_links">
@@ -34,10 +38,15 @@
 			</ul>
 		</div> -->
 
-		<div class="foot_der" style="margin-top:5px">
-			<p><a target="_BLANK" href="http://www.aleiiaf.org" style="text-decoration:none">Asociacion Latinoamericana de Estudiantes e Ingenieros Industriales y Afines ALEIIAF</a></p>
+		<div class="foot_izq" >
+			<a target="_BLANK" href="http://www.aleiiaf.org">
+                <img src="img/LogoALEIIAF.blanco.png" alt="Asociación Latinoamericana de Estudiantes e Ingenieros Industriales y Afines ALEIIAF" width="60px" height="60px;">
+            </a>
 		</div>
-		<div class="clearfix"></div>
+        <div class="foot_der" style="margin-top:25px">
+            <p>2018 CLEIN REPUBLICA DOMINICANA TODOS LOS DERECHOS RESERVADOS</p>
+        </div>
+        <div class="clearfix"></div>
 	</div>
 </footer>
 

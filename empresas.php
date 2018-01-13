@@ -20,15 +20,12 @@ Bienvenido/a <strong><?php echo $_SESSION['user_name'];?></strong> <!-- <a href=
 
 <section id="main">
 	<div class="container">
-        <h4 class="title">VINCÚLESE COMO UNIVERSIDAD</h4>
-        <p>Su Universidad puede vincularse al evento, siendo universidad auspiciadora, vincularse como apoyo científico o comprando cupos a precios preferenciales para estudiantes o docentes.</p>
+        <h4 class="title">CONVIÉRTASE EN SOCIO DEL CLEIN REPÚBLICA DOMINICANA 2018</h4>
+        <p>Nuestro evento es la oportunidad perfecta para posicionar su marca, hacer negocios y actualizarse para generar competitividad en su organización, contáctenos y conozca como puede vincularse.</p>
         <h4 class="title">CONTACTO</h4>
         <p>Génesis Vargas</p>
         <p>Directora de Mercadeo y Patrocinios CLEIN República Dominicana 2018</p>
         <p>marketing.clein@gmail.com</p>
-        <p>John Guzman Diaz</p>
-        <p>Director de Academica CLEIN República Dominicana 2018</p>
-        <p>academico.clein@gmail.com</p>
     </div>
 </section>
 

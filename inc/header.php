@@ -13,16 +13,16 @@
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="XXIV Congreso Latinoamericano de Estudiantes e Ingenieros Industriales y Afines">
-	<title>XXIV Congreso Latinoamericano de Estudiantes e Ingenieros Industriales y Afines</title>
+	<meta name="description" content="XXVII Congreso Latinoamericano de Estudiantes e Ingenieros Industriales y Afines">
+	<title>XXVII Congreso Latinoamericano de Estudiantes e Ingenieros Industriales y Afines</title>
 	<meta name="description" content="XXVII CLEIN Republica Dominicana 2018 - Santo Domingo del 29 de octubre a 3 de noviembre de 2018">
 	<meta property="og:title" content="CLEIN Republica Dominicana 2018" />
 	<meta property="og:site_name" content="CLEIN Republica Dominicana 2018">
 	<meta property="og:url" content="<?php echo WEB_URL;?>">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="Santo Domingo - Republica Dominicana del 29 de octubre a 3 de noviembre de 2018" />
-	<meta property="og:image" itemprop="image" content="<?php echo WEB_URL;?>/images/cleindominicana2018.jpg" />
-	<meta property="og:image:url" content="<?php echo WEB_URL;?>/images/cleindominicana2018.jpg">
+	<meta property="og:image" itemprop="image" content="<?php echo WEB_URL;?>/img/IMAGEN-DE-HOME.jpg" />
+	<meta property="og:image:url" content="<?php echo WEB_URL;?>/img/IMAGEN-DE-HOME.jpg">
 	<meta property="og:image:height" content="474">
 	<meta property="og:image:width" content="1280">
 
@@ -50,6 +50,9 @@
 
 
 	<!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/lightbox.css">
@@ -65,6 +68,9 @@
 	<script type="text/javascript" src="js/Login.js"></script>
 	<script type="text/javascript" src="js/controlPagoTc.js"></script>
 	<script type="text/javascript" src="js/loginControl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
 
 
@@ -76,60 +82,8 @@
 	<div class="container">
 		<a href="index.php"><div class="logo">CLEIN República Dominicana 2018</div></a>
 		<nav>
-			<ul>
-				<li><a href="#">Temática</a>
-					<ul>
-						<!-- <li><a href="tematica.php">Temática</a></li>
-						<li><a href="expositores.php">Expositores</a></li>
-						<li><a href="industriales.php">Visitas Industriales</a></li>
-						<li><a href="concurso.php">Concurso de ponencia estudiantil</a></li> -->
-					</ul>
-				</li>
-				<li><a href="#">Actividades</a>
-					<ul>
-						<!-- <li><a href="cronograma.php">Cronograma</a></li>
-						<li><a href="actividades_nocturnas.php">Actividades Nocturnas</a></li>
-						<li><a href="crea_tu_negocio.php">Crea tu negocio</a></li>
-						<li><a href="actividad_social.php">Actividad social</a></li>
-						<li><a href="visitas_tecnicas.php">Visitas Técnicas</a></li> -->
-					</ul>
-				</li>
-				<li><a href="#">Comunidad</a>
-					<ul>
-						<!-- <li><a href="aleiiafpy.php">Aleiiaf Paraguay</a></li>
-						<li><a href="aleiiaf.php">Aleiiaf</a></li>
-						<li><a href="universidades.php">Universidades Patrocinadoras</a></li> -->
-					</ul>
-				</li>
-				<li><a href="#">Rep. Dominicana</a>
-					<ul>
-						<!-- <li><a href="asuncion.php">Asunción</a></li>
-						<li><a href="paraguay.php">El País</a></li>
-						<li><a href="http://www.migraciones.gov.py/institucional" target="_blank">Datos Migraciones</a></li>
-						<li><a href="tour_clein.php">Pre y Post Congreso</a></li> -->
-					</ul>
-				</li>
-				<!-- <li><a href="hospedaje.php">Hospedaje</a></li>
-				<li><a href="contacto.php">Contacto</a></li> -->
-				<?php
-					if ($login == false) {
-				?>
-				<li><a href="log_in.php">Entrar aqui</a></li>
-				<?php
-					} else {
-				?>
-				<li><a href="mis_cursos.php">Mi Cuenta</a>
-					<ul>
-						<li><a href="inc/cerrarsesion.php">Cerrar sesión</a></li>
-						<li><a href="mis_cursos.php">Mis cursos</a></li>
-						<li><a href="cursos_disponibles.php">Cursos Disponibles</a></li>
-					</ul>
-				</li>
-				<?php
-					}
-				?>
-
-			</ul>
+            <?php include 'menuprincipal.php'; ?>
 		</nav>
 	</div>
 </header>
+<div style="height:120px;">&nbsp;</div>

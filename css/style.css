@@ -11,7 +11,6 @@
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke: 0.05px;
 }
 html,
 body {
@@ -20,8 +19,9 @@ body {
 body {
   font-weight: normal;
   font-family: 'Source Sans Pro', Arial, sans-serif;
-  color: #153b70;
-  font-size: 14px;
+  text-align: justify;
+  color: #333333;
+  font-size: 1.5em;
   line-height: 140%;
   width: 100%;
   margin: 0 auto;
@@ -51,6 +51,7 @@ h3 {
   margin-bottom: 9px;
 }
 h4 {
+  margin-top: 20px;
   font-size: 22px;
   margin-bottom: 8px;
 }
@@ -69,23 +70,27 @@ em {
   font-style: italic;
 }
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: #153b70;
   font-weight: 400;
 }
 a:hover {
   color: #091930;
+  text-decoration: none;
 }
-.container {
-  width: 960px;
-  margin: 0 auto;
-  position: relative;
+p{
+  padding:12px;
 }
-.container:after {
-  display: block;
-  clear: both;
-  content: "";
-}
+/*.container {*/
+  /*width: 960px;*/
+  /*margin: 0 auto;*/
+  /*position: relative;*/
+/*}*/
+/*.container:after {*/
+  /*display: block;*/
+  /*clear: both;*/
+  /*content: "";*/
+/*}*/
 .pad4 {
   padding: 4% 0;
 }
@@ -234,7 +239,7 @@ input[type="radio"] {
 }
 label {
   float: left;
-  font-size: 146x;
+  font-size: 146px;
   font-weight: 600;
   display: block;
   padding-top: 9px;
@@ -272,20 +277,22 @@ table tr th {
 header {
   width: 100%;
   height: 120px;
-  position: relative;
+  position: fixed;
   z-index: 99;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(255,255,255,0.95);
 }
 header .logo {
-  background-image: url('../images/logo.png');
+  background-image: url('../img/LOGO-HORIZONTAL.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 120px;
+  background-size: contain;
+  width: 200px;
+  height: 50px;
   text-indent: -9999px;
   position: relative;
   float: left;
-  margin: 0px 0px 0 0;
+  margin: 30px 0px 0 0;
 }
 header nav {
   display: block;
@@ -316,20 +323,26 @@ header nav ul li {
 header nav ul li a {
   padding: 8px 8px;
   display: block;
-  color: #153b70;
+  color: #666666;
   text-transform: uppercase;
   font-weight: 600;
-  font-style: 18px;
+  font-size: 18px;
   text-decoration: none;
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
   transition: 0.2s ease;
 }
-header nav ul li:hover {
-  background-color: #153b70;
+header nav ul li a:hover, header nav ul li a:active {
+  color: #FDCF07;
+  text-decoration: none;
 }
 header nav ul li:hover a {
-  color: #ffffff;
+  background-color: white;
+  text-decoration: none;
+}
+header nav ul li ul li:hover a:hover {
+  color:white;
+  background-color: #153b70;
 }
 header nav ul li ul {
   padding: 0;
@@ -345,11 +358,10 @@ header nav ul li ul {
   visibility: hidden;
 }
 header nav ul li ul li {
-  background: #153b70;
+  background-color: white;
   display: block;
   color: #ffffff;
   padding: 0px;
-  border-bottom: 2px solid #12325f;
 }
 header nav ul li ul li:hover {
   background: #102d56;
@@ -358,6 +370,7 @@ header nav ul li:hover ul {
   display: block;
   opacity: 1;
   visibility: visible;
+  border-bottom: solid 6px #FDCF07;
 }
 .userbar {
   padding: 15px 0 5px 0;
@@ -673,7 +686,6 @@ section#sponsors ul li img {
 footer {
   background-color: #102d56;
   color: #ffffff;
-  padding: 4% 0;
 }
 footer a {
   color: #ffffff;
@@ -686,11 +698,11 @@ footer a:hover {
 }
 footer .foot_izq {
   float: left;
-  width: 40%;
+  width: 60px;
 }
 footer .foot_der {
   float: right;
-  width: 60%;
+  width: 70%;
 }
 footer .foot_der ul.foot_links {
   list-style: none;
@@ -924,9 +936,8 @@ footer .foot_der ul.foot_links li {
 
 
 
-====== 3d unfold ======
+/*====== 3d unfold ======*/
 
-*/
 .mfp-3d-unfold {
   /* start state */
   /* animate in */
@@ -960,9 +971,8 @@ footer .foot_der ul.foot_links li {
   opacity: 0;
 }
 
-====== "Hinge" close effect ======
+/*====== "Hinge" close effect ======*/
 
-*/
 @keyframes hinge {
   0% {
     transform: rotate(0);
@@ -1007,4 +1017,80 @@ footer .foot_der ul.foot_links li {
 }
 .mfp-with-fade.mfp-removing.mfp-bg {
   opacity: 0;
+}
+
+
+
+
+.btn
+{
+  text-decoration: none;
+}
+
+.carousel-indicators li {
+  background: #ccc;
+}
+
+.carousel-indicators .active {
+  background: #666;
+}
+
+
+.nav-item
+{
+  font-size:1.5em;
+  line-height: 1em;
+  text-transform: capitalize;
+  background-color: #E80302;
+  padding: 1em 2em;
+  margin-left: 2em;
+  margin-top: 1em;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.btn-red
+{
+  background-color: #E80302;
+  color:white;
+}
+.nav-item:hover, .btn-red:hover
+{
+  color:white;
+  background-color: #153b70;
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 10px;
+  font-size: 25px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border: solid #153b70 2px;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: white;
+  color: #153b70;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: white;
+  color: #153b70;
 }
