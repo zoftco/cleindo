@@ -371,7 +371,97 @@ header nav ul li:hover ul {
   opacity: 1;
   visibility: visible;
   border-bottom: solid 6px #FDCF07;
+  z-index:10;
 }
+
+header #navbar
+{
+  float:none;
+}
+
+header #navbar ul
+{
+  list-style: none;
+  background-color: white;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  width:100%;
+}
+
+
+header #navbar ul li {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width:100%;
+}
+
+header #navbar ul li:hover > a
+{
+  color: #FDCF07;
+  text-decoration: none;
+}
+
+header #navbar ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  border-bottom: solid 6px #FDCF07;
+  width:100%;
+  z-index:10;
+  left:20px;
+}
+
+header #navbar ul li ul {
+  padding: 0px;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  width: 200px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 1;
+  visibility: hidden;
+  width:100%;
+}
+
+header #navbar ul li ul li {
+  background-color: white;
+  display: block;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 1;
+  width:100%;
+}
+
+header #navbar ul li ul li:hover {
+  color:white;
+  background-color: #153b70;
+}
+
+header #navbar ul li ul li:hover a {
+  color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .userbar {
   padding: 15px 0 5px 0;
   height: 30px;
@@ -1038,13 +1128,12 @@ footer .foot_der ul.foot_links li {
 
 .nav-item
 {
-  font-size:1.5em;
+  font-size:1em;
   line-height: 1em;
   text-transform: capitalize;
   background-color: #E80302;
-  padding: 1em 2em;
-  margin-left: 2em;
-  margin-top: 1em;
+  padding: 1em 1em;
+  margin: 1em 0.5em 0em 0.5em;
   color: white;
   text-decoration: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1093,4 +1182,63 @@ footer .foot_der ul.foot_links li {
 .fa-twitter {
   background: white;
   color: #153b70;
+}
+
+@media only screen and (max-width: 576px) {
+  /* For mobile phones: */
+  .container {
+    max-width: 576px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .container {
+    max-width: 768px;
+  }
+}
+
+#homeimage
+{
+  background-image:url('../img/IMAGEN-DE-HOME.jpg');
+  background-size: cover;
+  padding-top:300px;
+  background-position: center;
+}
+
+@media only screen and (min-width: 1200px)
+{
+  #homeimage
+  {
+    padding-top:400px;
+  }
+}
+
+#mobile-menu-trigger { display: none; }
+
+@media only screen and (max-width: 768px)
+{
+  #homeimage
+  {
+    padding-top:200px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  #menu {
+    display: none;
+  }
+  #mobile-menu-trigger .fa{
+    border:none;
+  }
+  #mobile-menu-trigger {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+    padding: 10px;
+    margin-top: 0;
+    z-index: 999;
+  }
 }
