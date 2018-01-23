@@ -105,9 +105,9 @@
             </a>
         </div>
         <nav class="nav nav-pills nav-justified">
-            <a class="nav-item nav-link" href="#">Portafolio Académico</a>
-            <a class="nav-item nav-link" href="#">Concurso de Ponencias</a>
-            <a class="nav-item nav-link" href="#">Guía de Asistente del Congreso</a>
+            <a class="nav-item nav-link" href="#">PORTAFOLIO ACADÉMICO</a>
+            <a class="nav-item nav-link" href="#">CONCURSO DE PONENCIAS</a>
+            <a class="nav-item nav-link" href="#">GUÍA DE ASISTENTE DEL CONGRESO</a>
         </nav>
 	</div>
 </section>
