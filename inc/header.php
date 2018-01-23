@@ -79,11 +79,20 @@
 <body>
 <?php include_once("analyticstracking.php") ?>
 <header>
-	<div class="container">
-		<a href="index.php"><div class="logo">CLEIN República Dominicana 2018</div></a>
-		<nav>
+    <div class="container">
+        <div class="navbar-header">
+            <a href="index.php"><div class="logo">CLEIN República Dominicana 2018</div></a>
+            <a href="#" id="mobile-menu-trigger" class="mobile-menu-closed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <nav id="menu">
             <?php include 'menuprincipal.php'; ?>
-		</nav>
-	</div>
+        </nav>
+
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false">
+            <?php include 'menuprincipal.php'; ?>
+        </div>
+    </div>
 </header>
 <div style="height:120px;">&nbsp;</div>
