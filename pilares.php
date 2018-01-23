@@ -19,16 +19,15 @@ if(isset($_SESSION['user_name'])) {
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-    <p>Muchas startups se conciben con la idea de un producto o servicio que los fundadores creen que la gente quiere. Por lo tanto, dedican meses (incluso años) perfeccionando dicho producto o servicios en mostrar el producto o servicio, ni si quiera en su forma más rudimentaria, a los futuros clientes y consumidores finales. Al no lograr la aceptación deseada por los clientes, lo cuales lo propenso a suceder por no haberse comunicado con los clientes, la empresa falla.</p>
-    <p>Para convertir este caos en orden, el CLEIN República Dominicana, a través de la metodología Lean Startup, provee de herramientas para tener una visión continua de la situación en la que se encuentra la idea de negocio.</p>
-        <br>
+            <p>Muchas startups se conciben con la idea de un producto o servicio que los fundadores creen que la gente quiere. Por lo tanto, dedican meses (incluso años) perfeccionando dicho producto o servicio, sin saber si logrará la aceptación de los consumidores, al no tomar en cuenta lo que existe en el mercado, lo que los consumidores realmente necesitan, o bien, entender si lo que se propone es realmente una necesidad palpable. Pero, como no se consigue la aceptación deseada por los clientes, lo cual es lo propenso a suceder por no llevar a cabo pautas y factores reales de innovación y desarrollo de productos, la empresa falla.</p>
+            <p>Para convertir este caos en orden, el CLEIN República Dominicana, a través del pilar Start-up, provee de herramientas claves para tener una visión continua de la situación en la que se encuentra la idea de negocio.</p>
+            <br>
         </div>
     </div>
 </div>
 
-<div class="container-fluid" style="background-image:url('img/pilares/PROJECT-MANAGEMENT.jpg');background-size: contain;background-repeat: no-repeat;background-position: center;">
-    <div class="mx-auto" style="height:500px;text-align:center">
-    </div>
+<div class="container-fluid">
+    <img src="img/pilares/PROJECT-MANAGEMENT.jpg" alt="Día 1: Integración" width="100%">
 </div>
 <div class="container">
     <div class="row">
@@ -40,9 +39,9 @@ if(isset($_SESSION['user_name'])) {
         </div>
     </div>
 </div>
-<div class="container-fluid" style="background-image:url('img/pilares/MEJORA-CONTINUA.jpg');background-size: contain;background-repeat: no-repeat;background-position: center;">
-    <div class="mx-auto" style="height:500px;text-align:center">
-    </div>
+
+<div class="container-fluid">
+    <img src="img/pilares/MEJORA-CONTINUA.jpg" alt="Día 1: Integración" width="100%">
 </div>
 <div class="container">
     <div class="row">
