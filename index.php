@@ -60,8 +60,8 @@
 <!--Barra de Usuario Logueado-->
 
 <section>
-	<div class="container-fluid" style="background-image:url('img/IMAGEN-DE-HOME.jpg');background-size: cover;padding-top:400px;">
-        <div class="mx-auto" style="height:100px;text-align:center">
+	<div class="container-fluid" id="homeimage">
+        <div class="mx-auto" style="height:120px;text-align:center">
             <a href="inscripcioninternacional.php" class="btn btn-lg btn-red">INSCRIPCIONES</a>
         </div>
 	</div>

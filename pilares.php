@@ -13,9 +13,8 @@ if(isset($_SESSION['user_name'])) {
 ?>
 
 <!--Barra de Usuario Logueado-->
-<div class="container-fluid" style="background-image:url('img/pilares/LEAN-STARTUP.jpg');background-size: contain;background-repeat: no-repeat;background-position: center;">
-    <div class="mx-auto" style="height:500px;text-align:center">
-    </div>
+<div class="container-fluid">
+    <img src="img/pilares/LEAN-STARTUP.jpg" alt="Día 1: Integración" width="100%">
 </div>
 <div class="container">
     <div class="row">

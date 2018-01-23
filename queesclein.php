@@ -15,7 +15,7 @@ Bienvenido/a <strong><?php echo $_SESSION['user_name'];?></strong> <!-- <a href=
 <!--Barra de Usuario Logueado-->
 
 <section id="main">
-	<div class="container">
+	<div class="container-fluid">
         <img src="img/QUE-ES-EL-CLEIN.jpg" width="100%" />
 <!--			<h4 class="title">¿Qué es CLEIN?</h4>-->
 <!--            <p>El congreso Latinoamericano de Estudiantes e lngenieros lndustriales y Afines, es la actividad academica, social y cultural de mayor envergadura en el area de la lngenierfa Industrial en Latinoamerica, que afio tras afio reune a estudiantes, profesionales, docentes y empresarios de diferentes pafses de la region.</p>-->

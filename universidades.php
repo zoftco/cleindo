@@ -13,9 +13,8 @@ Bienvenido/a <strong><?php echo $_SESSION['user_name'];?></strong> <!-- <a href=
 ?>
 
 <!--Barra de Usuario Logueado-->
-<div class="container-fluid" style="background-image:url('img/VINCULARSE.jpg');background-size: contain;background-repeat: no-repeat;background-position: center;">
-    <div class="mx-auto" style="height:500px;text-align:center">
-    </div>
+<div class="container-fluid">
+    <img src="img/VINCULARSE.jpg" alt="Día 1: Integración" width="100%">
 </div>
 
 <section id="main">
