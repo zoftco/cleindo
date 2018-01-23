@@ -1,6 +1,15 @@
 DirectoryIndex home.php index.html index.php
 Options -Indexes
 
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteCond !{HTTPS} off
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+</IfModule>
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
@@ -48,3 +57,5 @@ ExpiresDefault "access 2 days"
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
   Header append Vary User-Agent
 </IfModule>
+
+
