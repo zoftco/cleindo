@@ -19,8 +19,11 @@ Bienvenido/a <strong><?php echo $_SESSION['user_name'];?></strong> <!-- <a href=
 
 <section id="main">
 	<div class="container">
-        <p>Catalonia Santo Domingo es un sensacional hotel de 21 pisos que se encuentra ubicado frente al mar, con ventanales que permiten disfrutar la hermosa vista desde todos los pisos. Situado en  la avenida George Washington, a treinta minutos del Aeropuerto Internacional Las Américas (AILA) y a pocos minutos del distrito comercial y de la zona histórica de la ciudad de Santo Domingo.</p>
-        <p>Las 228 habitaciones están decoradas de acuerdo a las exigencias del cliente corporativo y de negocio y ofrecen conexión a internet WiFi gratis en todas las áreas del hotel. En los restaurantes del Catalonia Santo Domingo puedes encontrar la mejor combinación entre calidad y sabor. Disfruta de suculentos platos y el más autentico ambiente en nuestros restaurantes, bares y snacks.</p>
+    <p>Barceló Santo Domingo</p>
+    <p>Lujo urbano para viajes de placer o negocios, en el corazón de Santo Domingo</p>
+    <p>El Barceló Santo Domingo es un elegante hotel de vanguardia concebido con todo lujo de detalles para garantizar que los huéspedes disfruten de una experiencia inolvidable. Las 216 habitaciones han sido equipadas bajo los criterios de los más altos estándares para asegurar a los huéspedes un agradable descanso. La oferta gastronómica, de reconocimiento internacional, tiene como protagonista el afamado restaurante Kyoto, especializado en gastronomía japonesa a la carta.</p>
+    <p>Entre sus excelentes servicios cabe destacar la conexión gratuita a Internet en todas las instalaciones del hotel y aparcamiento también gratuito. Este hotel es el alojamiento ideal para aquellos huéspedes que deseen experimentar una estancia relajada; gracias a sus completas instalaciones que incluyen magníficas piscinas, una bañera hidromasaje, un excelente spa y un centro de fitness. Su ubicación, cerca de los principales puntos de interés de la ciudad, también lo convierte en un hotel ideal para viajes de negocios o para realizar turismo urbano. </p>
+    <p>El establecimiento se encuentra a 500 metros del Teatro Nacional de Santo Domingo, y de varios centros comerciales´, así como de una estación del metro de Santo Domingo.</p>
         <table class="table table-bordered">
             <thead>
             <tr >
@@ -35,32 +38,40 @@ Bienvenido/a <strong><?php echo $_SESSION['user_name'];?></strong> <!-- <a href=
 
             <tr >
                 <td>
-                    <p>TRIPLE (Tres Personas)</p>
+                    <p>Superior Room Individual (SGL)</p>
                 </td>
                 <td >
-                    <p>115 USD</p>
+                    <p>77 USD</p>
                 </td>
             </tr>
             <tr >
                 <td>
-                    <p>DOBLE (Dos Personas)</p>
-                </td>
-                <td >
-                    <p>85 USD</p>
-                </td>
-            </tr>
-            <tr >
-                <td>
-                    <p>SENCILLA (Una Persona)</p>
+                    <p>Superior Room Doble (DBL)</p>
                 </td>
                 <td >
                     <p>90 USD</p>
                 </td>
             </tr>
+            <tr >
+                <td>
+                    <p>Extra Pax (3ra y 4ta Persona)</p>
+                </td>
+                <td >
+                    <p>+20 USD</p>
+                </td>
+            </tr>
+            <tr >
+                <td>
+                    <p>Niños (2-12 años)</p>
+                </td>
+                <td >
+                    <p>+14 USD</p>
+                </td>
+            </tr>
         </table>
-
-        </p>
-        <p>*Precios por habitación por noche, sujeto a un 28% de impuestos y cargos por otros servicios</p>
+        <p>Tarifas por habitación por noche, precios no incluyen el 28% impuestos</p>
+        <p>Alojamiento, desayuno e internet incluidos en la tarifa</p>
+        <p>Sujeto a cargos por otros servicios</p>
     </div>
 </section>
 
