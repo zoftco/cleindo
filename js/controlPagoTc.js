@@ -7,5 +7,28 @@ $(function() {
 	})
 	
 })
-//cuando vuelvas del almuerzo intenta ver el//
-//tema de porque no anda el POST en tu archivo php Prueba.php//
+
+$(document).ready(function(){
+    $(".westernUnion").hide();
+    $(".pagoefectivo").hide();
+    $(".pagoTarjeta").hide();
+    $("#metodopago").change(function(){
+        if ($(this).val() == "WU" ) {
+            $(".westernUnion").slideDown();
+        } else {
+            $(".westernUnion").slideUp();
+        }
+
+        if ($(this).val() == "EF" ) {
+            $(".pagoefectivo").slideDown();
+        } else {
+            $(".pagoefectivo").slideUp();
+        }
+
+        if ($(this).val() == "TC" ) {
+            $(".pagoTarjeta").slideDown();
+        } else {
+            $(".pagoTarjeta").slideUp();
+        }
+    });
+});
