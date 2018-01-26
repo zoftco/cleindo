@@ -3,7 +3,7 @@
 	
 	$email=$_POST['email'];
 	$pass=hash("sha512", $_POST['pass']);
-
+    require ('config.php');
 	require ('conexion.php');
 
 	$query= mysqli_query($conexion, "SELECT * FROM login WHERE correoElectronico = '$email' AND contrasena = '$pass'");

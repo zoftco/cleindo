@@ -1,5 +1,13 @@
 $(function(){
-	$('#botonIngresarLogin').click(function() {
+    $('#passLogin').keypress(function (e) {
+        var key = e.which;
+        if(key == 13)  // the enter key code
+        {
+            $('#botonIngresarLogin').click();
+            return false;
+        }
+    });
+    $('#botonIngresarLogin').click(function() {
 		var email = $('#emailLogin').val();
 		var pass = $('#passLogin').val();
 

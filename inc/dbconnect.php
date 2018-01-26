@@ -1,26 +1,19 @@
 <?php
-
+require('config.php');
 require('conexion.php');
 
-require("../inc/config.php");
 require '../admin/TemplateMail/PHPMailer-master/PHPMailerAutoload.php';
 require('../admin/TemplateMail/mandarmail.php');
 
-$nombreyapellidoInput=utf8_decode($_POST['nombreyapellidoInput']);
-$idNumber=$_POST['idNumber'];
-$pais=$_POST['pais'];
-$estudiante=$_POST['estudiante'];
-$fechaNacimiento=$_POST['fechaNacimiento'];
-$correoElectronico=$_POST['correoElectronico'];
-$contra = $_POST['contrasena'];
+$nombreyapellidoInput=mysqli_real_escape_string($conexion,utf8_decode($_POST['nombreyapellidoInput']));
+$correoElectronico=mysqli_real_escape_string($conexion,$_POST['correoElectronico']);
+$telefono = mysqli_real_escape_string($conexion,$_POST['telefono']);
+$nivelacademico=mysqli_real_escape_string($conexion,$_POST['nivelacademico']);
+$pais=mysqli_real_escape_string($conexion,$_POST['pais']);
+$facebook=mysqli_real_escape_string($conexion,$_POST['facebook']);
+$instagram=mysqli_real_escape_string($conexion,$_POST['instagram']);
 $contrasena=hash("sha512", $_POST['contrasena']);
-$telefono = $_POST['telefono'];
 
-/*require('smtp_validateEmail.class.php');
-$sender = 'user@mydomain.com';
-$validacionMail = new smtp_validateEmail();
-$validacionMail->debug = false;
-$resultados = $validacionMail->validate(array($correoElectronico), $sender);*/
 $resultados = true;
 
 //if (@$resultados[$correoElectronico]) {
@@ -31,28 +24,18 @@ if ($resultados) {
 		$respuesta= array('respuesta'=>'Ya existe un usuario registrado con ese correo electrónico');
 		echo json_encode($respuesta);
 	} else {
-		if($pais != "PY" && $estudiante == "no") {
-			$currentState="pago";
-		} elseif($pais != "PY" && $estudiante == "si") {
-			$currentState="verificacion";
-		} elseif($pais == "PY" && $estudiante == "si") {
-			$currentState="verificacion";
-		} else {
-			$currentState="verificacion";
-		}
-		$query= mysqli_query($conexion, "INSERT INTO login (nombreyapellidoInput, idNumber, pais, estudiante, 
-			fechaNacimiento, correoElectronico, contrasena, estado, telefono) VALUES ('$nombreyapellidoInput', '$idNumber', '$pais', '$estudiante', 
-			'$fechaNacimiento', '$correoElectronico', '$contrasena', '$currentState', '$telefono')") or die(mysqli_error($conexion));
-
+		$currentState="verificacion";
+		$query= mysqli_query($conexion, "INSERT INTO login (nombreyapellidoInput, pais, estudiante, 
+			correoElectronico, contrasena, estado, telefono, facebook, instagram) VALUES ('$nombreyapellidoInput', '$pais', '$nivelacademico', 
+			'$correoElectronico', '$contrasena', '$currentState', '$telefono','$facebook', '$instagram')") or die(mysqli_error($conexion));
 		
 		$user_id= mysqli_insert_id($conexion);
 
-		$titulo = "CLEIN Paraguay";
-		$sujeto = "Información de usuario";
-		$mensaje = "Gracias por registrarte a nuestra página.</br>Tu usuario es: ".$correoElectronico." y tu contraseña es: ".$contra;
+		$subject = "Registro de usuario CLEIN República Dominicana 2018 clein.org";
+		$mensaje = "¡Saludos! Recibe una cordial bienvenida de parte del equipo CLEIN RD2018, gracias por crear su usuario y mostrar interés por el congreso Latinoamericano de Estudiantes e Ingenieros Industriales y afines, está a punto de desafiar sus límites y revolucionar su mundo. PRÓXIMO PASO Para continuar con el proceso, proceda a adjuntar algún documento que valide y compruebe su estatus estudiantil, en caso de no ser estudiante adjuntar una identificación o pasaporte. Recuerda que para nosotros será un honor contar con su presencia.";
 
 		$nuevoUsuario = new MandarMail;
-	$nuevoUsuario->mandar($titulo, $mensaje, $correoElectronico, $sujeto);
+        $nuevoUsuario->informarestados($correoElectronico,"paso1saludos.php",$subject,$nombreyapellidoInput,$mensaje);
 
 		if($conexion->query($query) == false) {
 			// $token =uniqid();
