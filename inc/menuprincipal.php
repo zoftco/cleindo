@@ -6,10 +6,10 @@
  * Time: 01:38
  */
 ?>
-<ul>
+<ul class="">
 				<li><a href="#">CLEIN</a>
 					<ul>
-                        <li><a href="queesclein.php">Qué es CLEIN?</a></li>
+                        <li><a href="queesclein.php">¿Qué es CLEIN?</a></li>
 						<li><a href="pilares.php">Pilares</a></li>
 						<li><a href="momentos.php">Momentos CLEIN</a></li>
 						<li><a href="contactos.php">Contactos</a></li>
@@ -27,9 +27,7 @@
                 <li><a href="#">Sede</a>
                     <ul>
                         <li><a href="republicadominicana.php">República Dominicana</a></li>
-                        <!--						<li><a href="paraguay.php">Santo Domingo</a></li>-->
                         <li><a href="hotelsede.php">Hotel Sede</a></li>
-                        <!--						<li><a href="tour_clein.php">Pre y Post Congreso</a></li>-->
                     </ul>
                 </li>
                 <li><a href="#">Inscripción</a>

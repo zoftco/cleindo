@@ -27,7 +27,7 @@
     </p>
 </div>
 <footer>
-	<div class="container">
+	<div class="container" style="display:flex;">
 
 
 		<!-- <div class="foot_der">
@@ -39,16 +39,16 @@
 		</div> -->
 
 		<div class="foot_izq" >
-			<a target="_BLANK" href="http://www.aleiiaf.org">
+			<a target="_BLANK" href="https://www.aleiiaf.org">
                 <img src="img/LogoALEIIAF.blanco.png" alt="Asociación Latinoamericana de Estudiantes e Ingenieros Industriales y Afines ALEIIAF" width="60px" height="60px;">
             </a>
 		</div>
-        <div class="foot_der" style="margin-top:25px">
+        <div class="foot_der">
             <p>2018 CLEIN REPUBLICA DOMINICANA TODOS LOS DERECHOS RESERVADOS</p>
         </div>
         <div class="clearfix"></div>
 	</div>
 </footer>
-
 </body>
+<?php include_once("analyticstracking.php") ?>
 </html>

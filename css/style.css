@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic);
 /*
 
 	Proyecto: CLEIN - XXIV Congreso Latinoamericano de Estudiantes e Ingenieros Industriales y Afines - Asunción Paraguay
@@ -81,6 +81,12 @@ a:hover {
 p{
   padding:12px;
 }
+.container-fluid
+{
+  width:100%;
+  padding:0px;
+}
+
 /*.container {*/
   /*width: 960px;*/
   /*margin: 0 auto;*/
@@ -139,7 +145,7 @@ input.button {
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
   transition: 0.2s ease;
-  background-color: transparent;
+  background-color: #153b70;
   color: #ffffff;
   padding: 10px 14px;
   margin: 6px 0px;
@@ -239,7 +245,7 @@ input[type="radio"] {
 }
 label {
   float: left;
-  font-size: 146px;
+  font-size: 14px;
   font-weight: 600;
   display: block;
   padding-top: 9px;
@@ -267,7 +273,8 @@ table thead {
 }
 table tr th,
 table tr td {
-  padding: 9px;
+  font-size: 0.6em !important;
+  padding: 0.25em;
   border: 1px solid #eeeeee;
   vertical-align: middle;
 }
@@ -282,13 +289,13 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(255,255,255,0.95);
 }
-header .logo {
+header .logo, .navbar .logo {
   background-image: url('../img/LOGO-HORIZONTAL.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 200px;
-  height: 50px;
+  width: 240px;
+  height: 60px;
   text-indent: -9999px;
   position: relative;
   float: left;
@@ -505,7 +512,7 @@ section#top_title .inscribirse_holder .btn_inscribirse:hover {
   color: #153b70;
 }
 section#main {
-  padding: 4% 0;
+  /*padding: 4% 0;*/
 }
 section#main article {
   float: left;
@@ -787,12 +794,16 @@ footer a:hover {
   color: #ffffff;
 }
 footer .foot_izq {
-  float: left;
-  width: 60px;
+  display:inline-block;
+  text-align: center;
+  vertical-align: center;
+  width: 20%;
 }
 footer .foot_der {
-  float: right;
-  width: 70%;
+  display:inline-block;
+  width: 80%;
+  font-size: 0.6em;
+  text-align: center;
 }
 footer .foot_der ul.foot_links {
   list-style: none;
@@ -831,7 +842,6 @@ footer .foot_der ul.foot_links li {
 #crumbs ul li a {
   display: block;
   float: left;
-  height: 20px;
   background: #bdc3c7;
   text-align: center;
   padding: 10px 20px 10px 35px;
@@ -1146,6 +1156,11 @@ footer .foot_der ul.foot_links li {
 {
   background-color: #E80302;
   color:white;
+  font-size:1em;
+  line-height: 1em;
+  text-transform: capitalize;
+  padding: 1em 1em;
+  margin: 1em 0.5em 0em 0.5em;
 }
 .nav-item:hover, .btn-red:hover
 {
