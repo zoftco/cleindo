@@ -1,52 +1,17 @@
 <!-- Paso 1 Formulario de Inscripción Principal -->
 <?php include 'inc/header.php'; ?>
 
-<section id="top_title">
-	<div class="container">
-		<h1>Inscripciones</h1>
-	</div>
-</section>
-
-
-
 <section id="main">
 	<div class="container">
-		<article>
-
+        <p>Si ya ha creado un perfil, puede ingresar <a href="log_in.php">aquí</a></p>
 			<div id="crumbs">
 				<ul>
 					<li><a href="javascript:void();" class="active">Registro</a></li>
 					<li><a href="javascript:void();">Validación de cuenta</a></li>
 					<li><a href="javascript:void();">Verificación de pago</a></li>
-					<li><a href="javascript:void();">Cursos</a></li>
+					<li><a href="javascript:void();">Actividades</a></li>
 				</ul>
 			</div>
-
-			<!-- <h4 class="title">Costos de inscripción</h4>
-			<table>
-				<thead class="txtC">
-					<tr>
-						<th>Participante</th>
-						<th>Primera Etapa<br>25/MAR - 06/JUN</th>
-						<th>Segunda Etapa<br>07/JUN - 31/JUL</th>
-						<th>Tercera Etapa<br>01/AGO - 07/OCT</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Estudiantes</td>
-						<td class="txtR">190 USD</td>
-						<td class="txtR">210 USD</td>
-						<td class="txtR">230 USD</td>
-					</tr>
-					<tr>
-						<td>Profesionales</td>
-						<td class="txtR">210 USD</td>
-						<td class="txtR">230 USD</td>
-						<td class="txtR">250 USD</td>
-					</tr>
-				</tbody>
-			</table> -->
 
 			<form action="zz">
 
@@ -54,17 +19,47 @@
 					<h4 class="title">Formulario de Inscripción</h4>
 
 					<div class="form-row">
-						<label for="name">Nombre y Apellido</label>
+						<label for="name">Nombre Completo (como saldrá en el certificado)</label>
 						<input type="text" name="" id="nombreyapellidoInput">
 					</div>
 
-					<div class="form-row">
-						<label for="name">Nro. de Cédula o Pasaporte</label>
-						<input type="text" name="" id="idNumber">
-					</div>
+                    <div class="form-row">
+                        <label for="name">Correo Electrónico</label>
+                        <input type="text" name="" id="correoElectronico">
+                        <span id = "mailInvalido" class="mayorEdad" style="color:red">Debes introducir un correo electronico válido.</span>
+                        <span id = "mailRepetido" class="mayorEdad" style="color:red">Ya existe una cuenta asociada a este correo electrónico</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="name">Contraseña (6 a 8 carácteres)</label>
+                        <input type="password" name="" id="contrasena">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="name">Repetir contraseña</label>
+                        <input type="password" name="" id="repetirContrasena">
+                        <span id="contrasenasIguales" class="mayorEdad" style="color:red">Las contraseñas deben ser iguales.</span>
+                    </div>
+
+                    <hr />
+
+                    <div class="form-row">
+                        <label for="name">Número de Teléfono / Whatsapp ej. +1 8294431870</label>
+                        <input type="text" name="" id="telefono">
+                        <span id = "mailInvalido" class="mayorEdad" style="color:red">Debes introducir un correo electronico válido.</span>
+                        <span id = "mailRepetido" class="mayorEdad" style="color:red">Ya existe una cuenta asociada a este correo electrónico</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="nivelacademico">Nivel Académico</label>
+                        <select name="nivelacademico" id="nivelacademico">
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Profesional">Profesional</option>
+                        </select>
+                    </div>
 
 					<div class="form-row">
-						<label for="name">Pais de Nacionalidad</label>
+						<label for="name">País</label>
 						<select name="pais" id="pais">
 <option value="0">Seleccionar</option>
 						<option value="AR">Argentina</option>
@@ -304,39 +299,14 @@
 						</select>
 					</div>
 
-					<div class="form-row">
-						<label for="name">¿Es estudiante?</label>
-						<input class = "estudianteRadio"type="radio" name="estudiante_si" id="" estudiante = "si"> Si <br>
-						<input class = "estudianteRadio"type="radio" name="estudiante_no" id="" estudiante = "no" checked ="true"> No
-					</div>
+                    <div class="form-row">
+                        <label for="facebook">Nombre en Facebook Ej. https://facebook.com/<span style="font-weight: bold">cleinaleiiaf</span></label>
+                        <input type="text" name="facebook" id="facebook">
+                    </div>
 
 					<div class="form-row">
-						<label for="name">Fecha de Nacimiento</label>
-						<input type="date" name="" id="fechaNacimiento">
-						<span id="debesSerMayor" class="mayorEdad" style="color:red">Debes ser mayor de edad para poder inscribirte.</span>
-					</div>
-
-					<div class="form-row">
-						<label for="name">Correo Electrónico</label>
-						<input type="text" name="" id="correoElectronico">
-						<span id = "mailInvalido" class="mayorEdad" style="color:red">Debes introducir un correo electronico válido.</span>
-						<span id = "mailRepetido" class="mayorEdad" style="color:red">Ya existe una cuenta asociada a este correo electrónico</span>
-					</div>
-
-					<div class="form-row">
-						<label for="name">Teléfono</label>
-						<input type="text" name="" id="telefono">
-					</div>
-
-					<div class="form-row">
-						<label for="name">Contraseña (6 a 8 carácteres)</label>
-						<input type="password" name="" id="contrasena">
-					</div>
-
-					<div class="form-row">
-						<label for="name">Repetir contraseña</label>
-						<input type="password" name="" id="repetirContrasena">
-						<span id="contrasenasIguales"class="mayorEdad" style="color:red">Las contraseñas deben ser iguales.</span>
+						<label for="instagram">Nombre en Instagram Ej. https://www.instagram.com/<span style="font-weight: bold">cleinrd2018</span></label>
+						<input type="text" name="instagram" id="instagram">
 					</div>
 
 					<div class="form-row">
@@ -352,13 +322,6 @@
 				</div>
 
 			</form>
-
-
-		</article>
-
-		<!-- Sidebar -->
-		<?php include 'inc/sidebar.php'; ?>
-		<div class="clearfix"></div>
 	</div>
 </section>
 

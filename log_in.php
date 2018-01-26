@@ -1,33 +1,24 @@
-<?php include 'inc/header.php'; ?>
 <?php
 	if (isset($_SESSION['user_id'])) {
 		header("Location:inc/intermediador.php");
 		exit;
 	}
 ?>
-<section id="top_title">
-	<div class="container">
-		<h1>Ingresar</h1>
-	</div>
-</section>
-
-
-
+<?php include 'inc/header.php'; ?>
 <section id="main">
 	<div class="container">
-		<article>
 			<p>Ingrese sus datos para acceder, si aún no ha creado un perfil, puede hacerlo <a href="inscripcion.php">aquí</a></p>
 
-			<form action="">
+			<form id="formIngresarLogin" method="post">
 				
 				<div class="form formlogin">
 					<div class="form-row">
-						<label for="name">Email</label>
+						<label for="emailLogin">Email</label>
 						<input type="text" name="emailLogin" id="emailLogin">
 					</div>
 					
 					<div class="form-row">
-						<label for="name">Contraseña</label>
+						<label for="passLogin">Contraseña</label>
 						<input type="password" name="passLogin" id="passLogin">
 						<a href="olvidaste_contra.php" class="txtSS">Olvidé mi contraseña</a>
 					</div>
@@ -41,12 +32,6 @@
 				</div>
 
 			</form>
-
-		</article>
-
-		<!-- Sidebar -->
-		<?php include 'inc/sidebar.php'; ?>
-		<div class="clearfix"></div>		
 	</div>
 </section>
 
