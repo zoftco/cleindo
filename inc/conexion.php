@@ -1,8 +1,8 @@
 <?php
-	$host= "localhost";
-	$user="aleiiafc_cleinecu";
-	$clave= "Clein2017";
-	$db="aleiiafc_cleinecu";
+	$host= DB_HOST;
+	$user=DB_USER;
+	$clave= DB_PASSWORD;
+	$db=DB_NAME;
 	$conexion= mysqli_connect($host,$user,$clave,$db)or die("Error.." . mysqli_error($conexion));
 
 ?>
