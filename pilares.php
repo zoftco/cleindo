@@ -1,20 +1,6 @@
 <?php include 'inc/header.php'; ?>
-<!--Barra de Usuario Logueado-->
-<?php
-if(isset($_SESSION['user_name'])) {
-    ?>
-    <div class="userbar">
-        <div class="container">
-            Bienvenido/a <strong><?php echo $_SESSION['user_name'];?></strong> <!-- <a href="mis_cursos.php" class="button azul mini">Mis Cursos</a> --> <a href="cursos_disponibles.php" class="button azul mini">Cursos Disponibles</a> <a href="inc/cerrarsesion.php" class="button azul mini">Salir</a>
-        </div>
-    </div>
-    <?php
-}
-?>
-
-<!--Barra de Usuario Logueado-->
 <div class="container-fluid">
-    <img src="img/pilares/LEAN-STARTUP.jpg" alt="Día 1: Integración" width="100%">
+    <img src="img/pilares/STARTUP-6.jpg" alt="Startup" width="100%">
 </div>
 <div class="container">
     <div class="row">
@@ -27,7 +13,7 @@ if(isset($_SESSION['user_name'])) {
 </div>
 
 <div class="container-fluid">
-    <img src="img/pilares/PROJECT-MANAGEMENT.jpg" alt="Día 1: Integración" width="100%">
+    <img src="img/pilares/PROJECT-MANAGEMENT.jpg" alt="Project Management" width="100%">
 </div>
 <div class="container">
     <div class="row">
@@ -41,7 +27,7 @@ if(isset($_SESSION['user_name'])) {
 </div>
 
 <div class="container-fluid">
-    <img src="img/pilares/MEJORA-CONTINUA.jpg" alt="Día 1: Integración" width="100%">
+    <img src="img/pilares/MEJORA-CONTINUA.jpg" alt="Mejora Continua" width="100%">
 </div>
 <div class="container">
     <div class="row">

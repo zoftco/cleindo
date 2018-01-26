@@ -7,6 +7,7 @@
 <?php
 	if (isset($_GET['uuid'])) {
 		require('pago/Procard.php');
+        require ('inc/config.php');
 		require ('inc/conexion.php');
 		$user_id = $_SESSION['user_id'];
 		$uuid = $_GET['uuid'];
@@ -44,21 +45,6 @@
 		$hacer = 'nada';
 	}
 ?>
-<!--Barra de Usuario Logueado-->
-<?php
-	if(isset($_SESSION['user_name'])) {
-?>
-	<div class="userbar">
-		<div class="container">
-			Bienvenido/a <strong><?php echo $_SESSION['user_name'] ;?></strong> <!-- <a href="mis_cursos.php" class="button azul mini">Mis Cursos</a> --> <a href="cursos_disponibles.php" class="button azul mini">Cursos Disponibles</a> <a href="inc/cerrarsesion.php" class="button azul mini">Salir</a>
-		</div>
-	</div>
-<?php
-	}
-?>
-
-<!--Barra de Usuario Logueado-->
-
 <section>
 	<div class="container-fluid" id="homeimage">
         <div class="mx-auto" style="height:120px;text-align:center">
