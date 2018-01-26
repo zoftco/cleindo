@@ -52,9 +52,13 @@
 
                                                         <td style="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%;text-align:left" valign="top">
 
-                                                            <p style="text-align:center;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%"><span style="color:#000080"><span style="font-size:34px"><strong>¡</strong>{titulo}<strong>!</strong></span></span></p>
+                                                            <p style="text-align:center;margin:10px 0;padding:0;color:#000080;font-family:Helvetica;font-size:16px;font-size:34px;line-height:150%">¡Saludos!</p>
+                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Recibe una cordial bienvenida de parte del equipo CLEIN RD2018, gracias por crear su usuario y mostrar interés por el congreso Latinoamericano de Estudiantes e Ingenieros Industriales y afines, está a punto de desafiar sus límites y revolucionar su mundo.</p>
+                                                            <p style="text-align:center;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:18px;line-height:150%;font-weight: bold">PRÓXIMO PASO</p>
 
-                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">{mensaje}</p>
+                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Para continuar con el proceso, proceda a adjuntar algún documento que valide y compruebe su estatus estudiantil, en caso de no ser estudiante adjuntar una identificación o pasaporte. Puede ingresar a la página <a href="https://clein.org/inscripciones_paso2.php" style="color:#000080;">aquí</a></p>
+                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Recuerda que para nosotros será un honor contar con su presencia.</p>
+
                                                         </td>
                                                     </tr>
                                                     </tbody>

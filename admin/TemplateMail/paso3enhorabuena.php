@@ -52,13 +52,11 @@
 
                                                         <td style="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%;text-align:left" valign="top">
 
-                                                            <p style="text-align:center;margin:10px 0;padding:0;color:#000080;font-family:Helvetica;font-size:16px;font-size:34px;line-height:150%">¡Saludos!</p>
-                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Recibe una cordial bienvenida de parte del equipo CLEIN RD2018, gracias por crear su usuario y mostrar interés por el congreso Latinoamericano de Estudiantes e Ingenieros Industriales y afines, está a punto de desafiar sus límites y revolucionar su mundo.</p>
-                                                            <p style="text-align:center;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:18px;line-height:150%;font-weight: bold">PRÓXIMO PASO</p>
-
-                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Para continuar con el proceso, proceda a adjuntar algún documento que valide y compruebe su estatus estudiantil, en caso de no ser estudiante adjuntar una identificación o pasaporte.</p>
-                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Recuerda que para nosotros será un honor contar con su presencia.</p>
-
+                                                            <p style="text-align:center;margin:10px 0;padding:0;color:#000080;font-family:Helvetica;font-size:16px;font-size:34px;line-height:150%;font-weight: bold">¡EN HORA BUENA!</p>
+                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Está a punto de completar su pase para abordar una de las mejores experiencias profesional, estudiantil y personal que será el <span style="font-weight: bold;">CLEIN República Dominicana 2018</span>, y para nosotros será un honor contar con su presencia.</p>
+                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Le informamos que en este momento puede proceder a realizar su pago como <span style="font-weight: bold;">{estudiante}</span>, sólo haciendo clic <a href="https://clein.org/inscripciones_paso3.php">Aquí</a></p>
+                                                            <p style="text-align:center;margin:30px 0 0 0;padding:0;color:#808080;font-family:Helvetica;font-size:24px;line-height:150%;font-weight: bold">PRÓXIMO PASO</p>
+                                                            <p style="text-align:justify;margin:10px 0;padding:0;color:#808080;font-family:Helvetica;font-size:16px;line-height:150%">Le recomendamos revisar a detalle la <a href="https://clein.org/guiadelasistente.php">guía del asistente</a> y finalmente visualizar el <a href="https://clein.org/hotelsede.php">hotel sede.</a></p>
                                                         </td>
                                                     </tr>
                                                     </tbody>
