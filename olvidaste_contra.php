@@ -1,20 +1,7 @@
-<!-- Paso 1 Formulario de Inscripción Principal -->
-<?php include 'inc/header.php'; ?>
-
-<section id="top_title">
-	<div class="container">
-		<h1>Cambia tu contraseña</h1>
-	</div>
-</section>
-
-
-
-<section id="main">
-	<div class="container">
-		<article>
 		<?php
 			if (isset($_POST['correo'])) {
 				$correo = trim($_POST['correo']);
+                require('inc/config.php');
 				require('inc/conexion.php');
 				
 				$valid_email = mysqli_query($conexion, "SELECT * FROM login WHERE correoElectronico = '$correo'");
@@ -22,25 +9,29 @@
 				if (mysqli_num_rows($valid_email) == 0) {
 					header("Location:".WEB_URL."/olvidaste_contra.php?solicitud=fallida");
 				} else {
-					require("inc/config.php");
 					require 'admin/TemplateMail/PHPMailer-master/PHPMailerAutoload.php';
 					require('admin/TemplateMail/mandarmail.php');
 
 					$valid_email = mysqli_fetch_assoc($valid_email);
 					$email_forgot = $valid_email['correoElectronico'];
+                    $nombreyapellidoInput = $valid_email['nombreyapellidoInput'];
 					$id_forgot = $valid_email['id'];
-
-					$titulo = "CLEIN Ecuador";
-					$sujeto = "Cambia tu contraseña";
-					$mensaje = 'Para cambiar tu contraseña haz click <a style="font-size:20px;color:navy" href="'.WEB_URL.'/olvido_pass.php?id='.$id_forgot.'">aquí</a>. Si no pediste un cambio de contraseña, no hagas caso a este mensaje';
+                    $key=hash("sha512", $valid_email['modificado'].$valid_email['id']);
+					$titulo = "Cambia tu contraseña";
+					$sujeto = "Cambia tu contraseña CLEIN República Dominicana 2018 clein.org";
+					$mensaje = 'Para cambiar tu contraseña haz click <a style="font-size:20px;color:navy" href="'.WEB_URL.'/olvido_pass.php?id='.$id_forgot.'&key='.$key.'">aquí</a>. Si no pediste un cambio de contraseña, no hagas caso a este mensaje';
 
 					$usuario_olvido = new MandarMail;
-					$usuario_olvido->mandar($titulo, $mensaje, $email_forgot, $sujeto);
+					$usuario_olvido->mandar($titulo, $mensaje, $email_forgot, $sujeto,$nombreyapellidoInput);
 
 					header("Location:".WEB_URL."/olvidaste_contra.php?solicitud=enviada");
 				}
 			}
-		?>
+
+			include 'inc/header.php'; ?>
+
+        <section id="main">
+            <div class="container">
 		<?php
 			if (isset($_GET['solicitud']) && $_GET['solicitud'] == 'enviada') {
 		?>
@@ -56,7 +47,7 @@
 					<div class="form">
 						<h4 class="title">Introduzca su correo electrónico y recibira un mail con instrucciones para cambiar su contraseña.</h4>
 						<div class="form-row">
-							<label for="name">Correo Electrónico</label>
+							<label for="correo">Correo Electrónico</label>
 							<input type="text" name="correo" >
 						</div>
 						<div class="form-row">
@@ -67,10 +58,6 @@
 		<?php
 			}
 		?>
-		</article>
-
-		<!-- Sidebar -->
-		<?php include 'inc/sidebar.php'; ?>
 		<div class="clearfix"></div>		
 	</div>
 </section>
