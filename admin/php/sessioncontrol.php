@@ -2,9 +2,13 @@
 	class sessioncontrol {
 		public $sessiontimeout = 3600;
 
-		public function sessioncontrol() {
-			session_start();
-		}
+//		public function sessioncontrol() {
+//			session_start();
+//		}
+
+        public function __construct() {
+            session_start();
+        }
 
 		public function isValid($key) {
 			if(isset($_SESSION[$key])) {

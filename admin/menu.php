@@ -20,17 +20,13 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class = "<?php echo $first;?>"><a href="admin.php">Administrar Usuarios</a></li>
-          <li class = "<?php echo $second;?>"><a href="adminpagos.php">Administrar Pagos </a></li>
-          <!-- <li class = "<?php echo $third;?>"><a href="transaccionesprocard.php">Ver Transacciones </a></li> -->
-          <li class = "<?php echo $fourth;?>"><a href="totalregistrados.php">Usuarios Registrados </a></li>
-        
-		  <!-- nuevo -->
-          <li class = "<?php echo $six;?>"><a href="pilares.php">Pilares</a></li>
-          <li class = "<?php echo $five;?>"><a href="cursos.php">Charlas</a></li>
-          <li class = "<?php echo $seven;?>"><a href="visitas.php">Visitas</a></li>
-		  <li class = "<?php echo $eight;?>"><a href="actividades.php">Actividades</a></li>
-          <!-- nuevo -->
+          <li><a href="totalregistrados.php">Usuarios Registrados </a></li>
+          <li><a href="admin.php">Administrar Comprobantes</a></li>
+          <li><a href="adminpagos.php">Administrar Pagos</a></li>
+          <li><a href="pilares.php">Pilares</a></li>
+          <li><a href="cursos.php">Charlas</a></li>
+          <li><a href="visitas.php">Visitas</a></li>
+		  <li><a href="actividades.php">Actividades</a></li>
 		  
         </ul>
         <ul class="nav navbar-nav navbar-right">

@@ -255,6 +255,15 @@ function Usuarioscontrol(table, newadmisubmitbtn){
 				},
 				errormessage: 'El campo nombre es requerido.'
 			},
+            {
+                dom: 'input[name="editadmin_rol"]',
+                errordom: '#editadmin_rol',
+                validation: function(value){
+                    var regex = /^.+$/gi;
+                    return regex.test(value);
+                },
+                errormessage: 'El campo rol es requerido.'
+            },
 			{
 				dom: 'input[name="editadmin_pass"]',
 				errordom: '#editadmin_pass',

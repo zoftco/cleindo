@@ -8,19 +8,14 @@
 ?>
 
 <?php
-	require ('../inc/conexion.php');
     require ('../inc/config.php');
+	require ('../inc/conexion.php');
 	$url = WEB_URL;
 	$query = mysqli_query($conexion, "SELECT * FROM login");
-	// ORDER BY field (estado, 'pendiente', 'aceptado', 'rechazado') acordate que este es el query para ordenar, aunque no importa mucho en esta pag, preguntale a david //
 	$estado = array();
 	while($row = mysqli_fetch_assoc($query)) {
 		$estado[] = array_map('utf8_encode', $row);
 	}
-	$first = 'asfive';
-	$second = 'asdsfe';
-	$third = 'aasdfe';
-	$fourth = 'active';
 ?>
 
 <?php
@@ -80,20 +75,25 @@
 			}
 		?>
 
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
 						<thead>
 							<tr>
+                                <th>Codigo Usuario</th>
 								<th>Nombre</th>
-								<th>Correo Electronico</th>
 								<th>Nacionalidad</th>
-								<th>Estudiante</th>
+								<th>Nivel</th>
+                                <th>Universidad</th>
+                                <th>Carrera</th>
+                                <th>Correo Electronico</th>
 								<th>Teléfono</th>
-								<th>Estado</th>
-								<th>Codigo Usuario</th>
-								<th>Contacto</th>
+                                <th>Facebook</th>
+                                <th>Instagram</th>
+								<th>Fecha Nacimiento</th>
+                                <th>Estado</th>
+								<th>Contactar</th>
 								<th>Administrar</th>
 							</tr>
 						</thead>
@@ -103,48 +103,44 @@
 									$universidad = $estado[$key]['universidad'];
 									$nombre = $estado[$key]['nombreyapellidoInput'];
 									$email = $estado[$key]['correoElectronico'];
-									$nacionalidad = $estado[$key]['pais'];
+									$pais = $estado[$key]['pais'];
 									$estudiante = $estado[$key]['estudiante'];
-									if ($estudiante == 'no') {
-										$estudiante = 'No';
-									} else {
-										if (!$universidad) {
-											$estudiante = 'Si';
-										} else {
-											$estudiante = $universidad;
-										}
-										
-									}
+                                    $universidad = $estado[$key]['universidad'];
+                                    $fechaNacimiento = $estado[$key]['fechaNacimiento'];
+                                    $carrera = $estado[$key]['carrera'];
+                                    $instagram = $estado[$key]['instagram'];
+                                    $facebook = $estado[$key]['facebook'];
 									$state = $estado[$key]['estado'];
 									$id = $estado[$key]['id'];
 									$telefono = $estado[$key]['telefono'];
-									if (!$telefono) {
-										$telefono = "Sin telefono";
-									}
 							?> 	
 							<tr>
-
+                                <td>
+                                    <?php echo $id;?>
+                                </td>
 								<td>
 									<?php echo $nombre;?>
 								</td>
 								<td>
-									<?php echo $email;?>
+									<?php echo $pais;?>
 								</td>
-								<td>
-									<?php echo $nacionalidad;?>
-								</td>
-
-								<td>
-									<?php echo $estudiante;?>
-								</td>
-
+                                <td>
+                                    <?php echo $estudiante;?>
+                                </td>
+                                <td>
+                                    <?php echo $universidad;?>
+                                </td>
+                                <td>
+                                    <?php echo $carrera;?>
+                                </td>
+                                <td>
+                                    <?php echo $email;?>
+                                </td>
 								<td><?php echo $telefono;?></td>
-
+                                <td><?php echo $facebook;?></td>
+                                <td><?php echo $instagram;?></td>
+                                <td><?php echo $fechaNacimiento;?></td>
 								<td><?php echo $state;?></td>
-
-								<td style="padding-left:50px">
-									<?php echo $id;?>
-								</td>
 									
 								<td>
 											<!-- <button type="button" data-toggle="modal" data-target="#modalRechazar" class="btn btn-danger rechazar-btn" value="<?php echo $id;?>">Rechazar</button> -->

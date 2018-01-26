@@ -58,6 +58,13 @@
                                         <input name="newadmin_email" type="email" class="form-control">
                                     </div>
                                 </div>
+                                <div class="form-group" id="newadmin_rol">
+                                    <label class="control-label">Rol</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input name="newadmin_rol" type="text" class="form-control">
+                                    </div>
+                                </div>
                                 <div class="form-group" id="newadmin_pass">
                                     <label class="control-label">Contraseña</label>
                                     <div class="input-group">
@@ -89,7 +96,8 @@
                                     <tr>
                                         <th>Nombre y apellido</th>
                                         <th>E-mail</th>
-                                        <th></th>
+                                        <th>Rol</th>
+                                        <th>Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>

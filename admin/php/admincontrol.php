@@ -23,7 +23,8 @@
 					'columns' => array(
 						'admin_nombre' => 'admin_nombre',
 						'admin_id' => 'admin_id',
-						'admin_email' => 'admin_email'),
+						'admin_email' => 'admin_email',
+                        'admin_rol' => 'admin_rol'),
 					'order' => array(
 						'admin_nombre' => 'ASC'));
 
@@ -47,6 +48,7 @@
 
 				$fields['newadmin_name']= strtolower($fields['newadmin_name']);
 				$fields['newadmin_email']= strtolower($fields['newadmin_email']);
+                $fields['newadmin_rol']= strtolower($fields['newadmin_rol']);
 				$fields['newadmin_name']= ucwords($fields['newadmin_name']);
 				// $fields = array_map('utf8_decode',$fields);
 
@@ -67,6 +69,7 @@
 					'columns' => array(
 						'admin_nombre' => $fields['newadmin_name'],
 						'admin_email' => $fields['newadmin_email'],
+                        'admin_rol' => $fields['newadmin_rol'],
 						'admin_pass' => hash('sha512',$fields['newadmin_pass'])));
 
 				$datos = $database->insertData($queryarray);
@@ -105,6 +108,7 @@
 					'table' => 'administradores',
 					'columns' => array(
 						'admin_nombre' => $fields['editadmin_nombre'],
+                        'admin_rol' => $fields['editadmin_rol'],
 						'admin_pass' => hash('sha512', $fields['editadmin_pass'])),
 					'conditions' => array(
 						'admin_id' => $admin_id));
