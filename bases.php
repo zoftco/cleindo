@@ -1,16 +1,8 @@
 <?php include 'inc/header.php'; ?>
 
-<section id="top_title">
-	<div class="container">
-		<h1>BASES Y CONDICIONES</h1>
-	</div>
-</section>
-
-
-
 <section id="main">
 	<div class="container">
-		<article>
+            <h1>BASES Y CONDICIONES</h1>
 			<h5 class="txtBold">1.	Aceptación de las bases y condiciones</h5>
 			<p>Las personas participantes de este congreso con su inscripción al mismo, manifiestan que han leído las disposiciones descriptas en estas Bases y Condiciones aceptando de pleno derecho todas y cada una de las mismas. </p>
 
@@ -21,14 +13,14 @@
 			<p>La Organización se reserva el derecho de admisión y permanencia durante la realización del Congreso. Queda prohibido sostener discusiones de carácter personal que se desarrollen fuera del margen de respeto y corrección así como el consumo de bebidas alcohólicas durante la realización de los talleres, conferencias y visitas organizadas </p>
 
 			<h5 class="txtBold">4.	De las inscripciones</h5>
-			<p>El proceso de inscripción se inicia el día 25/03/2015 hasta el 07/10/2015. Los precios de las inscripciones se establecen según el calendario publicado en el sitio web, considerando su proximidad al evento. Las inscripciones se realizan a través de este sitio web y en el local sito en Tte. Mellones 1506, Barrio Los Laureles.</p>
+			<p>Los precios de las inscripciones se establecen según el calendario publicado en el sitio web, considerando su proximidad al evento.</p>
 
 			<p>Durante el período de inscripción se podrán realizar diferentes promociones que modifiquen el valor de la inscripción actual, siempre con la intención de beneficiar a los futuros participantes.</p>
 
-			<p>El pago se podrá realizar mediante pago en efectivo, en cheque, por transferencia de dinero a través de Western Union a nombre de Arturo Toñanez o a través de página web con tarjeta de crédito.</p>
+			<p>El pago se podrá realizar mediante pago en efectivo, en cheque, por transferencia de dinero a través de Western Union o a través de página web con Paypal o tarjeta de crédito.</p>
 
 			<h5 class="txtBold">5.	De la cancelación de participación</h5>
-			<p>Realizado el correspondiente pago de inscripción, no se admitirán pedidos de reintegros bajo ninguna circunstancia aun cuando la persona inscripta no pudiere participar del Congreso. Se admitirá el traspaso de la inscripción a otra persona. Los traspasos se realizarán únicamente al momento de la acreditación, con una autorización por escrito con firma certificada por Escribanía en la cual figuren los datos del titular de la inscripción y los datos de quien la recibe.</p>
+			<p>Realizado el correspondiente pago de inscripción, no se admitirán pedidos de reintegros bajo ninguna circunstancia aun cuando la persona inscrita no pudiere participar del Congreso. Se admitirá el traspaso de la inscripción a otra persona. Los traspasos se realizarán únicamente al momento de la acreditación, con una autorización por escrito con firma certificada en la cual figuren los datos del titular de la inscripción y los datos de quien la recibe.</p>
 
 			<h5 class="txtBold">6.	Confidencialidad de los datos personales</h5>
 			<p>Los datos personales recopilados a través del formulario de inscripción, una vez enviados, serán parte de la base de datos del ALEIIAF, pudiendo ser utilizados para la remisión de informaciones, promociones y/o publicaciones referidas a los fines y actividades de la Asociación. Los datos podrán ser utilizados por la ALEIIAF u empresas que por convenio con ésta hayan obtenido la base de datos.</p>
@@ -56,11 +48,7 @@
 			<p>La Organización se reserva el derecho de modificar las presentes bases y condiciones, en caso que circunstancias imprevistas lo justifiquen, hasta 48 (cuarenta y ocho horas) antes de la iniciación del Congreso debiendo publicar las mismas en el sitio web. </p>
 
 			<p>Las presentes Bases y Condiciones se encuentran a disposición de cualquier interesado en este sitio web.</p>
-
-		</article>
-
 		<!-- Sidebar -->
-		<?php include 'inc/sidebar.php'; ?>
 		<div class="clearfix"></div>		
 	</div>
 </section>
