@@ -10,8 +10,8 @@
 ?>
 
 <?php
-	require ('../inc/conexion.php');
     require ('../inc/config.php');
+    require ('../inc/conexion.php');
 	$url = WEB_URL;
 	
 	$query = mysqli_query($conexion, "SELECT * FROM pagoefectivo LEFT JOIN (SELECT login.nombreyapellidoInput, login.correoElectronico, login.id FROM login) AS usuarios ON (pagoefectivo.idUsers = usuarios.id) ORDER BY field (estado, 'pendiente', 'aceptado', 'rechazado')");
@@ -19,10 +19,6 @@
 	while($row = mysqli_fetch_assoc($query)) {
 		$estado[] = array_map('utf8_encode', $row);
 	}
-	$first = 'asfive';
-	$second = 'active';
-	$third = 'aasdfe';
-	$fourth = 'asdasd';
 ?>
 
 <!DOCTYPE html>
@@ -145,8 +141,6 @@
 				</div>
 			</div>
 		</div>
-
-		<h4 style="margin-left:110px"><a href="transacciones.php">Ver transacciones</a></h4>
 	
 
 		<div class="modal fade" id="modalRechazar">

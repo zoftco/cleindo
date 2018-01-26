@@ -7,9 +7,8 @@
     }
 ?>
 <?php
-	
-	require ('../inc/conexion.php');
     require ('../inc/config.php');
+    require ('../inc/conexion.php');
 	$url = WEB_URL;
 	$query = mysqli_query($conexion, "SELECT * FROM imagenes LEFT JOIN (SELECT login.pais, login.estudiante, login.nombreyapellidoInput, login.correoElectronico, login.id FROM login) AS usuarios ON (imagenes.user_id = usuarios.id) ORDER BY field (estado, 'pendiente', 'aceptado', 'rechazado')");
 	$estado = array();
@@ -99,7 +98,7 @@
 										if ($fotoFactura != "") {
 											$fotoFactura = $url.$fotoFactura;
 									?>
-										<a href="<?php echo $fotoFactura;?>">Factura</a>
+                                            <a href="<?php echo $fotoFactura;?>"><img src="<?php echo $fotoFactura;?>" width="100px"/></a>
 									<?php
 										}
 									?>
@@ -107,7 +106,7 @@
 										if ($fotoCedula != "") {
 											$fotoCedula = $url.$fotoCedula;
 									?>
-										<a href="<?php echo $fotoCedula;?>">Cedula</a>
+                                            <a href="<?php echo $fotoCedula;?>"><img src="<?php echo $fotoCedula;?>" width="100px"/></a>
 									<?php
 										}
 									?>

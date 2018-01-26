@@ -1,21 +1,24 @@
 <?php
-	$user_id=$_POST['user_id'];
-	$mensaje=$_POST['mensaje'];
-	require('../inc/conexion.php');
+    require('../inc/config.php');
+    require('../inc/conexion.php');
+    require 'TemplateMail/PHPMailer-master/PHPMailerAutoload.php';
+    require('TemplateMail/mandarmail.php');
+
+    $user_id=htmlspecialchars($_POST['user_id']);
+    $mensaje=htmlspecialchars($_POST['mensaje']);
+
 	$query= mysqli_query($conexion, "UPDATE pagoefectivo SET mensaje = '$mensaje' WHERE idUsers = '$user_id'");
 	$query= mysqli_query($conexion, "UPDATE pagoefectivo SET estado = 'rechazado' WHERE idUsers = '$user_id'");
-	
-	$razon= mysqli_query($conexion, "SELECT mensaje FROM imagenes WHERE user_id = '$user_id'");
-	$razon= mysqli_fetch_assoc($razon);
 
-	$razonRechazo = $razon['mensaje'];
-
-	$userMail= mysqli_query($conexion, "SELECT correoElectronico FROM login WHERE id = '$user_id'");
+	$userMail= mysqli_query($conexion, "SELECT correoElectronico,nombreyapellidoInput FROM login WHERE id = '$user_id'");
 	$userMail= mysqli_fetch_assoc($userMail);
-	$correo= $userMail['correoElectronico'];
-	$titulo = 'Pago rechazado.';
-	$mensaje = 'Su solicitud de inscripción ha sido rechazada. Haga click <a target="_BLANK" href="'.WEB_URL.'/log_in.php">aquí</a> para cargar sus documentos de nuevo.';
-	$mensaje = $mensaje.'<br><br><br>'.'<span style="padding:10px;color:red;font-size:18px">'.$razonRechazo.'</span>';
-	$sujeto = 'Solicitud de pago rechazada.';
-	header('Location:'.WEB_URL.'/admin/TemplateMail/olvidocontrasenha.php?titulo='.$titulo.'&mensaje='.$mensaje.'&correo='.$correo.'&sujeto='.$sujeto.'&tipoMail=pago');
+    $correoElectronico= $userMail['correoElectronico'];
+    $nombreyapellidoInput= $userMail['nombreyapellidoInput'];
+    $subject = 'Hay un problema con su pago - CLEIN República Dominicana 2018 clein.org';
+    $titulo = 'Hay un problema con su pago';
+    $mensaje = 'Hay un problema con los comprobantes de pago enviados. '.$mensaje.' Ingrese a https://www.clein.org/inscripciones_paso3.php para realizar el envío nuevamente.';
+
+    $nuevoUsuario = new MandarMail;
+    $nuevoUsuario->mandar($titulo,$mensaje,$correoElectronico,$subject,$nombreyapellidoInput);
+	header('Location:adminpagos.php');
 ?>

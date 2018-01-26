@@ -1,13 +1,20 @@
 <?php
-	$user_id=$_POST['user_id'];
+    require('../inc/config.php');
 	require('../inc/conexion.php');
+    require 'TemplateMail/PHPMailer-master/PHPMailerAutoload.php';
+    require('TemplateMail/mandarmail.php');
+
+    $user_id=$_POST['user_id'];
 	$query= mysqli_query($conexion, "UPDATE login SET estado = 'cursos' WHERE id = '$user_id'");
 	$query= mysqli_query($conexion, "UPDATE pagoefectivo SET estado = 'aceptado' WHERE idUsers = '$user_id'");
-	$userMail= mysqli_query($conexion, "SELECT correoElectronico FROM login WHERE id = '$user_id'");
+	$userMail= mysqli_query($conexion, "SELECT correoElectronico,nombreyapellidoInput  FROM login WHERE id = '$user_id'");
 	$userMail= mysqli_fetch_assoc($userMail);
-	$correo= $userMail['correoElectronico'];
-	$titulo = 'Pago aceptado!';
-	$mensaje = 'Su pago de inscripción ha sido aceptado. Haga click <a target="_BLANK" href="'.WEB_URL.'/log_in.php">aquí</a> para ver los cursos disponibles.';
-	$sujeto = 'Su pago ha sido aceptado';
-	header('Location:'.WEB_URL.'/admin/TemplateMail/olvidocontrasenha.php?titulo='.$titulo.'&mensaje='.$mensaje.'&correo='.$correo.'&sujeto='.$sujeto.'&tipoMail=pago');
+    $correoElectronico= $userMail['correoElectronico'];
+    $nombreyapellidoInput= $userMail['nombreyapellidoInput'];
+    $subject = 'Pago de Inscripción Aceptado - CLEIN República Dominicana 2018 clein.org';
+    $mensaje = '¡BIENVENIDO/A A BORDO! Hemos recibido su pago satisfactoriamente. PRÓXIMO PASO Le recomendamos revisar a detalle la guía del asistente y finalmente visualizar el hotel sede.';
+    $nuevoUsuario = new MandarMail;
+    $nuevoUsuario->informarestados($correoElectronico,"paso4bienvenido.php",$subject,$nombreyapellidoInput,$mensaje);
+
+	header('Location:adminpagos.php');
 ?>
