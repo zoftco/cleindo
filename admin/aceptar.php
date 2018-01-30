@@ -12,7 +12,7 @@
     $nombreyapellidoInput= $userMail['nombreyapellidoInput'];
     $estudiante= $userMail['estudiante'];
     $subject = 'Documentos de Solicitud de Inscripción Aceptados - CLEIN República Dominicana 2018 clein.org';
-    $mensaje = '¡EN HORA BUENA! Está a punto de completar su pase para abordar una de las mejores experiencias profesional, estudiantil y personal que será el CLEIN República Dominicana 2018, y para nosotros será un honor contar con su presencia. Su solicitud de inscripción ha sido aceptada. Ingrese a https://www.clein.org/inscripciones_paso3.php para realizar el pago de su inscripción.';
+    $mensaje = '¡ENHORABUENA! Hemos validado su estatus, está a punto de completar su pase para abordar una de las mejores experiencias profesional, estudiantil y personal que será el CLEIN República Dominicana 2018, y para nosotros será un honor contar con su presencia. Su solicitud de inscripción ha sido aceptada. Ingrese a https://www.clein.org/inscripciones_paso3.php para realizar el pago de su inscripción.';
 
     $nuevoUsuario = new MandarMail;
     $nuevoUsuario->informarestados($correoElectronico,"paso3enhorabuena.php",$subject,$nombreyapellidoInput,$mensaje,$estudiante);

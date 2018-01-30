@@ -58,7 +58,7 @@
 <section id="main">
 	<div class="container">
         <div style="text-align: center;"><h1>DESAFIA TUS LÍMITES, REVOLUCIONA TU MUNDO</h1></div>
-			<p>Será un escenario de encuentro, aprendizaje e intercambio de experiencias desde el sector académico, en el que nos comprometeremos como futuros ingenieros hacia un objetivo común para toda Latinoamérica: ser ejemplo de cambio a nivel mundial. En este espacio definiremos no solo propuestas, sino actos que nos garanticen tomar un rumbo innovador hacia los retos que el mundo presenta en la actualidad, alcanzando así, desde la ingeniería, un entorno adecuado paa el desarrollo social y cultural, llevándonos hacia la paz y el desarrollo integral.</p>
+			<p>Será un escenario de encuentro, aprendizaje e intercambio de experiencias desde el sector académico, en el que nos comprometeremos como futuros ingenieros hacia un objetivo común para toda Latinoamérica: ser ejemplo de cambio a nivel mundial. En este espacio definiremos no solo propuestas, sino actos que nos garanticen tomar un rumbo innovador hacia los retos que el mundo presenta en la actualidad, alcanzando así, desde la ingeniería, un entorno adecuado para el desarrollo social y cultural, llevándonos hacia la paz y el desarrollo integral.</p>
     </div>
     <br />
         <div class="container">

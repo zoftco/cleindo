@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <p>Muchas startups se conciben con la idea de un producto o servicio que los fundadores creen que la gente quiere. Por lo tanto, dedican meses (incluso años) perfeccionando dicho producto o servicio, sin saber si logrará la aceptación de los consumidores, al no tomar en cuenta lo que existe en el mercado, lo que los consumidores realmente necesitan, o bien, entender si lo que se propone es realmente una necesidad palpable. Pero, como no se consigue la aceptación deseada por los clientes, lo cual es lo propenso a suceder por no llevar a cabo pautas y factores reales de innovación y desarrollo de productos, la empresa falla.</p>
-            <p>Para convertir este caos en orden, el CLEIN República Dominicana, a través del pilar Start-up, provee de herramientas claves para tener una visión continua de la situación en la que se encuentra la idea de negocio.</p>
+            <p>Para convertir este caos en orden, el CLEIN República Dominicana, a través del pilar Startup, provee de herramientas claves para tener una visión continua de la situación en la que se encuentra la idea de negocio.</p>
             <br>
         </div>
     </div>

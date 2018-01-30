@@ -7,7 +7,7 @@
         <img src="img/ofertaacademica/CONFERENCIAS-MAGISTRALES.jpg" width="100%" />
     </div>
         <div class="container">
-        <p>El congreso contara con conferencistas de talla nacional como internacional, los cuales, a través de sus experiencias diversas, buscarán enlazar cada uno de los temas con el objetivo de lograr la meta central del congreso.
+        <p>El congreso contará con conferencistas de talla nacional como internacional, los cuales, a través de sus experiencias diversas, buscarán enlazar cada uno de los temas con el objetivo de lograr la meta central del congreso.
         </p>
     </div>
     <div class="container-fluid">
@@ -36,14 +36,14 @@
         <img src="img/ofertaacademica/TALLERES.jpg" width="100%" />
     </div>
     <div class="container">
-        <p>Ayudarán tanto a aumentar el sentido creativo y trabajo en equipo como proporcionar un contacto con la vida real, donde se dote de la capacidad para la interpretación de los hechos; basados en los tres pilares: Lean Start-up, Mejora Continua y Project Management.
+        <p>Ayudarán tanto a aumentar el sentido creativo y trabajo en equipo como proporcionar un contacto con la vida real, donde se dote de la capacidad para la interpretación de los hechos; basados en los tres pilares: Startup, Mejora Continua y Project Management.
         </p>
     </div>
     <div class="container-fluid">
         <img src="img/ofertaacademica/FERIAS-EMPRESARIALES.jpg" width="100%" />
     </div>
     <div class="container">
-        <p>Se contara con la presencia de empresas patrocinadoras, donde cada una ofrecerá a los asistentes sus productos y/o servicios.
+        <p>Se contará con la presencia de empresas patrocinadoras, donde cada una ofrecerá a los asistentes sus productos y/o servicios.
         </p>
     </div>
     <div class="container-fluid">

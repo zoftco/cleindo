@@ -117,7 +117,7 @@ include 'inc/header.php';
                     ?>
 					
 					<div class="form-row">
-						<div class="obs_block"><strong>Observación:</strong> <br>Una vez recibidos los archivos, validaremos tu cuenta para proceder al pago de su inscripción. La imagen debe estar en los formatos .png, .pdf o .jpg.</div>
+						<div class="obs_block"><strong>Observación:</strong> <br>Una vez recibidos los archivos, validaremos su cuenta para proceder al pago de su inscripción. La imagen debe estar en los formatos .png, .pdf o .jpg.</div>
 					</div>
 
 					<div class="form-row">
@@ -203,7 +203,7 @@ include 'inc/header.php';
                         ?>
 						
 						<div class="form-row">
-							<div class="obs_block"><strong>Observación:</strong> <br>Una vez recibidos los archivos, validaremos tu cuenta para proceder al pago de su inscripción. La imagen debe estar en los formatos .png, .pdf o .jpg.</div>
+							<div class="obs_block"><strong>Observación:</strong> <br>Una vez recibidos los archivos, validaremos su cuenta para proceder al pago de su inscripción. La imagen debe estar en los formatos .png, .pdf o .jpg.</div>
 						</div>
 
 						<input type="hidden" name="user_id" value="<?php echo $session_id;?>">

@@ -4,7 +4,7 @@
         <img src="img/diasdelclein/INTEGRACION-1.jpg" alt="Día 1: Integración" width="100%">
     </div>
     <div class="container">
-        <p>Este sera un día cargado de emociones para todos los asistentes, buscando sentar las bases para toda una semana de integración latinoamericana, se lograra a través de actividades de integración social. Para finalizar el día se realizara la apertura oficial del evento acompañados de figuras importantes, tanto nacionales como internacionales.</p>
+        <p>Este será un día cargado de emociones para todos los asistentes, buscando sentar las bases para toda una semana de integración latinoamericana, se logrará a través de actividades de integración social. Para finalizar el día se realizará la apertura oficial del evento acompañados de figuras importantes, tanto nacionales como internacionales.</p>
 
     </div>
     <div class="container-fluid">
@@ -25,14 +25,14 @@
         <img src="img/diasdelclein/MEJORA-CONTINUA-4.jpg" alt="Día 4: Mejora Continua" width="100%">
     </div>
     <div class="container">
-        <p>En este mundo tan cambiante no podemos quedarnos estáticos, escalemos nuestro start-up a un nivel mayor.</p>
+        <p>En este mundo tan cambiante no podemos quedarnos estáticos, escalemos nuestro startup a un nivel mayor.</p>
         <p>Actividades: Ponencias profesionales, ponencias magistrales, casos de éxitos, taller.</p>
     </div>
     <div class="container-fluid">
         <img src="img/diasdelclein/NETWORKING-5.jpg" alt="Día 5: Networking" width="100%">
     </div>
     <div class="container">
-        <p>Conoceremos las prácticas de Start-Up, Project Management y Mejora Continua que tienen diferentes empresas nacionales y multinacionales, contaremos con una feria de empresa donde espacio para networking.</p>
+        <p>Conoceremos las prácticas de Startup, Project Management y Mejora Continua que tienen diferentes empresas nacionales y multinacionales, contaremos con una feria de empresa donde espacio para networking.</p>
 
 
     </div>

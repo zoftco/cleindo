@@ -4,7 +4,7 @@
         <img src="img/momentos/ACTIVIDAD-DE-INTEGRACION.jpg" width="100%" />
     </div>
     <div class="container">
-        <p>Con el fin de fomentar el trabajo en equipo y intercambio social y cultural, el CLEIN República Dominicana 2018 pondrá aprueba las habilidades físicas, creativas y sociales en una actividad deportiva recreativa.</p>
+        <p>Con el fin de fomentar el trabajo en equipo e intercambio social y cultural, el CLEIN República Dominicana 2018 pondrá aprueba las habilidades físicas, creativas y sociales en una actividad deportiva recreativa.</p>
     </div>
     <div class="container-fluid">
         <img src="img/momentos/ACT.-SOCIAL.jpg" width="100%" />
