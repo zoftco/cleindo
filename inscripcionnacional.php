@@ -11,7 +11,7 @@
         <p>2. Espera el correo de confirmación con los medios de pago.</p>
         <p>3. Realiza tu pago y luego carga la evidencia de la realización del pago en tu usuario.</p>
         <p>4. Te llegara un correo confirmando tu inscripción al evento.</p>
-        <img src="img/inscripcion/Inscripciones.jpg" alt="Inscripciones CLEIN República Dominicana 2018" width="100%" />
+        <img src="img/inscripcion/pagosDOP.jpg" alt="Inscripciones CLEIN República Dominicana 2018" width="100%" />
     </div>
 </section>
 
