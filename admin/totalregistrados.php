@@ -74,7 +74,11 @@
 		<?php
 			}
 		?>
-
+        <?php
+			if(isset($_GET['emailenviado'])) {
+			    echo '<div class="alert alert-success">Email enviado con éxito</div>';
+			}
+        ?>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
@@ -159,31 +163,31 @@
 			</div>
 		</div>
 		<!-- dropdownmenu -->
-		<div class="container">
-			<form action="TemplateMail/comunicado.php" method="post">
-			    <div class="modal-body">
-			    	<div class="form-group">
-			    		<div class="container" style="padding-left:0px">
-			    			<label>Enviar comunicado a:</label><br>
-			    			<input type="radio" name="quienMandar" checked value="todos"> Todos</input><br>
-			    			<input type="radio" name="quienMandar" value="sinDocumentos"> Usuarios sin documentos</input><br>
-			    			<input type="radio" name="quienMandar" value="sinComprobantes"> Usuarios sin comprobante de pago</input><br>
-			    			<input type="radio" name="quienMandar" value="cursos"> Usuarios listos para inscribirse en cursos</input><br>
-			    		</div><br>
-			     		<label>Asunto:</label>
-			     		<input class="form-control" type="text" name="sujeto" required>
-			     		<label>Titulo:</label>
-			     		<input class="form-control" type="text" name="titulo" required>
-			     		<input type="hidden" name="tipoMail" value="totalregistrados">
-			     		<label>Mensaje:</label>
-			     		<textarea class="form-control" name="mensaje" required></textarea>
-			     	</div>
-			    </div>
-			    <div class="modal-footer">
-			      	<button type="submit" name="user_id" class="btn btn-primary sendEnviar">Enviar</button>
-			    </div>
-			</form>
-		</div>	
+<!--		<div class="container">-->
+<!--			<form action="TemplateMail/comunicado.php" method="post">-->
+<!--			    <div class="modal-body">-->
+<!--			    	<div class="form-group">-->
+<!--			    		<div class="container" style="padding-left:0px">-->
+<!--			    			<label>Enviar comunicado a:</label><br>-->
+<!--			    			<input type="radio" name="quienMandar" checked value="todos"> Todos</input><br>-->
+<!--			    			<input type="radio" name="quienMandar" value="sinDocumentos"> Usuarios sin documentos</input><br>-->
+<!--			    			<input type="radio" name="quienMandar" value="sinComprobantes"> Usuarios sin comprobante de pago</input><br>-->
+<!--			    			<input type="radio" name="quienMandar" value="cursos"> Usuarios listos para inscribirse en cursos</input><br>-->
+<!--			    		</div><br>-->
+<!--			     		<label>Asunto:</label>-->
+<!--			     		<input class="form-control" type="text" name="sujeto" required>-->
+<!--			     		<label>Titulo:</label>-->
+<!--			     		<input class="form-control" type="text" name="titulo" required>-->
+<!--			     		<input type="hidden" name="tipoMail" value="totalregistrados">-->
+<!--			     		<label>Mensaje:</label>-->
+<!--			     		<textarea class="form-control" name="mensaje" required></textarea>-->
+<!--			     	</div>-->
+<!--			    </div>-->
+<!--			    <div class="modal-footer">-->
+<!--			      	<button type="submit" name="user_id" class="btn btn-primary sendEnviar">Enviar</button>-->
+<!--			    </div>-->
+<!--			</form>-->
+<!--		</div>	-->
 	 	<!-- dropdownmenu -->
 
 		<div class="modal fade" id="modalEnviar">

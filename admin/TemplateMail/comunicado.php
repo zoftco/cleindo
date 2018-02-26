@@ -38,8 +38,8 @@
 		$mail->SMTPAuth = true;
 		$mail->Username = MAIL_SERVER_USER;
 		$mail->Password = MAIL_SERVER_PASS;
-		$mail->setFrom(CONTACT_MAIL,'Info Clein');
-		$mail->addReplyTo(CONTACT_MAIL,'Info Clein');
+		$mail->setFrom(CONTACT_MAIL,'Inscripciones CLEIN');
+		$mail->addReplyTo(CONTACT_MAIL,'Inscripciones CLEIN');
 
 
 		foreach($mails as $key=>$value) {

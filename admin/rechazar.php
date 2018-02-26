@@ -20,6 +20,6 @@
 
     $nuevoUsuario = new MandarMail;
     $nuevoUsuario->mandar($titulo,$mensaje,$correoElectronico,$subject,$nombreyapellidoInput);
-
+    header('Location:admin.php');
 
 ?>

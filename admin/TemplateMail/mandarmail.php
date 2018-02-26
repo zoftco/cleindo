@@ -28,9 +28,9 @@
                 $mail->Debugoutput = 'html';
 
                 //Recipients
-                $mail->setFrom(CONTACT_MAIL, 'Info Clein');
+                $mail->setFrom(CONTACT_MAIL, 'Inscripciones CLEIN');
                 $mail->addAddress($correo, $nombre);
-                $mail->addReplyTo(CONTACT_MAIL, 'Info Clein');
+                $mail->addReplyTo(CONTACT_MAIL, 'Inscripciones CLEIN');
 
                 //Content
                 $mail->isHTML(true);                                  // Set email format to HTML
@@ -64,9 +64,9 @@
                 $mail->Debugoutput = 'html';
 
                 //Recipients
-                $mail->setFrom(CONTACT_MAIL, 'Info Clein');
+                $mail->setFrom(CONTACT_MAIL, 'Inscripciones CLEIN');
                 $mail->addAddress($correo, $nombre);
-                $mail->addReplyTo(CONTACT_MAIL, 'Info Clein');
+                $mail->addReplyTo(CONTACT_MAIL, 'Inscripciones CLEIN');
 
 
                 //Content
