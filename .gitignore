@@ -2,3 +2,5 @@
 inc/config.php
 .ftpconfig
 *.zip
+upload/comprobante/
+upload/documento/

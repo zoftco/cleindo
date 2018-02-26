@@ -19,6 +19,7 @@
 					<ul>
 						<li><a href="ofertaacademica.php">Oferta Académica</a></li>
 						<li><a href="diasdelclein.php">Días del CLEIN</a></li>
+                        <li><a href="ponencias.php">Concurso de Ponencias</a></li>
 <!--						<li><a href="crea_tu_negocio.php">Crea tu negocio</a></li>-->
 <!--						<li><a href="actividad_social.php">Actividad social</a></li>-->
 <!--						<li><a href="visitas_tecnicas.php">Visitas Técnicas</a></li>-->
