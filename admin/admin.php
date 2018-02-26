@@ -15,11 +15,9 @@
 	while($row = mysqli_fetch_assoc($query)) {
 		$estado[] = array_map('utf8_encode', $row);
 	}
-	$first = 'active';
-	$second = 'aasdfe';
-	$third = 'aasdfe';
-	$fourth = 'asdasd';
 ?>
+
+
 
 <!DOCTYPE html>
 
@@ -37,6 +35,41 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body style="background-color:#e2e2e2">
+  <?php
+  if (isset($_GET['action']) && $_GET['action'] == 'delete') {
+      $borrar_id = $_GET['imagenes_id'];
+      mysqli_query($conexion, "DELETE FROM imagenes WHERE user_id = '$borrar_id'");
+      header('Location:'.WEB_URL.'/admin/admin.php');
+  }
+  ?>
+
+  <?php
+      if(isset($_GET['borrar'])&&$_SESSION['admin_rol']=='admin') {
+          $id = $_GET['imagenes_id'];
+          ?>
+          <div class="alert alert-danger">
+              <div class="row">
+                  <div class="col-md-11">
+                      <h3>¿Está seguro que desea eliminar al usuario?</h3>
+                      <p>Tenga en cuenta que este procedimiento no puede ser revertido.</p>
+                  </div>
+              </div>
+              <!--<form id="confirmleteform" method="post" action="includestrmgmt.php">-->
+              <table class="actionbtntable table">
+                  <tbody>
+                  <tr>
+                      <td class="actionfield nopadding">
+                          <a href="<?php echo WEB_URL;?>/admin/admin.php?action=delete&imagenes_id=<?php echo $id;?>"class="btn btn-danger">Eliminar</button></a>
+                          <a href="<?php echo WEB_URL;?>/admin/admin.php" class="btn btn-default">Cancelar</a>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+              <!--</form>-->
+          </div>
+          <?php
+      }
+      ?>
 		
 
   		<?php require ('menu.php');?>
@@ -59,6 +92,7 @@
 						<tbody>
 							<?php
 								foreach ($estado as $key=>$value) {
+                                    $imagenes_id = $estado[$key]['id'];
 									$fotoFactura = $estado[$key]['fotoFactura'];
 									$fotoCedula = $estado[$key]['fotoCedula'];
 									$id = $estado[$key]['user_id'];
@@ -130,6 +164,10 @@
 										<button class="btn btn-danger" data-toggle="modalRechazar" disabled>Rechazar</button>
 									<?php
 										}
+										if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="operaciones")
+                                        {
+                                           echo '<a href="'.WEB_URL.'/admin/admin.php?borrar=true&imagenes_id='.$id.'" class="btn btn-default">Eliminar Comprobante</a>';
+                                        }
 									?>
 								</td>
 							</tr>

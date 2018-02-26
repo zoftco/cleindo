@@ -1,30 +1,27 @@
-<?php include 'inc/header.php'; ?>
+
 
 <?php
-	require('inc/conexion.php');
-	if (isset($_SESSION['user_id'])) {
-		if (($_SESSION['time'] + 3600) > time()) {
-			$_SESSION['time'] = time() + 3600;
-			$session_id = $_SESSION['user_id'];
-			$userData = mysqli_query($conexion, "SELECT * FROM login WHERE id = '$session_id'");
-			$userData = mysqli_fetch_assoc($userData);
-			$userState = $userData['estado'];
-			$nacionalidad = $userData['pais'];
-			$estudiante = $userData['estudiante'];
-			if ($userState != 'cursos') {
-				header("Location:inc/intermediador.php");
-				exit;
-			}
-		} else {
-			unset($_SESSION['time']);
-			unset($_SESSION['user_id']);
-			header("Location:log_in.php");
-			exit;
-		}
-	} else {
-		header("Location:log_in.php");
-		exit;
-	}
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require_once('inc/config.php');
+require('inc/conexion.php');
+if (isset($_SESSION['user_id'])) {
+    $session_id = $_SESSION['user_id'];
+    $userData = mysqli_query($conexion, "SELECT * FROM login WHERE id = '$session_id'");
+    $userData = mysqli_fetch_assoc($userData);
+    $userState = $userData['estado'];
+    $_SESSION['pais'] = $userData['pais'];
+    $pais = $_SESSION['pais'];
+    $_SESSION['etapa'] = "";
+    $estudiante = $userData['estudiante'];
+    if ($userState != 'cursos') {
+        header("Location:inc/intermediador.php");
+        exit;
+    }
+} else {
+    header("Location:log_in.php");
+    exit;
+}
 
 	$result = mysqli_query($conexion, "select 
 		pilar.id as p_id, 
@@ -112,10 +109,7 @@
 	  $visita_ids[] = $row['id'];
 	}
 ?>
-
-<link rel="stylesheet" href="css/cursosDisponibles.css">
-
-
+<?php include 'inc/header.php'; ?>
 <section id="main">
 	<div class="container">
         <div id="crumbs">
@@ -126,7 +120,18 @@
                 <li><a href="javascript:void();" class="active">Actividades</a></li>
             </ul>
         </div>
-			<h4>Recibirás un mail de confirmación para que puedas volver a nuestra página y empezar a inscribirte a las actividades del congreso.</h4>
+        <div class="row">
+            <div class="col-md-4"><?php echo $userData['nombreyapellidoInput']; ?></div>
+            <div class="col-md-2"><?php echo $estudiante; ?></div>
+            <div class="col-md-2"><?php echo $userData['pais']; ?></div>
+            <div class="col-md-4"><a href="inc/cerrarsesion.php" class="button azul mini">Cerrar Sesión</a></div>
+        </div>
+        <div class="row">
+            <h1>¡BIENVENIDO/A A BORDO!</h1>
+        </div>
+        <div class="row">
+            <h4>Hemos recibido su pago satisfactoriamente. Recibirás un mail de confirmación para que puedas volver a nuestra página y empezar a inscribirte a las actividades del congreso.</h4>
+        </div>
     </div>
 
 

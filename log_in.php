@@ -34,5 +34,5 @@
 			</form>
 	</div>
 </section>
-
+<script type="text/javascript" src="js/loginControl.js"></script>
 <?php include 'inc/footer.php'; ?>

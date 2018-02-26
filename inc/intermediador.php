@@ -17,7 +17,7 @@
 			header("Location:../inscripciones_paso3.php");
 		break;
 		case 'cursos':
-			header("Location:../cursos_disponibles.php");
+			header("Location:../inscripciones_paso4_actividades.php");
 		break;
 	}
 

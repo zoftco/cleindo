@@ -33,6 +33,7 @@
                 </li>
                 <li><a href="#">Inscripción</a>
                     <ul>
+                        <li><a href="inscripciones_paso2.php">Mi Cuenta</a></li>
                         <li><a href="inscripcionnacional.php">Nacional</a></li>
                         <li><a href="inscripcioninternacional.php">Internacional</a></li>
                     </ul>

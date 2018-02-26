@@ -77,8 +77,8 @@ if (isset($_SESSION['user_id'])){
     <script type="text/javascript">
         var host = "<?php echo WEB_URL;?>";
     </script>
-    <script type="text/javascript" src="js/login.js"></script>
-    <script type="text/javascript" src="js/loginControl.js"></script>
+
+
 
 </head>
 <body>

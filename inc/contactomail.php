@@ -20,7 +20,7 @@
 
 	$mail->From = $correo; //MAIL 
 	$mail->FromName = $nombre; //NOMBRE
-	$mail->addAddress('info@cleinecuador.com', 'Info Clein'); //MAIL Y NOMBRE
+	$mail->addAddress('info@cleinecuador.com', 'Inscripciones CLEIN'); //MAIL Y NOMBRE
 	$mail->addReplyTo($correo, $nombre);
 	$mail->isHTML(true);
 

@@ -19,47 +19,46 @@
 					<h4 class="title">Formulario de Inscripción</h4>
 
 					<div class="form-row">
-						<label for="name">Nombre Completo (como saldrá en el certificado)</label>
-						<input type="text" name="" id="nombreyapellidoInput">
+						<label for="name">*Nombre Completo (como saldrá en el certificado)</label>
+						<input type="text" name="nombreyapellidoInput" id="nombreyapellidoInput">
 					</div>
 
                     <div class="form-row">
-                        <label for="name">Correo Electrónico</label>
-                        <input type="text" name="" id="correoElectronico">
+                        <label for="name">*Correo Electrónico</label>
+                        <input type="email" name="correoElectronico" id="correoElectronico">
                         <span id = "mailInvalido" class="mayorEdad" style="color:red">Debes introducir un correo electronico válido.</span>
                         <span id = "mailRepetido" class="mayorEdad" style="color:red">Ya existe una cuenta asociada a este correo electrónico</span>
                     </div>
 
                     <div class="form-row">
-                        <label for="name">Contraseña (6 a 8 carácteres)</label>
-                        <input type="password" name="" id="contrasena">
+                        <label for="name">*Contraseña (6 a 8 carácteres)</label>
+                        <input type="password" name="contrasena" id="contrasena">
                     </div>
 
                     <div class="form-row">
-                        <label for="name">Repetir contraseña</label>
-                        <input type="password" name="" id="repetirContrasena">
+                        <label for="name">*Repetir contraseña</label>
+                        <input type="password" name="repetirContrasena" id="repetirContrasena">
                         <span id="contrasenasIguales" class="mayorEdad" style="color:red">Las contraseñas deben ser iguales.</span>
                     </div>
 
                     <hr />
 
                     <div class="form-row">
-                        <label for="name">Número de Teléfono / Whatsapp ej. +1 8294431870</label>
-                        <input type="text" name="" id="telefono">
-                        <span id = "mailInvalido" class="mayorEdad" style="color:red">Debes introducir un correo electronico válido.</span>
-                        <span id = "mailRepetido" class="mayorEdad" style="color:red">Ya existe una cuenta asociada a este correo electrónico</span>
+                        <label for="name">*Número de Teléfono / Whatsapp ej. +1 8294431870</label>
+                        <input type="text" name="telefono" id="telefono">
+                        <span id = "telefonoInvalido" class="mayorEdad" style="color:red">Debes introducir un número de teléfono válido.</span>
                     </div>
 
                     <div class="form-row">
-                        <label for="nivelacademico">Nivel Académico</label>
-                        <select name="nivelacademico" id="nivelacademico">
+                        <label for="nivelacademico">*Nivel Académico</label>
+                        <select name="nivelacademico" name="nivelacademico" id="nivelacademico">
                         <option value="Estudiante">Estudiante</option>
                         <option value="Profesional">Profesional</option>
                         </select>
                     </div>
 
 					<div class="form-row">
-						<label for="name">País</label>
+						<label for="pais">*País</label>
 						<select name="pais" id="pais">
 <option value="0">Seleccionar</option>
 						<option value="AR">Argentina</option>
@@ -310,12 +309,11 @@
 					</div>
 
 					<div class="form-row">
-						<label for="name">Acepta los <a href="bases.php" target="_blank">términos y condiciones</a> del contrato de responsabilidad</label>
+						<label for="name">*Acepta los <a href="bases.php" target="_blank">términos y condiciones</a> del contrato de responsabilidad</label>
 						<span id ="aceptaTexto">Si, acepto</span> <input type="checkbox" name="" id="aceptaTerminos">
 					</div>
 
 					<div class="form-row">
-						<!-- Acordate de volver a cambiar el type button a submit -->
 						<input type="button" value="Siguiente" class="button enviarform" id="botonEnviarForm">
 					</div>
 
@@ -324,5 +322,5 @@
 			</form>
 	</div>
 </section>
-
+<script type="text/javascript" src="js/login.js"></script>
 <?php include 'inc/footer.php'; ?>

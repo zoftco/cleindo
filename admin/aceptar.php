@@ -16,5 +16,5 @@
 
     $nuevoUsuario = new MandarMail;
     $nuevoUsuario->informarestados($correoElectronico,"paso3enhorabuena.php",$subject,$nombreyapellidoInput,$mensaje,$estudiante);
-
+    header('Location:admin.php');
 ?>

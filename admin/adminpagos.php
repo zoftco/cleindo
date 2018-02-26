@@ -22,6 +22,41 @@
 ?>
 
 <!DOCTYPE html>
+<?php
+if (isset($_GET['action']) && $_GET['action'] == 'delete') {
+    $borrar_id = $_GET['pago_id'];
+    mysqli_query($conexion, "DELETE FROM pagoefectivo WHERE idUsers = '$borrar_id'");
+    header('Location:'.WEB_URL.'/admin/adminpagos.php');
+}
+?>
+
+<?php
+if(isset($_GET['borrar'])&&($_SESSION['admin_rol']=='admin'||$_SESSION['admin_rol']=='finanzas')) {
+$id = $_GET['pago_id'];
+?>
+    <div class="alert alert-danger">
+        <div class="row">
+            <div class="col-md-11">
+                <h3>¿Está seguro que desea eliminar el pago?</h3>
+                <p>Tenga en cuenta que este procedimiento no puede ser revertido.</p>
+            </div>
+        </div>
+        <!--<form id="confirmleteform" method="post" action="includestrmgmt.php">-->
+        <table class="actionbtntable table">
+            <tbody>
+            <tr>
+                <td class="actionfield nopadding">
+                    <a href="<?php echo WEB_URL;?>/admin/adminpagos.php?action=delete&pago_id=<?php echo $id;?>"class="btn btn-danger">Eliminar</button></a>
+                    <a href="<?php echo WEB_URL;?>/admin/adminpagos.php" class="btn btn-default">Cancelar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--</form>-->
+    </div>
+<?php
+}
+?>
 
 
 <html lang="en">
@@ -111,7 +146,10 @@
 								
 
 								<td>
+
 									<?php
+                                    if($_SESSION['admin_rol']=="admin"||$_SESSION['admin_rol']=='finanzas')
+                                    {
 										if($state == 'pendiente') {
 									?>
 										<form action="aceptarpago.php" method="post" style="display:inline-block">
@@ -129,11 +167,12 @@
 										<button class="btn btn-danger" data-toggle="modalRechazar" disabled>Rechazar</button>
 									<?php
 										}
-									?>
+                                        echo '<a href="'.WEB_URL.'/admin/adminpagos.php?borrar=true&pago_id='.$id.'" class="btn btn-default">Eliminar Pago</a>';
+                                    }
+                                    ?>
 								</td>
 							</tr>
-							<?php
-								// end foreach
+                            <?php
 								}
 							?>
 						</tbody>	

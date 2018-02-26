@@ -31,7 +31,21 @@ $(function() {
 			$('#pais').removeClass('errorBorder');
 			bandera = true;
 		}
-		if (correoElectronico.length === 0) {
+        if (telefono === 0) {
+            $('#telefono').addClass('errorBorder');
+            bandera = false;
+        } else {
+            $('#telefono').removeClass('errorBorder');
+            bandera = true;
+        }
+        if (nivelacademico === 0) {
+            $('#nivelacademico').addClass('errorBorder');
+            bandera = false;
+        } else {
+            $('#nivelacademico').removeClass('errorBorder');
+            bandera = true;
+        }
+		if (correoElectronico.length < 7) {
 			$('#correoElectronico').addClass('errorBorder');
 			bandera = false;
 		} else if (!re.test(correoElectronico)) {
@@ -127,5 +141,4 @@ $(function() {
 				}
 			})
 		}
-	})
-});
+	});
