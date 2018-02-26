@@ -13,11 +13,14 @@
         <table class="table table-bordered">
             <thead>
             <tr >
-                <th scope="col" width="50%">
+                <th scope="col" width="40%">
                     <p><b><span>Habitación</span></b></p>
                 </th>
-                <th scope="col" width="50%">
+                <th scope="col" width="30%">
                     <p><b><span>Valor por Habitación</span></b></p>
+                </th>
+                <th scope="col" width="30%">
+                    <p><b><span>Valor por Persona</span></b></p>
                 </th>
             </tr>
             </thead>
@@ -27,7 +30,10 @@
                     <p>Superior Room Individual (SGL)</p>
                 </td>
                 <td >
-                    <p>77 USD</p>
+                    <p>98.6 USD</p>
+                </td>
+                <td >
+                    <p>98.6 USD</p>
                 </td>
             </tr>
             <tr >
@@ -35,29 +41,41 @@
                     <p>Superior Room Doble (DBL)</p>
                 </td>
                 <td >
-                    <p>90 USD</p>
+                    <p>115.2 USD</p>
+                </td>
+                <td >
+                    <p>57.6 USD</p>
                 </td>
             </tr>
             <tr >
                 <td>
-                    <p>Extra Pax (3ra y 4ta Persona)</p>
+                    <p>Extra Pax (3ra Persona)</p>
                 </td>
                 <td >
-                    <p>+20 USD</p>
+                    <p>140.8 USD</p>
+                </td>
+                <td >
+                    <p>46.9 USD</p>
                 </td>
             </tr>
             <tr >
                 <td>
-                    <p>Niños (2-12 años)</p>
+                    <p>Extra Pax (4ta Persona)</p>
                 </td>
                 <td >
-                    <p>+14 USD</p>
+                    <p>166.4 USD</p>
+                </td>
+                <td >
+                    <p>41.6 USD</p>
                 </td>
             </tr>
         </table>
-        <p>Tarifas por habitación por noche, precios no incluyen el 28% impuestos</p>
+        <p>Impuestos incluidos</p>
         <p>Alojamiento, desayuno e internet incluidos en la tarifa</p>
         <p>Sujeto a cargos por otros servicios</p>
+        <nav class="nav nav-pills nav-justified">
+            <a class="nav-item nav-link" href="files/CLEINRD2018_procesodereservacion_hotelbarcelo.pdf">PROCESO DE RESERVACIÓN</a>
+        </nav>
     </div>
 </section>
 
