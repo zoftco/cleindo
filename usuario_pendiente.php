@@ -3,7 +3,7 @@
 <!--Barra de Usuario Logueado-->
 <div class="userbar">
 	<div class="container">
-		Bienvenido/a <strong>Juan Perez</strong> <a href="mis_cursos.php" class="button azul mini">Mis Cursos</a> <a href="cursos_disponibles.php" class="button azul mini">Cursos Disponibles</a> <a href="#" class="button azul mini">Salir</a>
+		Bienvenido/a <strong>Juan Perez</strong> <a href="mis_cursos.php" class="button azul mini">Mis Cursos</a> <a href="inscripciones_paso4_actividades.php" class="button azul mini">Cursos Disponibles</a> <a href="#" class="button azul mini">Salir</a>
 	</div>
 </div>
 <!--Barra de Usuario Logueado-->
