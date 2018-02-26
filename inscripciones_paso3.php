@@ -95,6 +95,8 @@ require('inc/calcularmonto.php');
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
                                 <p>Para realizar el pago en efectivo, debe realizar el depósito en:</p>
+                                <p>Banco Popular Dominicano</p>
+                                <p>Cuenta de Ahorro 805871720</p>
                                 <p>Luego deberá ingresar en su cuenta los datos del recibo para la posterior verificación del pago.</p>
                                 <p>El monto total a pagar es de: <strong><?php echo $pagarefectivo;?> RD$</strong></p>
 
