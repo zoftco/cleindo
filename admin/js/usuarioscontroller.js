@@ -233,7 +233,7 @@ function Usuarioscontrol(table, newadmisubmitbtn){
 
 		var admintoeditdata = me.searchInArray(me.admindata,'admin_id',idtoedit);
 
-		var editmodal = me.renderData(me.viewport,'components/adminedit.html',admintoeditdata);
+		var editmodal = me.renderData(me.viewport,'components/adminedit2.html',admintoeditdata);
 
 		editmodal[0].modal('show');
 
@@ -256,7 +256,7 @@ function Usuarioscontrol(table, newadmisubmitbtn){
 				errormessage: 'El campo nombre es requerido.'
 			},
             {
-                dom: 'input[name="editadmin_rol"]',
+                dom: 'select[name="editadmin_rol"]',
                 errordom: '#editadmin_rol',
                 validation: function(value){
                     var regex = /^.+$/gi;

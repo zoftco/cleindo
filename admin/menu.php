@@ -21,13 +21,20 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="totalregistrados.php">Usuarios Registrados </a></li>
-          <li><a href="admin.php">Administrar Comprobantes</a></li>
-          <li><a href="adminpagos.php">Administrar Pagos</a></li>
-          <li><a href="pilares.php">Pilares</a></li>
-          <li><a href="cursos.php">Charlas</a></li>
-          <li><a href="visitas.php">Visitas</a></li>
-		  <li><a href="actividades.php">Actividades</a></li>
-		  
+            <?php
+            if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="operaciones"){
+          echo '<li><a href="admin.php">Administrar Comprobantes</a></li>';
+            }
+          if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="finanzas" OR $_SESSION['admin_rol']=="operaciones"){
+          echo '<li><a href="adminpagos.php">Administrar Pagos</a></li>';
+            }
+          if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="academica"){
+          echo '<li><a href="pilares.php">Pilares</a></li>
+                <li><a href="cursos.php">Charlas</a></li>
+                <li><a href="visitas.php">Visitas</a></li>
+		        <li><a href="actividades.php">Actividades</a></li>';
+            }
+            ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

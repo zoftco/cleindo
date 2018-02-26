@@ -41,6 +41,7 @@
 
 				$session->start(array('admin_id' => $userexists['admin_id'], 'time' => time()));
 				$session->set('admin_name',$userexists['admin_nombre']);
+                $session->set('admin_rol',$userexists['admin_rol']);
 
 				$database->disconnect();
 				break;
