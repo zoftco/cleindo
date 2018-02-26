@@ -4,53 +4,18 @@
 
 
     <div class="container-fluid">
-        <img src="img/ofertaacademica/CONFERENCIAS-MAGISTRALES.jpg" width="100%" />
-    </div>
-        <div class="container">
-        <p>El congreso contará con conferencistas de talla nacional como internacional, los cuales, a través de sus experiencias diversas, buscarán enlazar cada uno de los temas con el objetivo de lograr la meta central del congreso.
-        </p>
-    </div>
-    <div class="container-fluid">
         <img src="img/ofertaacademica/PONENCIAS.jpg" width="100%" />
     </div>
     <div class="container">
-        <p>En el transcurso del congreso el asistente tendrá acceso a ponencias estudiantiles y profesionales. Se realizará la convocatoria para aquellos que decidan participar en este espacio de socialización investigativa.
+        <h1>Concurso de Ponencias Estudiantiles y Profesionales</h1>
+        <p>El CLEIN República Dominicana 2018 presenta el concurso oficial de ponencias estudiantiles y profesionales. El objetivo del mismo es involucrar a los asistentes en el desarrollo de las actividades académicas del congreso aportando con sus investigaciones y conocimientos a los demás participantes.</p>
+        <p> Accede al manual de Ponencias para conocer más sobre requisitos, beneficios y criterios de evaluación.
         </p>
-
-    </div>
-    <div class="container-fluid">
-        <img src="img/ofertaacademica/CASOS-DE-EXITO.jpg" width="100%" />
-    </div>
-    <div class="container">
-        <p>Los casos de éxitos permiten transmitirlas experiencias de innovación y liderazgo como ejemplo de buenas prácticas que pretenden servir de estímulo a las personas, intentando transformar en los distintos ámbitos.
-        </p>
-    </div>
-    <div class="container-fluid">
-        <img src="img/ofertaacademica/PONENCIA-CULTURAL.jpg" width="100%" />
-    </div>
-    <div class="container">
-        <p>En la situación actual en la que nos encontramos donde muchas veces, importa más la generación de beneficios económicos y triunfos personales; se hace necesario contar con personas que han tomado la iniciativa de entregar lo mejor de sí, combinando la pasión por lo que les gusta con el bienestar social.
-        </p>
-    </div>
-    <div class="container-fluid">
-        <img src="img/ofertaacademica/TALLERES.jpg" width="100%" />
-    </div>
-    <div class="container">
-        <p>Ayudarán tanto a aumentar el sentido creativo y trabajo en equipo como proporcionar un contacto con la vida real, donde se dote de la capacidad para la interpretación de los hechos; basados en los tres pilares: Startup, Mejora Continua y Project Management.
-        </p>
-    </div>
-    <div class="container-fluid">
-        <img src="img/ofertaacademica/FERIAS-EMPRESARIALES.jpg" width="100%" />
-    </div>
-    <div class="container">
-        <p>Se contará con la presencia de empresas patrocinadoras, donde cada una ofrecerá a los asistentes sus productos y/o servicios.
-        </p>
-    </div>
-    <div class="container-fluid">
-        <img src="img/ofertaacademica/VISITAS-TECNICAS.jpg" width="100%" />
-    </div>
-    <div class="container">
-        <p>Brindar al participante una experiencia palpable de manera que puedan conocer los pilares y valores reflejados en las empresas e industrias a visitar.</p>
+        <img src="img/ofertaacademica/cronograma.PNG" alt="Cronograma de Concurso de Ponencias Estudiantiles y Profesionales CLEIN República Dominicana 2018" width="100%" />
+        <nav class="nav nav-pills nav-justified">
+            <a class="nav-item nav-link" href="https://issuu.com/cleinrd/docs/manual_de_ponencias_estudiantiles_y" target="_blank">CONCURSO DE PONENCIAS</a>
+            <a class="nav-item nav-link" href="https://drive.google.com/file/d/1HKpqV8TGQkihHk4C5cI69Nxkj8VGv9uY/view" target="_blank">FORMATO DE PONENCIAS</a>
+        </nav>
     </div>
 </section>
 
