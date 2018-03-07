@@ -4,5 +4,6 @@
 	$clave= DB_PASSWORD;
 	$db=DB_NAME;
 	$conexion= mysqli_connect($host,$user,$clave,$db)or die("Error.." . mysqli_error($conexion));
+    mysqli_set_charset($conexion,"utf8");
 
 ?>

@@ -14,7 +14,7 @@
 	$query = mysqli_query($conexion, "SELECT * FROM login");
 	$estado = array();
 	while($row = mysqli_fetch_assoc($query)) {
-		$estado[] = array_map('utf8_encode', $row);
+		$estado[] = $row;
 	}
 ?>
 

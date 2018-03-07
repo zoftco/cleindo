@@ -35,7 +35,7 @@
 	$cursos = array();
 
 	while($row = mysqli_fetch_array($result)) { 
-	  $cursos[] = array_map('utf8_encode', $row); 
+	  $cursos[] = $row;
 	}
 
 	//print_r($cursos);die;
@@ -46,7 +46,7 @@
 	$visitas = array();
 
 	while($row = mysqli_fetch_array($result)) { 
-	  $visitas[] = array_map('utf8_encode', $row); 
+	  $visitas[] = $row;
 	}
 
 	//print_r($visitas);die;

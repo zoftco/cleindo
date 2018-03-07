@@ -42,7 +42,7 @@ if (isset($_SESSION['user_id'])) {
 	$cursos = array();
 
 	while($row = mysqli_fetch_array($result)) { 
-	  $cursos[] = array_map('utf8_encode', $row); 
+	  $cursos[] = $row;
 	}
 
 	$pilares = array();
@@ -79,7 +79,7 @@ if (isset($_SESSION['user_id'])) {
 	$visitas = array();
 
 	while($row = mysqli_fetch_array($result)) { 
-	  $visitas[] = array_map('utf8_encode', $row); 
+	  $visitas[] = $row;
 	}
 
 	//print_r($visitas);die;

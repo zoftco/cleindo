@@ -11,7 +11,7 @@
     // ORDER BY field (estado, 'pendiente', 'aceptado', 'rechazado') acordate que este es el query para ordenar, aunque no importa mucho en esta pag, preguntale a david //
     $estado = array();
     while($row = mysqli_fetch_assoc($query)) {
-        $pilares[] = array_map('utf8_encode', $row);
+        $pilares[] = $row;
     }
     //print_r($pilares);die;
     $first='asd';

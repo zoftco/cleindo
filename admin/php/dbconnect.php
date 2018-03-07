@@ -107,7 +107,7 @@
 
 			$data = array();
 			while($row = mysqli_fetch_assoc($query)) {
-				$data[] = array_map('utf8_encode',$row);
+				$data[] = $row;
 			}
 
 			return $data;
@@ -132,7 +132,7 @@
 
 			$data = array();
 			while($row = mysqli_fetch_assoc($query)) {
-				$data[] = array_map('utf8_encode',$row);
+				$data[] = $row;
 			}
 			return $data;
 		}
