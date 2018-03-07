@@ -103,16 +103,27 @@
 				$fields = json_decode($_POST['fields'],true);
 				$fields = array_map('utf8_decode',$fields);
 				$admin_id = $_POST['admin_id'];
-
-				$queryarray = array(
-					'table' => 'administradores',
-					'columns' => array(
-						'admin_nombre' => $fields['editadmin_nombre'],
-                        'admin_rol' => $fields['editadmin_rol'],
-						'admin_pass' => hash('sha512', $fields['editadmin_pass'])),
-					'conditions' => array(
-						'admin_id' => $admin_id));
-
+                if($fields['editadmin_pass'] == $fields['editadmin_pass2'] AND $fields['editadmin_pass']!= "")
+                {
+                    $queryarray = array(
+                        'table' => 'administradores',
+                        'columns' => array(
+                            'admin_nombre' => $fields['editadmin_nombre'],
+                            'admin_rol' => $fields['editadmin_rol'],
+                            'admin_pass' => hash('sha512',$fields['editadmin_pass'])),
+                        'conditions' => array(
+                            'admin_id' => $admin_id));
+                }
+                else
+                {
+                    $queryarray = array(
+                        'table' => 'administradores',
+                        'columns' => array(
+                            'admin_nombre' => $fields['editadmin_nombre'],
+                            'admin_rol' => $fields['editadmin_rol']),
+                        'conditions' => array(
+                            'admin_id' => $admin_id));
+                }
 				$update = $database->updateData($queryarray);
 
 				if($update) {
