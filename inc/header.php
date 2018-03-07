@@ -30,32 +30,9 @@ if (isset($_SESSION['user_id'])){
     <meta property="og:image:height" content="474">
     <meta property="og:image:width" content="1280">
 
-
-
-    <script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-66351966-3', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
-
-
-
-
-
-
-
-
-
-
     <!--CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -77,12 +54,11 @@ if (isset($_SESSION['user_id'])){
     <script type="text/javascript">
         var host = "<?php echo WEB_URL;?>";
     </script>
-
+    <?php include_once("analyticstracking.php") ?>
 
 
 </head>
 <body>
-<?php include_once("analyticstracking.php") ?>
 <header>
     <div class="container">
         <div class="navbar-header">
