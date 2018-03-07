@@ -32,7 +32,8 @@
           echo '<li><a href="pilares.php">Pilares</a></li>
                 <li><a href="cursos.php">Charlas</a></li>
                 <li><a href="visitas.php">Visitas</a></li>
-		        <li><a href="actividades.php">Actividades</a></li>';
+		        <li><a href="actividades.php">Actividades</a></li>
+		        <li><a href="adminconcurso.php">Concurso Ponencias</a></li>';
             }
             ?>
         </ul>

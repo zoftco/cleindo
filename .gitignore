@@ -4,3 +4,4 @@ inc/config.php
 *.zip
 upload/comprobante/
 upload/documento/
+upload/

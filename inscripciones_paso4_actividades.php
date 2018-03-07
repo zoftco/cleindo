@@ -118,6 +118,7 @@ if (isset($_SESSION['user_id'])) {
                 <li><a href="javascript:void();" class="success">Validación de cuenta</a></li>
                 <li><a href="javascript:void();" class="success">Verificación de pago</a></li>
                 <li><a href="javascript:void();" class="active">Actividades</a></li>
+                <li><a href="inscripciones_concurso.php;">Concurso Ponencia</a></li>
             </ul>
         </div>
         <div class="row">
