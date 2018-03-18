@@ -114,7 +114,7 @@ $id = $_GET['idconcurso'];
                                     <?php echo $perfil[$key]['tipoDocumento'];?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>"><?php echo $perfil[$key]['rutaDocumento'];?></a>
+                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>" target="_blank"><?php echo $perfil[$key]['rutaDocumento'];?></a>
                                 </td>
                                 <td>
                                     <?php echo $perfil[$key]['fechaenvioDocumento'];?>
@@ -205,7 +205,98 @@ $id = $_GET['idconcurso'];
                                     <?php echo $perfil[$key]['tipoDocumento'];?>
                                 </td>
                                 <td>
-                                    <?php echo $perfil[$key]['rutaDocumento'];?>
+                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>" target="_blank"><?php echo $perfil[$key]['rutaDocumento'];?></a>
+                                </td>
+                                <td>
+                                    <?php echo $perfil[$key]['fechaenvioDocumento'];?>
+                                </td>
+                                <td>
+                                    <?php echo $perfil[$key]['estadoDocumento'];?>
+                                </td>
+                                <td>
+
+                                    <?php
+
+                                    if($perfil[$key]['estadoDocumento'] == 'pendiente') {
+                                        if ($_SESSION['admin_rol'] == "admin" || $_SESSION['admin_rol'] == 'academica') {
+                                            ?>
+                                            <form action="accionesconcurso.php" method="post"
+                                                  style="display:inline-block">
+                                                <input type="hidden" name="idconcurso"
+                                                       value="<?php echo $perfil[$key]['idconcurso']; ?>">
+                                                <input type="hidden" name="accion"
+                                                       value="aprobado">
+                                                <input type="hidden" name="mensaje"
+                                                       value="">
+                                                <button type="submit" class="btn btn-primary"> Aceptar</button>
+                                            </form>
+                                            <form action="accionesconcurso.php" method="post"
+                                                  style="display:inline-block">
+                                                <button type="button" data-toggle="modal" id="buttonRechazar"
+                                                        data-target="#modalRechazar"
+                                                        class="btn btn-danger rechazar-btn"
+                                                        value="<?php echo $perfil[$key]['idconcurso']; ?>">Rechazar
+                                                </button>
+                                            </form>
+                                            <a href="adminconcurso.php?borrar=true&idconcurso=<?php echo $perfil[$key]['idconcurso']; ?>"
+                                               class="btn btn-default">Eliminar</a>
+                                            <?php
+                                        }
+                                    }else{
+                                        ?>
+                                        <p>Revisado por: <?php echo $administradores[$perfil[$key]['usuarioaprobadorDocumento']];?></p>
+                                        <p>Fecha Revisión: <?php echo $perfil[$key]['estadoDocumento'];?></p>
+                                        <p>Comentarios: <?php echo $perfil[$key]['mensajeDocumento'];?></p>
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Validación de Título</h3>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Perfil</th>
+                            <th>Autores</th>
+                            <th>Tipo</th>
+                            <th>Documento</th>
+                            <th>Fecha de Envío</th>
+                            <th>Estado</th>
+                            <th>Administración</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $query = mysqli_query($conexion, "SELECT * FROM concurso LEFT JOIN (SELECT * FROM login) AS usuario ON (concurso.idlogin = usuario.id) WHERE concurso.tipoDocumento LIKE 'titulo'");
+                        $perfil = array();
+                        while($row = mysqli_fetch_assoc($query)) {
+                            $perfil[] = $row;
+                        }
+                        foreach ($perfil as $key=>$value) {
+                            ?>
+                            <tr>
+                                <td>
+                                    <a href="perfil.php?id=<?php echo $perfil[$key]['idlogin'];?>">
+                                        <?php echo $perfil[$key]['nombreyapellidoInput'];?>
+                                    </a>
+                                </td>
+                                <td>
+                                    <?php echo $perfil[$key]['autor1'].', '.$perfil[$key]['autor2'];?>
+                                </td>
+                                <td>
+                                    <?php echo $perfil[$key]['tipoDocumento'];?>
+                                </td>
+                                <td>
+                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>" target="_blank"><?php echo $perfil[$key]['rutaDocumento'];?></a>
                                 </td>
                                 <td>
                                     <?php echo $perfil[$key]['fechaenvioDocumento'];?>
@@ -308,7 +399,7 @@ $id = $_GET['idconcurso'];
                                     <?php echo $perfil[$key]['tipoDocumento'];?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>"><?php echo $perfil[$key]['rutaDocumento'];?></a>
+                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>" target="_blank"><?php echo $perfil[$key]['rutaDocumento'];?></a>
                                 </td>
                                 <td>
                                     <?php echo $perfil[$key]['fechaenvioDocumento'];?>
@@ -399,7 +490,7 @@ $id = $_GET['idconcurso'];
                                     <?php echo $perfil[$key]['tipoDocumento'];?>
                                 </td>
                                 <td>
-                                    <?php echo $perfil[$key]['rutaDocumento'];?>
+                                    <a href="<?php echo WEB_URL.$perfil[$key]['rutaDocumento'];?>" target="_blank"><?php echo $perfil[$key]['rutaDocumento'];?></a>
                                 </td>
                                 <td>
                                     <?php echo $perfil[$key]['fechaenvioDocumento'];?>

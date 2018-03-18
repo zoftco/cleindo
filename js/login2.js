@@ -24,35 +24,30 @@ $(function() {
             bandera = false
         } else {
             $('#idNumber').removeClass('errorBorder');
-            bandera = true;
         }
         if (fechaNacimiento.length === 0) {
             $('#fechaNacimiento').addClass('errorBorder');
             bandera = false;
         } else {
             $('#fechaNacimiento').removeClass('errorBorder');
-            bandera = true;
         }
         if (fotoDocumento.length === 0) {
             $('#fotoDocumento').addClass('errorBorder');
             bandera = false
         } else {
             $('#fotoDocumento').removeClass('errorBorder');
-            bandera = true;
         }
         if (universidad.length === 0) {
             $('#universidad').addClass('errorBorder');
             bandera = false;
         } else {
             $('#universidad').removeClass('errorBorder');
-            bandera = true;
         }
         if (carrera.length === 0) {
             $('#carrera').addClass('errorBorder');
             bandera = false;
         } else {
             $('#carrera').removeClass('errorBorder');
-            bandera = true;
         }
         if ($('#fotoComprobante').length) {
             if (fotoComprobante.length === 0) {
@@ -60,7 +55,6 @@ $(function() {
                 bandera = false
             } else {
                 $('#fotoComprobante').removeClass('errorBorder');
-                bandera = true;
             }
         }
 

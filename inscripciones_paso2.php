@@ -47,7 +47,7 @@ include 'inc/header.php';
 					<li><a href="javascript:void();" class="active">Validación de cuenta</a></li>
 					<li><a href="javascript:void();">Verificación de pago</a></li>
 					<li><a href="javascript:void();">Actividades</a></li>
-                    <li><a href="inscripciones_concurso.php">Concurso Ponencia</a></li>
+                    <li><a href="inscripciones_concurso.php">Concurso de Ponencias E&P</a></li>
 				</ul>
 			</div>
             <div class="row">

@@ -5,7 +5,7 @@ require('conexion.php');
 require '../admin/TemplateMail/PHPMailer-master/PHPMailerAutoload.php';
 require('../admin/TemplateMail/mandarmail.php');
 
-$nombreyapellidoInput=mysqli_real_escape_string($conexion,utf8_decode($_POST['nombreyapellidoInput']));
+$nombreyapellidoInput=mysqli_real_escape_string($conexion,$_POST['nombreyapellidoInput']);
 $correoElectronico=mysqli_real_escape_string($conexion,$_POST['correoElectronico']);
 $telefono = mysqli_real_escape_string($conexion,$_POST['telefono']);
 $nivelacademico=mysqli_real_escape_string($conexion,$_POST['nivelacademico']);

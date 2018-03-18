@@ -33,7 +33,7 @@
                 <li><a href="cursos.php">Charlas</a></li>
                 <li><a href="visitas.php">Visitas</a></li>
 		        <li><a href="actividades.php">Actividades</a></li>
-		        <li><a href="adminconcurso.php">Concurso Ponencias</a></li>';
+		        <li><a href="adminconcurso.php">Concurso de Ponencias E&P</a></li>';
             }
             ?>
         </ul>

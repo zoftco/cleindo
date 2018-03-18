@@ -34,7 +34,7 @@ if(isset($_GET['mensaje']))
                 <li><a href="inscripciones_paso2.php">Validación de cuenta</a></li>
                 <li><a href="inscripciones_paso3.php">Verificación de pago</a></li>
                 <li><a href="inscripciones_paso4_actividades.php">Actividades</a></li>
-                <li><a href="javascript:void();" class="active">Concurso Ponencia</a></li>
+                <li><a href="javascript:void();" class="active">Concurso de Ponencias E&P</a></li>
             </ul>
         </div>
         <div class="row">
@@ -42,6 +42,16 @@ if(isset($_GET['mensaje']))
             <div class="col-md-2"><?php echo $userData['estudiante']; ?></div>
             <div class="col-md-2"><?php echo $userData['pais']; ?></div>
             <div class="col-md-2"><a href="inc/cerrarsesion.php" class="button azul mini">Cerrar Sesión</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Requisitos básicos</h2>
+                <p>1.	Máximo <span style="font-weight: bold"> (2) integrantes por ponencia</span> y pueden contar con un asesor (docente universitario) que también deben indicar su nombre al someter el resumen.</p>
+                <p>2.	Las ponencias <span style="font-weight: bold"> deben desarrollarse en torno a los pilares del CLEIN</span>, deben estar redactadas en idioma español y ser completamente inéditas.</p>
+                <p>3.   Al aplicar a ponencias profesionales, los autores deben proporcionar un <span style="font-weight: bold">documento que avale que son egresados de una universidad</span>  y que contenga <span style="font-weight: bold">fecha de graduación</span>. No deben haberse graduado de la universidad <span style="font-weight: bold">después del 5 de marzo del 2018 y antes del 5 de marzo del 2015</span>. En caso de haber culminado sus estudios al 5 de marzo del 2018 pero estar pendiente de graduación, debe de subir la documentación necesaria.</p>
+                <p>4.	Toda carta o documento de aval solicitado debe tener firma responsable de la universidad. No se aceptan firmas digitales, por tanto, los documentos deben <span style="font-weight: bold"> ser resultado de la emisión de una versión en físico.</span> </p>
+                <p>5.	Para cualquier duda, ver nuestro <a href="https://issuu.com/cleinrd/docs/manual_de_ponencias_estudiantiles_y">Manual de Ponencias</a> o escríbenos a <a href="mailto:academica@clein.org">academica@clein.org</a>.</p>
+            </div>
         </div>
             <div id="accordion">
                     <div id="concursoResumen" class="card">
@@ -62,6 +72,7 @@ if(isset($_GET['mensaje']))
                                     <thead>
                                     <tr>
                                     <th>Autores</th>
+                                    <th>Asesor</th>
                                     <th>Tipo</th>
                                     <th>Documento</th>
                                     <th>Fecha de Envío</th>
@@ -71,7 +82,21 @@ if(isset($_GET['mensaje']))
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <?php echo $userDocumento['autor1'].', '.$userDocumento['autor2'];?>
+                                            <?php echo $userDocumento['autor1'];
+                                            if($userDocumento['autor2']!="")
+                                            {
+                                                echo ', '.$userDocumento['autor2'];
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            echo $userDocumento['asesor'];
+                                            if($userDocumento['universidadasesor']!="")
+                                            {
+                                                echo ', '.$userDocumento['universidadasesor'];
+                                            }
+                                            ?>
                                         </td>
                                         <td>
                                             <?php echo $userDocumento['tipoDocumento'];?>
@@ -90,21 +115,89 @@ if(isset($_GET['mensaje']))
                                 <?php
                                 }
                                 ?>
+                                <?php
+                                $userDocumento = mysqli_query($conexion, "SELECT * FROM concurso WHERE idlogin = '$user_id' AND tipoDocumento='titulo'");
+                                if(mysqli_num_rows($userDocumento)!=0)
+                                {
+                                    $userDocumento = mysqli_fetch_assoc($userDocumento);
+                                    ?>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>Autores</th>
+                                            <th>Asesor</th>
+                                            <th>Tipo</th>
+                                            <th>Documento</th>
+                                            <th>Fecha de Envío</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <?php echo $userDocumento['autor1'];
+                                                    if($userDocumento['autor2']!="")
+                                                    {
+                                                            echo ', '.$userDocumento['autor2'];
+                                                    }
+                                                        ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                echo $userDocumento['asesor'];
+                                                if($userDocumento['universidadasesor']!="")
+                                                {
+                                                    echo ', '.$userDocumento['universidadasesor'];
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $userDocumento['tipoDocumento'];?>
+                                            </td>
+                                            <td>
+                                                <a href="<?php echo WEB_URL.$userDocumento['rutaDocumento'];?>"><?php echo $userDocumento['rutaDocumento'];?></a>
+                                            </td>
+                                            <td>
+                                                <?php echo $userDocumento['fechaenvioDocumento'];?>
+                                            </td>
+                                            <td>
+                                                <?php echo $userDocumento['estadoDocumento'];?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <?php
+                                }
+                                ?>
 
                                 <form action="inc/concurso.php" method="post" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <label for="documento">Documento</label>
-                                        <input type="file" name="documento" id="documento" required>
+                                        <input type="file" name="documento" id="documento" required><span style="color:red">*</span>
                                     </div>
 
                                     <div class="form-row">
                                         <label for="autor1">Autor 1</label>
-                                        <input type="text" name="autor1" id="autor1" required>
+                                        <input type="text" name="autor1" id="autor1" required><span style="color:red">*</span>
                                     </div>
 
                                     <div class="form-row">
                                         <label for="autor2">Autor 2</label>
                                         <input type="text" name="autor2" id="autor2">
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="asesor">Asesor</label>
+                                        <input type="text" name="asesor" id="asesor">
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="universidadasesor">Universidad del Asesor</label>
+                                        <input type="text" name="universidadasesor" id="universidadasesor">
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="titulo">Validación de Título</label>
+                                        <input type="file" name="titulo" id="titulo">
                                     </div>
 
                                     <div class="form-row">

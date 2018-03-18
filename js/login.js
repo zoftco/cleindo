@@ -13,7 +13,7 @@ $(function() {
         var repetirContrasena = $('#repetirContrasena').val();
         var aceptaTerminos = $('input[type="checkbox"]');
         var bandera = true;
-        var aprobadoPass = false;
+        var aprobadoPass = true;
         var selectedYear = '';
         var vacio = true;
 
@@ -22,28 +22,24 @@ $(function() {
             bandera = false
         } else {
             $('#nombreyapellidoInput').removeClass('errorBorder');
-            bandera = true;
         }
-        if (pais === 0) {
+        if (pais == 0) {
             $('#pais').addClass('errorBorder');
             bandera = false;
         } else {
             $('#pais').removeClass('errorBorder');
-            bandera = true;
         }
-        if (telefono === 0) {
+        if (telefono.length === 0) {
             $('#telefono').addClass('errorBorder');
             bandera = false;
         } else {
             $('#telefono').removeClass('errorBorder');
-            bandera = true;
         }
-        if (nivelacademico === 0) {
+        if (nivelacademico.length === 0) {
             $('#nivelacademico').addClass('errorBorder');
             bandera = false;
         } else {
             $('#nivelacademico').removeClass('errorBorder');
-            bandera = true;
         }
         if (correoElectronico.length < 7) {
             $('#correoElectronico').addClass('errorBorder');
@@ -55,57 +51,32 @@ $(function() {
         } else {
             $('#correoElectronico').removeClass('errorBorder');
             $('#mailInvalido').addClass('mayorEdad');
-            bandera = true;
         }
-        if (contrasena.length === 0) {
+        if (contrasena.length < 6) {
             $('#contrasena').addClass('errorBorder');
-            bandera = false;
-            aprobadoPass = false;
-            vacio = true;
-        } else {
-            $('#contrasena').removeClass('errorBorder');
-            bandera = true;
-            aprobadoPass = true;
-            vacio = false;
-        }
-        if ((contrasena.lenth < 6) || (contrasena.length > 8) || (vacio === true)) {
-            $('#contrasena').addClass('errorBorder');
-            bandera = false;
-            aprobadoPass = false;
-        } else {
-            $('#contrasena').removeClass('errorBorder');
-            bandera = true;
-            aprobadoPass = true;
-        }
-        if (repetirContrasena.length === 0) {
-            $('#repetirContrasena').addClass('errorBorder');
-            bandera = false;
-            aprobadoPass = false;
-        } else {
-            $('#repetirContrasena').addClass('errorBorder');
-            bandera = true;
-            aprobadoPass = true;
-        }
-        if ((contrasena !== repetirContrasena) && (vacio === false)) {
-            $('#contrasena').addClass('errorBorder');
-            $('#repetirContrasena').addClass('errorBorder');
-            $('#contrasenasIguales').removeClass('mayorEdad');
             bandera = false;
         } else {
             $('#contrasena').removeClass('errorBorder');
-            $('#repetirContrasena').removeClass('errorBorder');
-            $('#contrasenasIguales').addClass('mayorEdad');
-            bandera = true;
+            if (contrasena !== repetirContrasena) {
+                $('#contrasena').addClass('errorBorder');
+                $('#repetirContrasena').addClass('errorBorder');
+                $('#contrasenasIguales').removeClass('mayorEdad');
+                bandera = false;
+            } else {
+                $('#contrasena').removeClass('errorBorder');
+                $('#repetirContrasena').removeClass('errorBorder');
+                $('#contrasenasIguales').addClass('mayorEdad');
+            }
         }
+
         if (aceptaTerminos[0].checked === false) {
             $('#aceptaTexto').addClass('errorTexto');
             bandera = false;
         } else {
             $('#aceptaTexto').removeClass('errorTexto');
-            bandera = true;
         }
 
-        if ((bandera === true) && (aprobadoPass === true)) {
+        if ((bandera === true)) {
             $.ajax({
                 type: 'POST',
                 url: 'inc/dbconnect.php',

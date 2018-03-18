@@ -10,7 +10,7 @@
 					<li><a href="javascript:void();">Validación de cuenta</a></li>
 					<li><a href="javascript:void();">Verificación de pago</a></li>
 					<li><a href="javascript:void();">Actividades</a></li>
-                    <li><a href="javascript:void();">Concurso Ponencia</a></li>
+                    <li><a href="javascript:void();">Concurso de Ponencias E&P</a></li>
 				</ul>
 			</div>
 

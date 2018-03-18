@@ -7,10 +7,10 @@
     require('conexion.php');
 try{
     $user_id=$_SESSION['user_id'];
-    $idNumber = htmlspecialchars($_POST['idNumber']);
-    $universidad = utf8_decode($_POST['universidad']);
-    $fechaNacimiento = htmlspecialchars($_POST['fechaNacimiento']);
-    $carrera = utf8_decode($_POST['carrera']);
+    $idNumber = mysqli_real_escape_string($conexion,$_POST['idNumber']);
+    $universidad = mysqli_real_escape_string($conexion,$_POST['universidad']);
+    $fechaNacimiento = mysqli_real_escape_string($conexion,$_POST['fechaNacimiento']);
+    $carrera = mysqli_real_escape_string($conexion,$_POST['carrera']);
     $existeImagen = mysqli_query($conexion, "DELETE FROM imagenes WHERE user_id='$user_id'");
     $locationDocumento=guardarimagenes($_FILES['fotoDocumento'],'documento',$user_id);
     if(isset($_FILES['fotoComprobante'])){
