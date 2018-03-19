@@ -11,7 +11,8 @@
     require ('../inc/config.php');
 	require ('../inc/conexion.php');
 	$url = WEB_URL;
-	$query = mysqli_query($conexion, "SELECT * FROM login");
+    $query = mysqli_query($conexion, "SET @row_number=0");
+	$query = mysqli_query($conexion, "SELECT *,(@row_number:=@row_number + 1) AS num FROM login");
 	$estado = array();
 	while($row = mysqli_fetch_assoc($query)) {
 		$estado[] = $row;
@@ -115,7 +116,7 @@
                                     $instagram = $estado[$key]['instagram'];
                                     $facebook = $estado[$key]['facebook'];
 									$state = $estado[$key]['estado'];
-									$id = $estado[$key]['id'];
+									$id = $estado[$key]['num'];
 									$telefono = $estado[$key]['telefono'];
 							?> 	
 							<tr>
@@ -162,6 +163,13 @@
 				</div>
 			</div>
 		</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div><a href="totalregistrados_excel.php" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> Descargar a Excel</a></div>
+                </div>
+            </div>
+        </div>
 		<!-- dropdownmenu -->
 <!--		<div class="container">-->
 <!--			<form action="TemplateMail/comunicado.php" method="post">-->

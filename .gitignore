@@ -6,3 +6,4 @@ upload/comprobante/
 upload/documento/
 upload/
 .htaccess
+vendor/
