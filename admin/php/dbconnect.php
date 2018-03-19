@@ -4,6 +4,7 @@
 
 		public function connect($data) {
 			$tryconnect = mysqli_connect($data['host'],$data['user'],$data['pass'],$data['db']);
+            mysqli_set_charset($tryconnect,"utf8");
 			if(!$tryconnect) {
 				$respuesta = array(
 					'success' => false,

@@ -29,6 +29,7 @@
 						'admin_nombre' => 'ASC'));
 
 				$datos = $database->getTabledata($queryarray);
+
 				if($datos) {
 					$respuesta = array(
 						'success' => true,
@@ -38,19 +39,16 @@
 						'success' => true,
 						'data' => array());
 				}
-				
 				echo json_encode($respuesta);
 				break;
 			
 			case 'newadmin':
 				$fields = json_decode($_POST['fields'],true);
-				$fields = array_map('utf8_decode',$fields);
 
 				$fields['newadmin_name']= strtolower($fields['newadmin_name']);
 				$fields['newadmin_email']= strtolower($fields['newadmin_email']);
                 $fields['newadmin_rol']= strtolower($fields['newadmin_rol']);
 				$fields['newadmin_name']= ucwords($fields['newadmin_name']);
-				// $fields = array_map('utf8_decode',$fields);
 
 				$conditions = array(
 					'admin_email' => $fields['newadmin_email']);
@@ -77,7 +75,6 @@
 				$respuesta = array(
 					'success' => true,
 					'data' => $datos);
-
 				echo json_encode($respuesta);
 				break;
 
@@ -101,7 +98,6 @@
 
 			case 'editadmin':
 				$fields = json_decode($_POST['fields'],true);
-				$fields = array_map('utf8_decode',$fields);
 				$admin_id = $_POST['admin_id'];
                 if($fields['editadmin_pass'] == $fields['editadmin_pass2'] AND $fields['editadmin_pass']!= "")
                 {

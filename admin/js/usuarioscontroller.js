@@ -30,9 +30,6 @@ function Usuarioscontrol(table, newadmisubmitbtn){
 
 						me.adminrows = rows;
 						me.admindata = data;
-
-						var currentadminrow = me.getDomelement(me.adminrows,'data-id',me.select('#currentuser').attr('data-id'));
-						currentadminrow.find('.deleteadminbtn').attr('disabled','disabled');
 					});
 				},1500);
 			},
@@ -416,6 +413,15 @@ var newadminfields = [
 		},
 		errormessage: 'Debe introducir una dirección de e-mail válida.'
 	},
+    {
+        dom: 'select[name="newadmin_rol"]',
+        errordom: '#newadmin_rol',
+        validation: function(value){
+            var regex = /^.+$/gi;
+            return regex.test(value);
+        },
+        errormessage: 'Debe introducir un rol válido.'
+    },
 	{
 		dom: 'input[name="newadmin_pass"]',
 		errordom: '#newadmin_pass',

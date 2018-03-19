@@ -62,7 +62,7 @@
                                     <label class="control-label">Rol</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                        <select name="newadmin_rol" class="form-control">
+                                        <select name="newadmin_rol" id="newadmin_rol" class="form-control">
                                             <option value="admin">admin</option>
                                             <option value="finanzas">finanzas</option>
                                             <option value="operaciones">operaciones</option>
