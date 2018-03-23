@@ -85,8 +85,8 @@
 								<th>Nacionalidad</th>
 								<th>Estudiante</th>
 								<th>Correo Electronico</th>
-								<th>Documentos</th>
-								<th>Administrar</th>
+								<th style="width: 350px;">Documentos</th>
+								<th style="width: 100px;">Administrar</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -94,6 +94,7 @@
 								foreach ($estado as $key=>$value) {
                                     $imagenes_id = $estado[$key]['id'];
 									$fotoFactura = $estado[$key]['fotoFactura'];
+                                    $fotoDocumento2 = $estado[$key]['fotoDocumento2'];
 									$fotoCedula = $estado[$key]['fotoCedula'];
 									$id = $estado[$key]['user_id'];
 									$nombre = $estado[$key]['nombreyapellidoInput'];
@@ -136,6 +137,7 @@
 									<?php
 										}
 									?>
+
 									<?php
 										if ($fotoCedula != "") {
 											$fotoCedula = $url.$fotoCedula;
@@ -144,6 +146,15 @@
 									<?php
 										}
 									?>
+
+                                    <?php
+                                    if ($fotoDocumento2 != "") {
+                                        $fotoDocumento2 = $url.$fotoDocumento2;
+                                        ?>
+                                        <a href="<?php echo $fotoDocumento2;?>"><img src="<?php echo $fotoDocumento2;?>" width="100px"/></a>
+                                        <?php
+                                    }
+                                    ?>
 								</td>
 								<td>
 									<?php

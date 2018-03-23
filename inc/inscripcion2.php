@@ -12,14 +12,25 @@ try{
     $fechaNacimiento = mysqli_real_escape_string($conexion,$_POST['fechaNacimiento']);
     $carrera = mysqli_real_escape_string($conexion,$_POST['carrera']);
     $existeImagen = mysqli_query($conexion, "DELETE FROM imagenes WHERE user_id='$user_id'");
-    $locationDocumento=guardarimagenes($_FILES['fotoDocumento'],'documento',$user_id);
-    if(isset($_FILES['fotoComprobante'])){
+    if($_FILES['fotoDocumento']['size'] != 0 && $_FILES['fotoDocumento']['error'] == 0){
+        $locationDocumento=guardarimagenes($_FILES['fotoDocumento'],'documento',$user_id);
+    }else
+    {
+        $locationComprobante="";
+    }
+    if($_FILES['fotoDocumento2']['size'] != 0 && $_FILES['fotoDocumento2']['error'] == 0){
+        $locationDocumento2=guardarimagenes($_FILES['fotoDocumento2'],'documento',$user_id);
+    }else
+    {
+        $locationDocumento2="";
+    }
+    if($_FILES['fotoComprobante']['size'] != 0 && $_FILES['fotoComprobante']['error'] == 0){
         $locationComprobante=guardarimagenes($_FILES['fotoComprobante'],'comprobante',$user_id);
     }else
     {
         $locationComprobante="";
     }
-    mysqli_query($conexion, "INSERT INTO imagenes (fotoCedula, fotoFactura, user_id, estado) VALUES ('$locationDocumento', '$locationComprobante', '$user_id', 'pendiente')");
+    mysqli_query($conexion, "INSERT INTO imagenes (fotoCedula, fotoDocumento2, fotoFactura, user_id, estado) VALUES ('$locationDocumento','$locationDocumento2', '$locationComprobante', '$user_id', 'pendiente')");
     mysqli_query($conexion, "UPDATE login SET universidad = '$universidad', idNumber = '$idNumber', fechaNacimiento = '$fechaNacimiento', carrera = '$carrera' WHERE id = '$user_id'");
     $respuesta=array('user_id'=>$user_id);
     echo json_encode($respuesta);

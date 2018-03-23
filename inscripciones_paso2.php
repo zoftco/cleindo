@@ -19,20 +19,16 @@
 	}
 
 	$checkifUploaded = mysqli_query($conexion, "SELECT * FROM imagenes WHERE user_id='$session_id'");
-	$imageExists = mysqli_num_rows($checkifUploaded);
-	if ($imageExists == 0) {
-		$contenido = "";
-		$mensaje="";
-	} else {
-		$imgData = mysqli_fetch_assoc($checkifUploaded);
-		$imgState = $imgData['estado'];
-		if ($imgState == 'pendiente') {
-			$contenido = 'pendiente';
-		} elseif ($imgState == 'rechazado') {
-			$contenido = 'rechazado';
-            $mensaje=$imgData['mensaje'];
-		}
-	}
+    $contenido = "";
+    $mensaje="";
+    $imgData = mysqli_fetch_assoc($checkifUploaded);
+    $imgState = $imgData['estado'];
+    if ($imgState == 'pendiente') {
+        $contenido = 'pendiente';
+    } elseif ($imgState == 'rechazado') {
+        $contenido = 'rechazado';
+        $mensaje=$imgData['mensaje'];
+    }
 ?>
 <?php
 include 'inc/header.php';
@@ -85,6 +81,11 @@ include 'inc/header.php';
                         <div class="form-row">
                             <label for="fotoDocumento">Foto Documento Identidad o Pasaporte*</label>
                             <input type="file" name="fotoDocumento" id="fotoDocumento" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="fotoDocumento">Foto Documento Identidad (reverso)</label>
+                            <input type="file" name="fotoDocumento2" id="fotoDocumento2" required>
                         </div>
 
                         <div class="form-row">
