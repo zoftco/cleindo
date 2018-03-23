@@ -116,12 +116,13 @@
                                     $instagram = $estado[$key]['instagram'];
                                     $facebook = $estado[$key]['facebook'];
 									$state = $estado[$key]['estado'];
-									$id = $estado[$key]['num'];
+									$id = $estado[$key]['id'];
+                                    $num = $estado[$key]['num'];
 									$telefono = $estado[$key]['telefono'];
 							?> 	
 							<tr>
                                 <td>
-                                    <?php echo $id;?>
+                                    <?php echo $num;?>
                                 </td>
 								<td>
 									<?php echo $nombre;?>
