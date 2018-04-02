@@ -15,6 +15,7 @@
         <nav class="nav nav-pills nav-justified">
             <a class="nav-item nav-link" href="https://issuu.com/cleinrd/docs/manual_de_ponencias_estudiantiles_y" target="_blank">CONCURSO DE PONENCIAS</a>
             <a class="nav-item nav-link" href="https://drive.google.com/file/d/1HKpqV8TGQkihHk4C5cI69Nxkj8VGv9uY/view" target="_blank">FORMATO DE PONENCIAS</a>
+            <a class="nav-item nav-link" href="files/ConcursoDePonencias.pdf" target="_blank">CÓMO CARGAR TU PONENCIA</a>
         </nav>
     </div>
 </section>
