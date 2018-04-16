@@ -8,6 +8,7 @@ function calculo($estudiante, $card) {
     $fecha = time();
     $periodouno = strtotime('2018-01-22 00:00:00');
     $periododos = strtotime('2018-04-16 00:00:00');
+    $periododosdescuento = strtotime('2018-04-30 00:00:00');
     $periodotres = strtotime('2018-07-16 00:00:00');
     $precio="";
 
@@ -20,7 +21,15 @@ function calculo($estudiante, $card) {
                 $precio = "11200";
             }
         }
-        if (($fecha >= $periododos) && ($fecha < $periodotres)) {
+        if (($fecha >= $periododos) && ($fecha < $periododosdescuento)) {
+            $etapa="Segunda Etapa";
+            if ($estudiante=="Estudiante") {
+                $precio = "10900";
+            } else{
+                $precio = "11700";
+            }
+        }
+        if (($fecha >= $periododosdescuento) && ($fecha < $periodotres)) {
             $etapa="Segunda Etapa";
             if ($estudiante=="Estudiante") {
                 $precio = "10900";
@@ -45,7 +54,15 @@ function calculo($estudiante, $card) {
                 $precio = "230";
             }
         }
-        if (($fecha >= $periododos) && ($fecha < $periodotres)) {
+        if (($fecha >= $periododos) && ($fecha < $periododosdescuento)) {
+            $etapa="Segunda Etapa";
+            if ($estudiante=="Estudiante") {
+                $precio = "205";
+            } else{
+                $precio = "230";
+            }
+        }
+        if (($fecha >= $periododosdescuento) && ($fecha < $periodotres)) {
             $etapa="Segunda Etapa";
             if ($estudiante=="Estudiante") {
                 $precio = "225";
