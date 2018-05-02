@@ -50,8 +50,9 @@ $(function() {
             $('#carrera').removeClass('errorBorder');
         }
         if ($('#fotoComprobante').length) {
-            if (fotoComprobante.length === 0) {
+            if (fotoComprobante.length > 5000000 || fotoComprobante.length < 1000) {
                 $('#fotoComprobante').addClass('errorBorder');
+                console.log(form.files[0].size);
                 bandera = false
             } else {
                 $('#fotoComprobante').removeClass('errorBorder');

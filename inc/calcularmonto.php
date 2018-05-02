@@ -24,9 +24,9 @@ function calculo($estudiante, $card) {
         if (($fecha >= $periododos) && ($fecha < $periododosdescuento)) {
             $etapa="Segunda Etapa";
             if ($estudiante=="Estudiante") {
-                $precio = "10900";
+                $precio = "9900";
             } else{
-                $precio = "11700";
+                $precio = "11200";
             }
         }
         if (($fecha >= $periododosdescuento) && ($fecha < $periodotres)) {

@@ -125,6 +125,7 @@ include 'inc/header.php';
                             <div class="form-row">
                                 <label for="fotoComprobante">Foto Comprobante de Estudiante</label>
                                 <input type="file" name="fotoComprobante" id="fotoComprobante" required>
+                                <div id="fotoComprobanteerror"></div>
                             </div>
 
                             <?php
