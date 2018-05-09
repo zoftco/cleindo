@@ -3,6 +3,7 @@
 require '../vendor/autoload.php';
 require ('../inc/config.php');
 require ('../inc/conexion.php');
+require ('php/nuevoestado.php');
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -13,6 +14,7 @@ $querytext="SELECT (@row_number:=@row_number + 1) AS num,nombreyapellidoInput,pa
 $query = mysqli_query($conexion, $querytext);
 $estado = array();
 while($row = mysqli_fetch_assoc($query)) {
+    $row['estado']=nuevoestado($row['estado']);
     $estado[] = $row;
 }
 $titulos = ["Codigo Usuario","Nombre","Nacionalidad","Nivel","Universidad","Carrera","Correo Electronico","Teléfono" ,"Facebook","Instagram","Fecha Nacimiento","Estado"];

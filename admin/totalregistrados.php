@@ -10,6 +10,7 @@
 <?php
     require ('../inc/config.php');
 	require ('../inc/conexion.php');
+    require ('php/nuevoestado.php');
 	$url = WEB_URL;
     $query = mysqli_query($conexion, "SET @row_number=0");
 	$query = mysqli_query($conexion, "SELECT *,(@row_number:=@row_number + 1) AS num FROM login");
@@ -146,7 +147,7 @@
                                 <td><?php echo $facebook;?></td>
                                 <td><?php echo $instagram;?></td>
                                 <td><?php echo $fechaNacimiento;?></td>
-								<td><?php echo $state;?></td>
+								<td><?php echo nuevoestado($state);?></td>
 									
 								<td>
 											<!-- <button type="button" data-toggle="modal" data-target="#modalRechazar" class="btn btn-danger rechazar-btn" value="<?php echo $id;?>">Rechazar</button> -->
