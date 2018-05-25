@@ -40,9 +40,9 @@ function calculo($estudiante, $card) {
         if ($fecha >= $periodotres) {
             $etapa="Tercer Etapa";
             if ($estudiante=="Estudiante") {
-                $precio = "11400";
+                $precio = "9900";
             } else{
-                $precio = "12000";
+                $precio = "11200";
             }
         }
     }else{
