@@ -7,3 +7,7 @@ upload/documento/
 upload/
 .htaccess
 vendor/
+/admin/usuario.php
+_cgi-bin/
+admin/usuario.php
+cgi-bin/
