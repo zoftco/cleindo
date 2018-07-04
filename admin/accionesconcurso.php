@@ -22,8 +22,8 @@
     $subject = 'Concurso de Ponencias - CLEIN República Dominicana 2018 clein.org';
     $mensaje = $mensajeadmin;
     $titulo = 'Tu documento '.$tipoDocumento.' ha sido '.$estado.'. ';
-    $nuevoUsuario = new MandarMail;
-    $nuevoUsuario->mandar($titulo,$mensaje,$correoElectronico,$subject,$nombreyapellidoInput);
+    //$nuevoUsuario = new MandarMail;
+    //$nuevoUsuario->mandar($titulo,$mensaje,$correoElectronico,$subject,$nombreyapellidoInput);
 
 	header('Location:adminconcurso.php');
 ?>
