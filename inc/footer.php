@@ -19,6 +19,35 @@
 		</ul>
 	</div>
 </section> -->
+<div class="container" style="text-align: center;color:#999999;margin-top:30px;">
+    <div class="row"  >
+        <div class="col-md-4">
+            <p style="font-size: 3em;">20</p>
+            <p style="font-size: 0.8em;padding-top:6px;">países</p>
+        </div>
+        <div class="col-md-4">
+            <p style="font-size: 3em;">+600</p>
+            <p style="font-size: 0.8em;padding-top:6px;">participantes</p>
+        </div>
+        <div class="col-md-4">
+            <p style="font-size: 3em;">+22</p>
+            <p style="font-size: 0.8em;padding-top:6px;">actividades académicas</p>
+        </div>
+    </div>
+    <div class="row">
+        <p>Apoyan:</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="img/apoyo/AIESEC_Blue_Logo.png" height="60">
+        </div>
+        <div class="col-md-4">
+            <img src="img/apoyo/logo-intec-primario.png" height="60">
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
 <div style="text-align: center;margin-bottom:10px;">
     <p>SIGUENOS EN</p>
     <p>
