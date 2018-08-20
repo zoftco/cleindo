@@ -9,6 +9,8 @@ function calculo($estudiante, $card) {
     $periodouno = strtotime('2018-01-22 00:00:00');
     $periododos = strtotime('2018-04-16 00:00:00');
     $periododosdescuento = strtotime('2018-04-30 00:00:00');
+    $periodotresdescuento = strtotime('2018-08-20 04:00:00');
+    $periodotresdescuentofinal = strtotime('2018-08-21 04:00:00');
     $periodotres = strtotime('2018-07-16 00:00:00');
     $precio="";
 
@@ -70,7 +72,15 @@ function calculo($estudiante, $card) {
                 $precio = "240";
             }
         }
-        if ($fecha >= $periodotres) {
+        if (($fecha >= $periodotresdescuento) && ($fecha < $periodotresdescuentofinal)) {
+            $etapa="Tercer Etapa Descuento 20/08";
+            if ($estudiante=="Estudiante") {
+                $precio = "195";
+            } else{
+                $precio = "230";
+            }
+        }
+        if ($fecha >= $periodotresdescuentofinal) {
             $etapa="Tercer Etapa";
             if ($estudiante=="Estudiante") {
                 $precio = "235";
