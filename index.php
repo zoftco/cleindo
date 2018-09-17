@@ -48,4 +48,62 @@
         </nav>
 	</div>
 </section>
+    <div class="container" style="text-align: center;color:#999999;margin-top:30px;">
+        <div class="row"  >
+            <div class="col-md-4">
+                <p style="font-size: 3em;">20</p>
+                <p style="font-size: 0.8em;padding-top:6px;">países</p>
+            </div>
+            <div class="col-md-4">
+                <p style="font-size: 3em;">+600</p>
+                <p style="font-size: 0.8em;padding-top:6px;">participantes</p>
+            </div>
+            <div class="col-md-4">
+                <p style="font-size: 3em;">+22</p>
+                <p style="font-size: 0.8em;padding-top:6px;">actividades académicas</p>
+            </div>
+        </div>
+        <div class="row">
+            <p>Apoyan:</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="img/apoyo/UniversidadApec.png" height="80">
+            </div>
+            <div class="col-md-4">
+                <img src="img/apoyo/Intec.png" height="80">
+            </div>
+            <div class="col-md-4">
+                <img src="img/apoyo/Unibe.png" height="80">
+            </div>
+        </div>
+        <div class="row">
+            <p>Patrocinadores Diamante:</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/apoyo/HanesBrandsInc.png" height="60">
+            </div>
+            <div class="col-md-6">
+                <img src="img/apoyo/3Designers.png" height="60">
+            </div>
+        </div>
+        <div class="row">
+            <p>Patrocinadores Plata:</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="img/apoyo/LaLechera.png" height="40">
+            </div>
+            <div class="col-md-3">
+                <img src="img/apoyo/PlanetaAzul.png" height="40">
+            </div>
+            <div class="col-md-3">
+                <img src="img/apoyo/Cardnet.png" height="40">
+            </div>
+            <div class="col-md-3">
+<!--                <img src="img/apoyo/PlanetaAzul.png" height="40">-->
+            </div>
+        </div>
+    </div>
 <?php include 'inc/footer.php'; ?>

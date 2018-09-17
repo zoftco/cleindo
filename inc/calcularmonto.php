@@ -10,7 +10,7 @@ function calculo($estudiante, $card) {
     $periododos = strtotime('2018-04-16 00:00:00');
     $periododosdescuento = strtotime('2018-04-30 00:00:00');
     $periodotresdescuento = strtotime('2018-08-20 04:00:00');
-    $periodotresdescuentofinal = strtotime('2018-08-21 04:00:00');
+    $periodotresdescuentofinal = strtotime('2018-08-22 04:00:00');
     $periodotres = strtotime('2018-07-16 00:00:00');
     $precio="";
 
