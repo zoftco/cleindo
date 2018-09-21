@@ -68,13 +68,13 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="img/apoyo/UniversidadApec.png" height="80">
+                <img src="img/apoyo/UniversidadApec.png" height="100">
             </div>
             <div class="col-md-4">
-                <img src="img/apoyo/Intec.png" height="80">
+                <img src="img/apoyo/Intec.png" height="100">
             </div>
             <div class="col-md-4">
-                <img src="img/apoyo/Unibe.png" height="80">
+                <img src="img/apoyo/Unibe.png" height="100">
             </div>
         </div>
         <div class="row">
@@ -82,10 +82,10 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="img/apoyo/HanesBrandsInc.png" height="60">
+                <img src="img/apoyo/HanesBrandsInc.png" height="80">
             </div>
             <div class="col-md-6">
-                <img src="img/apoyo/3Designers.png" height="60">
+                <img src="img/apoyo/3Designers.png" height="80">
             </div>
         </div>
         <div class="row">
@@ -93,16 +93,16 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <img src="img/apoyo/LaLechera.png" height="40">
+                <img src="img/apoyo/LaLechera.png" height="60">
             </div>
             <div class="col-md-3">
-                <img src="img/apoyo/PlanetaAzul.png" height="40">
+                <img src="img/apoyo/PlanetaAzul.png" height="60">
             </div>
             <div class="col-md-3">
-                <img src="img/apoyo/Cardnet.png" height="40">
+                <img src="img/apoyo/Cardnet.png" height="60">
             </div>
             <div class="col-md-3">
-<!--                <img src="img/apoyo/PlanetaAzul.png" height="40">-->
+                <img src="img/apoyo/LaSirena.png" height="60">
             </div>
         </div>
     </div>
