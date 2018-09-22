@@ -14,7 +14,12 @@
     require ('../inc/conexion.php');
 	$url = WEB_URL;
 	
-	$query = mysqli_query($conexion, "SELECT * FROM pagoefectivo LEFT JOIN (SELECT login.nombreyapellidoInput, login.correoElectronico, login.id FROM login) AS usuarios ON (pagoefectivo.idUsers = usuarios.id) ORDER BY field (estado, 'pendiente', 'aceptado', 'rechazado')");
+	$query = mysqli_query($conexion,
+        "SELECT * FROM pagoefectivo 
+                LEFT JOIN (SELECT login.nombreyapellidoInput, login.correoElectronico, login.id FROM login) AS usuarios 
+                ON (pagoefectivo.idUsers = usuarios.id) 
+                WHERE pagoefectivo.numFactura LIKE '%PAY%' 
+                ORDER BY fechacreacion DESC");
 	$estado = array();
 	while($row = mysqli_fetch_assoc($query)) {
 		$estado[] = $row;
@@ -83,12 +88,10 @@ $id = $_GET['pago_id'];
 						<thead>
 							<tr>
 								<th>Estado</th>
-								<th>Nombre</th>
+								<th>Participante</th>
 								<th>Correo Electronico</th>
-								<th>Factura</th>
+								<th>idTransacción</th>
 								<th>Nro. de Factura</th>
-								<th>Nombre del Propietario</th>
-								
 								<th>Administrar</th>
 							</tr>
 						</thead>
@@ -127,28 +130,17 @@ $id = $_GET['pago_id'];
 								</td>
 								<td>
 									<?php
-										if ($fotoFactura != "") {
-											$fotoFactura = $url.$fotoFactura;
-									?>
-										<a href="<?php echo $fotoFactura;?>">Foto de comprobante</a>
-									<?php
-										}
-									?>
-								</td>
-
-								<td>
-									<?php
-                                    echo $numFactura;
                                     if ($idtransaccion != "") {
-                                        echo ' <a href="https://www.paypal.com/activity/payment/' . $idtransaccion . '" target="_blank">Ver en Paypal</a>';
+                                        echo ' <a href="https://www.paypal.com/activity/payment/' . $idtransaccion . '" target="_blank">Ver en Paypal: '.$idtransaccion.'</a>';
                                     }
                                     ?>
 								</td>
 
 								<td>
-									<?php echo $nombrePro;?>
+									<?php
+                                    echo $numFactura;
+                                    ?>
 								</td>
-								
 								
 
 								<td>

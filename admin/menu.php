@@ -26,7 +26,13 @@
           echo '<li><a href="admin.php">Administrar Comprobantes</a></li>';
             }
           if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="finanzas" OR $_SESSION['admin_rol']=="operaciones"){
-          echo '<li><a href="adminpagos.php">Administrar Pagos</a></li>';
+          echo '<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pagos</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="adminpagos.php">Administrar Pagos</a></li>
+                        <li><a href="adminpagospaypal.php">Administrar Pagos Paypal</a></li>
+                    </ul>
+                </li>';
             }
           if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="academica"){
           echo '<li><a href="pilares.php">Pilares</a></li>
