@@ -64,32 +64,43 @@
             </div>
         </div>
         <div class="row">
-            <p>Apoyan:</p>
+            <p>Universidades que Apoyan:</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="https://www.unapec.edu.do" target="_blank">
+                    <img src="img/apoyo/UniversidadApec.png" height="100">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://www.intec.edu.do" target="_blank">
+                    <img src="img/apoyo/Intec.png" height="100">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="http://www.unibe.edu.do" target="_blank">
+                    <img src="img/apoyo/Unibe.png" height="100">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="http://unphu.edu.do" target="_blank">
+                    <img src="img/apoyo/UNPHU.png" height="100">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <p>Patrocinadores:</p>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="img/apoyo/UniversidadApec.png" height="100">
-            </div>
-            <div class="col-md-4">
-                <img src="img/apoyo/Intec.png" height="100">
-            </div>
-            <div class="col-md-4">
-                <img src="img/apoyo/Unibe.png" height="100">
-            </div>
-        </div>
-        <div class="row">
-            <p>Patrocinadores Diamante:</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
                 <img src="img/apoyo/HanesBrandsInc.png" height="80">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <img src="img/apoyo/3Designers.png" height="80">
             </div>
-        </div>
-        <div class="row">
-            <p>Patrocinadores Plata:</p>
+            <div class="col-md-4">
+                <img src="img/apoyo/mitur.png" height="80">
+            </div>
         </div>
         <div class="row">
             <div class="col-md-3">
