@@ -3,6 +3,8 @@ $recargo = 3.9;
 define('RECARGO', $recargo);
 $pagartarjeta = calculopaypal($estudiante);
 $pagarpaypal = calculopaypalneto($estudiante);
+$precioaleiiaf = "230";
+$precioaleiiaftotal = round((double)$precioaleiiaf / (1-((double)RECARGO / 100)), 0, PHP_ROUND_HALF_UP);
 $pagarefectivo = calculo($estudiante, false);
 
 function calculo($estudiante, $card) {

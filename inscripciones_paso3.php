@@ -335,6 +335,122 @@ require('inc/calcularmonto.php');
                             </div>
                         </div>
                     </div>
+                    <?php
+                    if($estudiante=="Profesional") {
+                        ?>
+                        <div id="pagoPaypal" class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Pago por Paypal para ALEIIAF
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h2>Este monto de pago y su elegibilidad está sujeto a verificación por parte del Comité Organizador</h2>
+                                    <p>El monto de la inscripción es de: <?php echo $precioaleiiaf; ?> USD</p>
+                                    <p>El cargo de Paypal o Tarjeta de Crédito es
+                                        de <?php echo $precioaleiiaftotal - $precioaleiiaf; ?> USD</p>
+                                    <p>El monto total a pagar es <?php echo $precioaleiiaftotal; ?> USD</p>
+                                    <form action="inc/pagoPaypal.php" method="post" enctype="multipart/form-data">
+                                        <div id="paypal-button2-message" class="form-row"></div>
+                                        <div id="paypal-button2" class="form-row"></div>
+                                        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                                        <script>
+                                            paypal.Button.render({
+                                                env: 'production', // 'production' Or 'sandbox',
+                                                client: {
+                                                    sandbox: 'AeycuD71QxUAn_mqJ6eM4241t0WK5TjQAVqd4eW0srvPiR0rvXlNAtJsyJNgvrJv-wKDeWsffG5BVhAK',
+                                                    production: 'Ac8cscWdNd44lm4FJXTi9SZJ1db-vPxPCtvi1yxIvzQo6LtLFc8MdOkJvoA8UI4-UKPe6fqrizuuR0d6'
+                                                },
+                                                locale: 'es_ES',
+                                                commit: true, // Show a 'Pay Now' button
+
+                                                style: {
+                                                    color: 'gold',
+                                                    size: 'large'
+                                                },
+
+                                                payment: function (data, actions) {
+                                                    return actions.payment.create({
+                                                        payment: {
+                                                            transactions: [
+                                                                {
+                                                                    amount: {
+                                                                        total: "<?php echo $precioaleiiaftotal; ?>",
+                                                                        currency: 'USD'
+                                                                    },
+                                                                    item_list: {
+                                                                        items: [
+
+
+                                                                            {
+                                                                                name: "Inscripcion CLEIN RD",
+                                                                                description: "Profesional <?php echo $_SESSION['etapa']; ?>",
+                                                                                quantity: "1",
+                                                                                price: "<?php echo $precioaleiiaf; ?>",
+                                                                                currency: "USD"
+                                                                            },
+                                                                            {
+                                                                                name: "Cargo Paypal",
+                                                                                description: "Profesional <?php echo $_SESSION['etapa']; ?>",
+                                                                                quantity: "1",
+                                                                                price: "<?php echo $precioaleiiaftotal - $precioaleiiaf; ?>",
+                                                                                currency: "USD"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        experience: {
+                                                            input_fields: {
+                                                                no_shipping: 1
+                                                            }
+                                                        }
+                                                    });
+                                                },
+
+                                                onAuthorize: function (data, actions) {
+                                                    return actions.payment.execute().then(function (payment) {
+                                                        document.querySelector('#paypal-button2')
+                                                            .innerText = 'Pago efectuado exitosamente';
+                                                        document.querySelector('#paymentid').value = payment.id;
+                                                        document.querySelector('#paymentstate').value = payment.state;
+                                                        document.querySelector('#botonSiguientePagoPaypal').style = "visibility:visible";
+                                                    });
+                                                },
+
+                                                onCancel: function (data, actions) {
+                                                    document.querySelector('#paypal-button2-message')
+                                                        .innerText = 'Pago ha sido cancelado, intente nuevamente';
+                                                },
+
+                                                onError: function (err) {
+                                                    document.querySelector('#paypal-button2-message')
+                                                        .innerText = 'Ocurrió un error, intente nuevamente ' + err;
+                                                }
+                                            }, '#paypal-button2');
+                                        </script>
+                                        <div class="form-row">
+                                            <input id="nombreyapellidoInput" name="nombreyapellidoInput" type="hidden"
+                                                   value="<?php echo $userData['nombreyapellidoInput']; ?>">
+                                            <input id="paymentid" name="paymentid" type="hidden" value="">
+                                            <input id="paymentstate" name="paymentstate" type="hidden" value="">
+                                        </div>
+                                        <div class="form-row">
+                                            <input id="botonSiguientePagoPaypal" type="submit" value="Siguiente"
+                                                   class="button enviarform" style="visibility:hidden;">
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
                     <div id="pagoWesternUnion" class="card">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
