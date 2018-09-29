@@ -3,6 +3,13 @@
 		header("Location:inc/intermediador.php");
 		exit;
 	}
+    if (isset($_GET['email'])) {
+        session_start();
+        require ('inc/config.php');
+        require ('inc/conexion.php');
+        $query= mysqli_query($conexion, "UPDATE login SET mensaje = 'completar' WHERE `correoElectronico` LIKE '".$_GET['email']."'");
+    }
+
 ?>
 <?php include 'inc/header.php'; ?>
 <section id="main">

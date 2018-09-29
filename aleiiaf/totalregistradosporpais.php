@@ -4,7 +4,7 @@
     require ('../admin/php/nuevoestado.php');
 	$url = WEB_URL;
     $query = mysqli_query($conexion, "SET @row_number=0");
-	$query = mysqli_query($conexion, "SELECT *,(@row_number:=@row_number + 1) AS num FROM login");
+	$query = mysqli_query($conexion, "SELECT *,(@row_number:=@row_number + 1) AS num FROM login ORDER BY pais, estado");
 	$estado = array();
 	while($row = mysqli_fetch_assoc($query)) {
 		$estado[] = $row;
@@ -95,7 +95,7 @@
                                 <td><?php echo $facebook;?></td>
                                 <td><?php echo $instagram;?></td>
                                 <td><?php echo $fechaNacimiento;?></td>
-                                <td><?php echo nuevoestado($state);?></td>
+								<td><?php echo nuevoestado($state);?></td>
 							</tr>
 							<?php
 								// end foreach
