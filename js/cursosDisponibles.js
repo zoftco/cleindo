@@ -110,7 +110,7 @@
 							setTimeout(function(){
 								$(e).removeAttr('style');
 		    					$(img).css('display', 'none');
-		    					$(e).attr('checked', false);
+		    					$(e).prop('checked', false);
 		    					showModal(e, obj.message);
 							},1000);
 						} else {
@@ -135,7 +135,7 @@
 						setTimeout(function(){
 								$(e).removeAttr('style');
 		    					$(img).css('display', 'none');
-		    					$(e).attr('checked', false);
+		    					$(e).prop('checked', false);
 		    					showModal(e, 'Ha ocurrido un error, por favor vuelva a intentarlo.');
 						},1000);
 					}
@@ -155,7 +155,7 @@
 							setTimeout(function(){
 								$(e).removeAttr('style');
 		    					$(img).css('display', 'none');
-		    					$(e).attr('checked', true);
+		    					$(e).prop('checked', true);
 		    					showModal(e, obj.message);
 							},1000);
 						} else {
@@ -174,7 +174,7 @@
 						setTimeout(function(){
 								$(e).removeAttr('style');
 		    					$(img).css('display', 'none');
-		    					$(e).attr('checked', true);
+		    					$(e).prop('checked', true);
 		    					showModal(e, 'Ha ocurrido un error, por favor vuelva a intentarlo.');
 						},1000);
 					}
@@ -185,10 +185,10 @@
 
     function disabledChecksVisitas(e){
 		$("#visitas input[type=checkbox]").each(function(i) { 
-		  	if(e == 'enabled'){
+		  	if(e === 'enabled'){
 				$(this).removeAttr("disabled");
 			}
-			if(e == 'disabled'){
+			if(e === 'disabled'){
 				$(this).attr('disabled','true');
 			}
 		});
@@ -213,11 +213,11 @@
 						disabledChecksVisitas('enabled');
 					},1000);
 					var obj = jQuery.parseJSON(response);
-					if(obj.success == false) {
+					if(obj.success === false) {
 						setTimeout(function(){
 							$(e).removeAttr('style');
 		    				$(img).css('display', 'none');
-		    				$(e).attr('checked', false);
+		    				$(e).prop('checked', false);
 		    				showModal(e, obj.message);
 						},1000);
 					} else {
@@ -236,7 +236,7 @@
 					setTimeout(function(){
 						$(e).removeAttr('style');
 		    			$(img).css('display', 'none');
-		    			$(e).attr('checked', false);
+		    			$(e).prop('checked', false);
 		    			showModal(e, 'Ha ocurrido un error, por favor vuelva a intentarlo.');
 					},1000);
 				}
@@ -252,11 +252,11 @@
 							disabledChecksVisitas('enabled');
 						},1000);
 						var obj = jQuery.parseJSON(response);
-						if(obj.success == false) {
+						if(obj.success === false) {
 							setTimeout(function(){
 								$(e).removeAttr('style');
 		    					$(img).css('display', 'none');
-		    					$(e).attr('checked', true);
+		    					$(e).prop('checked', true);
 		    					showModal(e, obj.message);
 							},1000);
 						} else {
@@ -275,7 +275,7 @@
 						setTimeout(function(){
 								$(e).removeAttr('style');
 		    					$(img).css('display', 'none');
-		    					$(e).attr('checked', true);
+		    					$(e).prop('checked', true);
 		    					showModal(e, 'Ha ocurrido un error, por favor vuelva a intentarlo.');
 						},1000);
 					}

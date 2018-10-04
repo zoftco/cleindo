@@ -1,17 +1,10 @@
 <?php
-    require_once('php/sessioncontrol.php');
-    $session = new sessioncontrol();
-    if(!$session->isValid('admin_id')) {
-        $session->redirect('login.php');
-        exit;
-    }
-    $first='asd';
-    $second='asd';
-    $third='asd';
-    $fourth='asd';
-	$five = 'asd';
-    $six='active';
-    $seven = 'asd';
+require_once('php/sessioncontrol.php');
+$session = new sessioncontrol();
+if(!$session->isValid('admin_id')) {
+    $session->redirect('login.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

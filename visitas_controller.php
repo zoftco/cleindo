@@ -1,4 +1,5 @@
 <?php
+    require_once('inc/config.php');
 	require('inc/conexion.php');
 	if($_POST['operation'] == 'checkvisita'){
 		if( !empty($_POST['visita_id']) && !empty($_POST['user_id']) ) {
@@ -36,7 +37,7 @@
 			}else{
 				$respuesta = array(
 					'success' => false,
-					'message' => 'Error: Ya está inscripto en otra visita ese día'
+					'message' => 'Error: Ya está inscrito en otra visita ese día'
 				);
 				echo json_encode($respuesta);
 			}

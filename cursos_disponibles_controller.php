@@ -1,4 +1,5 @@
 <?php
+    require_once('inc/config.php');
 	require('inc/conexion.php');
 	if($_POST['operation'] == 'checkcurso'){
 		if( !empty($_POST['pilar_id']) && !empty($_POST['user_id']) ) {
@@ -35,7 +36,7 @@
 			else {
 				$respuesta = array(
 					'success' => false,
-					'message' => 'Error: Ya está inscripto en otro curso ese día'
+					'message' => 'Error: Ya está inscrito en otro curso ese día'
 				);
 				echo json_encode($respuesta);
 			}

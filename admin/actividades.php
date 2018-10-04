@@ -5,14 +5,6 @@
         $session->redirect('login.php');
         exit;
     }
-    $first='asd';
-    $second='asd';
-    $third='asd';
-    $fourth='asd';
-    $five = 'asd';
-    $six='asd';
-    $seven = 'asd';
-    $eight = 'active';
 ?>
 
 <!DOCTYPE html>

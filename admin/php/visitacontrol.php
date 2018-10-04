@@ -69,7 +69,6 @@
 
 			case 'newvisita':
 				$fields = json_decode($_POST['fields'],true);
-				$fields = array_map('utf8_decode',$fields);
 				$id = $_POST['id'];
 
 				$queryarray = array(
@@ -97,7 +96,6 @@
 
 			case 'editvisita':
 				$fields = json_decode($_POST['fields'],true);
-				$fields = array_map('utf8_decode',$fields);
 				$id = $_POST['id'];
 
 				$queryarray = array(
@@ -117,7 +115,8 @@
 
 				if($update) {
 					$respuesta = array(
-						'success' => true);
+						'success' => true
+                    );
 					echo json_encode($respuesta);
 				}
 
@@ -129,7 +128,7 @@
 	} else {
 		$respuesta = array(
 			'success' => false,
-			'message' => 'No se est� recibiendo ning�n par�metro');
+			'message' => 'No se está recibiendo ningún parámetro');
 		echo json_encode($respuesta);
 	}
 ?>

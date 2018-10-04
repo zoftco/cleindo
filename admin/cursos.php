@@ -6,19 +6,14 @@
         exit;
     }
 
+    require ('../inc/config.php');
     require ('../inc/conexion.php');
+
     $query = mysqli_query($conexion, "SELECT * FROM pilar ORDER BY fecha, pilar");
-    // ORDER BY field (estado, 'pendiente', 'aceptado', 'rechazado') acordate que este es el query para ordenar, aunque no importa mucho en esta pag, preguntale a david //
     $estado = array();
     while($row = mysqli_fetch_assoc($query)) {
         $pilares[] = $row;
     }
-    //print_r($pilares);die;
-    $first='asd';
-    $second='asd';
-    $third='asd';
-    $fourth='asd';
-	$five = 'active';
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +22,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
         <title>Administrador Clein</title>
 
         <!-- Bootstrap -->
