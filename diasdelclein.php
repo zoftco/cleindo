@@ -36,6 +36,10 @@
 
 
     </div>
+    <nav class="nav nav-pills nav-justified">
+        <a class="nav-item nav-link" href="https://issuu.com/cleinrd/docs/guia_informativa_para_el_asistente_" target="_blank">GUÍA DE ASISTENTE DEL CONGRESO</a>
+        <a class="nav-item nav-link" href="files/CLEINRD2018_CodigoVestimenta.pdf" target="_blank">CÓDIGO DE VESTIMENTA</a>
+    </nav>
 </section>
 
 <?php include 'inc/footer.php'; ?>
