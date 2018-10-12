@@ -103,17 +103,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <img src="img/apoyo/LaLechera.png" height="60">
             </div>
             <div class="col-md-3">
                 <img src="img/apoyo/PlanetaAzul.png" height="60">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <img src="img/apoyo/Cardnet.png" height="60">
             </div>
             <div class="col-md-3">
                 <img src="img/apoyo/LaSirena.png" height="60">
+            </div>
+            <div class="col-md-2">
+                <img src="img/apoyo/fundapec.png" height="60">
             </div>
         </div>
     </div>

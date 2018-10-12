@@ -38,16 +38,16 @@ if(!$session->isValid('admin_id')) {
         	<div class="col-sm-12">
                 <div class="pilarpanel panel panel-default">
             	    <div class="panel-heading">
-                        <h4 class="panel-title"><span class="glyphicon glyphicon-user"></span> Pilares	</h4>
+                        <h4 class="panel-title"><span class="glyphicon glyphicon-user"></span> Bloques	</h4>
                     </div>
                     <div class="addpilarbtn" style="margin: 20px 20px 0 0; display: inline-block; float:right;">
-                    	<p><span class="glyphicon glyphicon-plus"></span> Crear pilar</p>  
+                    	<p><span class="glyphicon glyphicon-plus"></span> Crear bloque</p>
                     </div>
                     <div class="panel-body">
                     	<table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Pilar</th>
+                                    <th>Bloque</th>
                                     <th>Fecha</th>
                                     <th>Salón</th>
                                     <th>Cupo</th>
