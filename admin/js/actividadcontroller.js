@@ -27,7 +27,7 @@ function Actividadcontrol(table, actividadpanel){
 							me.popAlert({type: 'alert-danger', message: message, icon: 'glyphicon glyphicon-remove-sign'});
 							return;
 						}
-						var rows = me.renderData(me.table.find('tbody'),'components/actividadrow.html',data);
+						var rows = me.renderData(me.table.find('tbody'),'components/actividadrow.html?get=1231424',data);
 
 						me.activdadrows = rows;
 						me.actividaddata = data;

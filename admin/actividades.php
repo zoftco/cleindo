@@ -47,7 +47,7 @@
                                     <th>Nombre</th>
                                     <th>Correo</th>
                                     <th>Teléfono</th>
-                                    <th>Imprimir</th>
+                                    <th>Seleccionar</th>
                                 </tr>
                             </thead>
                             <tbody>

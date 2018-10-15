@@ -35,9 +35,7 @@
                 </li>';
             }
           if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="academica"){
-          echo '<li><a href="pilares.php">Pilares</a></li>
-                <li><a href="cursos.php">Charlas</a></li>
-                <li><a href="visitas.php">Visitas</a></li>
+          echo '<li><a href="visitas.php">Visitas</a></li>
 		        <li><a href="actividades.php">Actividades</a></li>
 		        <li><a href="adminconcurso.php">Concurso de Ponencias E&P</a></li>';
             }

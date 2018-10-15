@@ -51,7 +51,7 @@
 	} else {
 		$respuesta = array(
 			'success' => false,
-			'message' => 'No se est� recibiendo ning�n par�metro');
+			'message' => 'No se está recibiendo ningún parámetro');
 		echo json_encode($respuesta);
 	}
 ?>
