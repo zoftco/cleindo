@@ -70,13 +70,11 @@
 	};
 
 	function disabledChecks(e){
-		$("#cursos-disponibles input[type=checkbox]").each(function(i) { 
-		  	if(e == 'enabled'){
-		   		if( $(this).attr('data-tipo') != '1' ){
-					$(this).removeAttr("disabled");
-				}
+		$("#cursos-disponibles input[type=radio]").each(function(i) {
+		  	if(e === 'enabled'){
+		   		$(this).removeAttr("disabled");
 			}
-			if(e == 'disabled'){
+			if(e === 'disabled'){
 				$(this).attr('disabled','true');
 			}
 		});
@@ -84,22 +82,19 @@
 
     function checkCurso(e, user_id) {
     	var name = $(e).attr('name');
-    	var id = $(e).attr('data-id');
-    	var img = '#img_' + id;
-    	//var td = '#ins_' + id;	    
+        var bloque_id = $(e).attr('data-bloqueid');
+    	var user_id = $(e).attr('data-userid');
+    	var actividad_id =  $(e).attr('data-actividadid');
 
-    	var pilar_id =  $(e).attr('data-pilarid');
-
-    	$(e).css('display', 'none');
-    	$(img).css('display', 'block');
+    	// $(e).css('display', 'none');
+    	// $(img).css('display', 'block');
     	disabledChecks('disabled');
 
-    	if($(e).attr('data-tipo') != '1'){
 	        if ($(e).is(':checked')) {
 			    $.ajax({
-					url: 'cursos_disponibles_controller.php',
+					url: '../actividades_disponibles_controller.php',
 					type: 'post',
-					data: { operation: 'checkcurso', pilar_id: pilar_id, user_id: user_id},
+					data: { operation: 'checkcurso', actividad_id: actividad_id, user_id: user_id, bloque_id: bloque_id},
 					success: function(response){
 						setTimeout(function(){
 							disabledChecks('enabled');
@@ -109,21 +104,21 @@
 						if(obj.success == false) {
 							setTimeout(function(){
 								$(e).removeAttr('style');
-		    					$(img).css('display', 'none');
+		    					// $(img).css('display', 'none');
 		    					$(e).prop('checked', false);
 		    					showModal(e, obj.message);
 							},1000);
 						} else {
 							setTimeout(function(){
-								$("input:checkbox[name='"+name+"']").each(function(i) { 
+								$("input:radio[name='"+name+"']").each(function(i) {
 
-							    if( id != $(this).attr('data-id') ){
+							    if( id !== $(this).attr('actividad_id') ){
 										$(this).prop('checked', false);
 									}
 								});
 
 								$(e).removeAttr('style');
-		    					$(img).css('display', 'none');
+		    					// $(img).css('display', 'none');
 		    					//$(td).html(parseInt($(td).html()) + 1);
 							},1000);
 						}
@@ -134,7 +129,7 @@
 						},1000);
 						setTimeout(function(){
 								$(e).removeAttr('style');
-		    					$(img).css('display', 'none');
+		    					// $(img).css('display', 'none');
 		    					$(e).prop('checked', false);
 		    					showModal(e, 'Ha ocurrido un error, por favor vuelva a intentarlo.');
 						},1000);
@@ -142,9 +137,9 @@
 				});
 			} else {
 			    $.ajax({
-					url: 'cursos_disponibles_controller.php',
+					url: '../actividades_disponibles_controller.php',
 					type: 'post',
-					data: { operation: 'uncheckcurso', pilar_id: pilar_id, user_id: user_id
+					data: { operation: 'uncheckcurso', actividad_id: actividad_id, user_id: user_id, bloque_id: bloque_id
 				},
 					success: function(response){
 						setTimeout(function(){
@@ -154,14 +149,14 @@
 						if(obj.success == false) {
 							setTimeout(function(){
 								$(e).removeAttr('style');
-		    					$(img).css('display', 'none');
+		    					// $(img).css('display', 'none');
 		    					$(e).prop('checked', true);
 		    					showModal(e, obj.message);
 							},1000);
 						} else {
 							setTimeout(function(){
 								$(e).removeAttr('style');
-		    					$(img).css('display', 'none');
+		    					// $(img).css('display', 'none');
 		    					//$(td).html(parseInt($(td).html()) - 1);
 							},1000);
 						}
@@ -173,14 +168,13 @@
 						var obj = jQuery.parseJSON(response);
 						setTimeout(function(){
 								$(e).removeAttr('style');
-		    					$(img).css('display', 'none');
+		    					// $(img).css('display', 'none');
 		    					$(e).prop('checked', true);
 		    					showModal(e, 'Ha ocurrido un error, por favor vuelva a intentarlo.');
 						},1000);
 					}
 				});
 			}
-		}	
     };
 
     function disabledChecksVisitas(e){
@@ -197,7 +191,7 @@
     function checkVisitas(e, user_id) {
     	//var name = $(e).attr('name');
     	var visita_id = $(e).attr('data-visitaid');
-    	var img = '#v_img_' + visita_id;	    
+    	var img = '#v_img_' + visita_id;
 
     	$(e).css('display', 'none');
     	$(img).css('display', 'block');
@@ -205,7 +199,7 @@
 
     	if ($(e).is(':checked')) {
     		$.ajax({
-				url: 'visitas_controller.php',
+				url: '../visitas_controller.php',
 				type: 'post',
 				data: { operation: 'checkvisita', visita_id: visita_id, user_id: user_id},
 				success: function(response){
@@ -243,7 +237,7 @@
 			})
     	}else {
 			    $.ajax({
-					url: 'visitas_controller.php',
+					url: '../visitas_controller.php',
 					type: 'post',
 					data: { operation: 'uncheckvisita', visita_id: visita_id, user_id: user_id
 				},

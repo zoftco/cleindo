@@ -77,11 +77,11 @@ if(!isset($_GET['idlogin']))
                 <div class="panel-body">
                     <div>
                         <h2 style="font-weight: bold;">Actividades Disponibles</h2>
-                        <table id="cursos-disponibles" class="table">
+                        <p>Debe seleccionar una actividad en cada bloque</p>
+                        <?php
+                        $table='<table id="cursos-disponibles" class="table">
                             <thead>
                             <tr>
-                                <th>Bloque</th>
-                                <th>Fecha Hora</th>
                                 <th>Título</th>
                                 <th>Conferencista</th>
                                 <th>Nacionalidad</th>
@@ -90,10 +90,12 @@ if(!isset($_GET['idlogin']))
                                 <th style="width: 40px;"></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody>';
+                            ?>
                                 <?php
                                 $fecha="";
                                 $color="";
+                                $opentable = false;
                                 foreach ($actividades as $v):
                                     $datetime = strtotime($v['fechahora']);
                                     $date = date("Y/m/d H:i", $datetime);
@@ -102,6 +104,13 @@ if(!isset($_GET['idlogin']))
                                     if( $fecha!= $v['fechahora']){
                                         $fecha = $v['fechahora'];
                                         $color = ($color =='#F0FBF8') ? '#FFFFFF' : '#F0FBF8';
+                                        if($opentable)
+                                        {
+                                            echo "</tbody></table>";
+                                        }
+                                        echo '<hr /><h3>'.$v['bloque'].' '.$date.'</h3>';
+                                        echo $table;
+                                        $opentable = true;
                                     }
                                     if(isset($mis_actividades_ids)){
                                         $checked = in_array($v['id'], $mis_actividades_ids) ? 'checked' : '';
@@ -119,12 +128,11 @@ if(!isset($_GET['idlogin']))
                                     }
                                     ?>
                                 <tr style="background-color:<?php echo $color;?>">
-                                    <td><?php echo $v['bloque_id']; ?></td>
-                                    <td><?php echo $date; ?></td>
+
                                     <td><?php echo $v['titulo']; ?></td>
                                     <td><?php echo $v['conferencista']; ?></td>
                                     <td><?php echo $v['nacionalidad']; ?></td>
-                                    <td><?php echo $v['salon'].' '.$v['inscritos']; ?></td>
+                                    <td><?php echo $v['salon']; ?></td>
                                     <td><?php echo $v['enfoque']; ?></td>
                                     <td>
                                         <input data-actividadid="<?php echo $v['id'] ?>"
@@ -143,7 +151,6 @@ if(!isset($_GET['idlogin']))
                                 <?php
                                 endforeach;
                                 ?>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
