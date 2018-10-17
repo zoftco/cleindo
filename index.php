@@ -91,15 +91,15 @@
         <div class="row">
             <p>Patrocinadores:</p>
         </div>
-        <div class="row">
+        <div class="row" style="margin-top:20px;margin-bottom:20px"">
             <div class="col-md-4">
-                <img src="img/apoyo/HanesBrandsInc.png" height="80">
+                <img src="img/apoyo/HanesBrandsInc.png" height="80" style="margin-top:40px">
             </div>
             <div class="col-md-4">
-                <img src="img/apoyo/3Designers.png" height="80">
+                <img src="img/apoyo/mitur.png" height="160">
             </div>
             <div class="col-md-4">
-                <img src="img/apoyo/mitur.png" height="80">
+                <img src="img/apoyo/3Designers.png" height="80" style="margin-top:40px">
             </div>
         </div>
         <div class="row">
