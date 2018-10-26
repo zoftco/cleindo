@@ -38,6 +38,13 @@
           echo '<li><a href="visitas.php">Visitas</a></li>
 		        <li><a href="actividades.php">Actividades</a></li>
 		        <li><a href="adminconcurso.php">Concurso de Ponencias E&P</a></li>';
+		        <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Asistencia</a>
+		            <ul class="dropdown-menu" role="menu">
+                        <li><a href="asistencia.php">Asistencia por Actividad</a></li>
+                        <li><a href="asistenciaporusuario.php">Asistencia por Usuario</a></li>
+                    </ul>
+                </li>
             }
             ?>
         </ul>
