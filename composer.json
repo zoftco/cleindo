@@ -1,6 +1,7 @@
 {
     "require": {
         "phpoffice/phpspreadsheet": "^1.2",
-        "ext-mysqli":"@latest"
+        "ext-mysqli":"@latest",
+      "ext-json": "*"
     }
 }

@@ -132,7 +132,7 @@ if(!isset($_GET['idlogin']))
                                     <td><?php echo $v['titulo']; ?></td>
                                     <td><?php echo $v['conferencista']; ?></td>
                                     <td><?php echo $v['nacionalidad']; ?></td>
-                                    <td><?php echo $v['salon']; ?></td>
+                                    <td><?php echo $v['salon'].' '.$v['inscritos'].'/'.$v['cupo']; ?></td>
                                     <td><?php echo $v['enfoque']; ?></td>
                                     <td>
                                         <input data-actividadid="<?php echo $v['id'] ?>"

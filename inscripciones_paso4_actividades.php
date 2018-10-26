@@ -20,99 +20,38 @@ if (isset($_SESSION['user_id'])) {
         header("Location:inc/intermediador.php");
         exit;
     }
+
+    $pago = mysqli_query($conexion,"select * from pagoefectivo where idUsers = '$session_id'");
+    $pago = mysqli_fetch_assoc($pago);
+
+    $visitas = mysqli_query($conexion, "SELECT * FROM visita");
+    $result_visita = mysqli_query($conexion, "SELECT visita.id FROM visita JOIN visita_login ON visita.id = visita_login.visita_id WHERE login_id = ".$session_id);
+    $visita_ids = array();
+    while($row = mysqli_fetch_array($result_visita)) {
+        $visita_ids[] = $row['id'];
+    }
+
+    $inscritos = mysqli_query($conexion, "SELECT id_actividad, COUNT(id) as inscritos FROM `actividades_login_bloque` GROUP BY id_actividad");
+
+    $actividades = mysqli_query($conexion, "SELECT actividades.`id`,`titulo`,`conferencista`,actividades.`fechahora`,`nacionalidad`,`enfoque`,`salon`,`cupo`,`bloque_id`,`bloque` FROM actividades INNER JOIN bloque WHERE actividades.bloque_id = bloque.id ORDER BY actividades.fechahora");
+
+    $mis_actividades = mysqli_query($conexion,"SELECT id_actividad FROM actividades_login_bloque WHERE id_login= ".$session_id);
+
+    $guardado=false;
+    while ($row= mysqli_fetch_array($mis_actividades))
+    {
+        if($row['id_actividad']==99999)
+        {
+//            $guardado=true;
+        }
+        $mis_actividades_ids[]=$row['id_actividad'];
+    }
+
 } else {
     header("Location:log_in.php");
     exit;
 }
-    $pago = mysqli_query($conexion,"select * from pagoefectivo where idUsers = '$session_id'");
-    $pago = mysqli_fetch_assoc($pago);
 
-
-	$result = mysqli_query($conexion, "select 
-		pilar.id as p_id, 
-	    pilar.pilar as p_pilar,
-	    pilar.fecha as p_fecha,
-	    pilar.cupo as p_cupo,
-	    pilar.salon as p_salon,	
-	    pilar.tipo as p_tipo,
-	    curso.id as c_id,
-	    curso.fecha as c_fecha,
-	    curso.titulo as c_titulo,
-	    curso.conferencista as c_conferencista,
-	    curso.nacionalidad as c_nacionalidad,
-	    curso.enfoque as c_enfoque
-	from pilar join curso on pilar.id = curso.pilar_id 
-	order by pilar.fecha, curso.fecha, pilar.pilar");
-	
-	$cursos = array();
-
-	while($row = mysqli_fetch_array($result)) { 
-	  $cursos[] = $row;
-	}
-
-	$pilares = array();
-	$charla = array();
-	$id = 0;
-	$idx = 0;
-
-	foreach ($cursos as $k => $v) {
-		if($id != $v['p_id']){
-			$id = $v['p_id'];
-			$pilares[$id]['p_id'] = $v['p_id'];
-			$pilares[$id]['p_pilar'] = $v['p_pilar'];
-			$pilares[$id]['p_fecha'] = $v['p_fecha'];
-			$pilares[$id]['p_salon'] = $v['p_salon'];
-			$pilares[$id]['p_cupo'] = $v['p_cupo'];
-			$pilares[$id]['p_tipo'] = $v['p_tipo'];
-		}
-	}
-
-	foreach ($cursos as $k => $v) {
-		$id = $v['p_id'];
-		$charla['c_id'] = $v['c_id'];
-		$charla['c_fecha'] = $v['c_fecha'];
-		$charla['c_titulo'] = $v['c_titulo'];
-		$charla['c_conferencista'] = $v['c_conferencista'];
-		$charla['c_nacionalidad'] = $v['c_nacionalidad'];
-		$charla['c_enfoque'] = $v['c_enfoque'];
-		$charla['p_id'] = $id;
-		$pilares[$id]['charlas'][] = $charla;
-	}
-
-	$result = mysqli_query($conexion, "SELECT * FROM visita");
-	
-	$visitas = array();
-
-	while($row = mysqli_fetch_array($result)) { 
-	  $visitas[] = $row;
-	}
-
-	//print_r($visitas);die;
-
-	//print_r($pilares);die;
-
-	$result = mysqli_query($conexion, "SELECT pilar.id, pilar.fecha FROM pilar JOIN pilar_login ON pilar.id = pilar_login.pilar_id WHERE login_id = ".$_SESSION['user_id']);
-	
-	$mis_cursos = array();
-
-	//print_r($result);die;
-
-	while($row = mysqli_fetch_array($result)) { 
-	  $mis_cursos_ids[] = $row['id']; 
-	  $mis_cursos_fechas[] = $row['fecha']; 
-	}
-
-
-
-	$result = mysqli_query($conexion, "SELECT visita.id FROM visita JOIN visita_login ON visita.id = visita_login.visita_id WHERE login_id = ".$_SESSION['user_id']);
-	
-	$visita_ids = array();
-
-	//print_r($result);die;
-
-	while($row = mysqli_fetch_array($result)) { 
-	  $visita_ids[] = $row['id'];
-	}
 ?>
 <?php include 'inc/header.php'; ?>
 <section id="main">
@@ -135,11 +74,157 @@ if (isset($_SESSION['user_id'])) {
         <div class="row">
             <h1>¡BIENVENIDO/A A BORDO!</h1>
         </div>
-        <div class="row">
-            <h4>Hemos recibido su pago satisfactoriamente. Recibirás un mail de confirmación para que puedas volver a nuestra página y empezar a inscribirte a las actividades del congreso.</h4>
-            <p>Pago registrado <?php echo $pago['fechacreacion']; ?></p>
-        </div>
 
+        <div class="panel-body">
+            <div>
+                <h2 style="font-weight: bold;">Actividades Disponibles</h2>
+                <p>Debe seleccionar una actividad en cada bloque</p>
+                <?php
+                $table='<table id="cursos-disponibles" class="table">
+                            <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Conferencista</th>
+                                <th>Nacionalidad</th>
+                                <th>Salón</th>
+                                <th>Enfoque</th>
+                                <th style="width: 40px;"></th>
+                            </tr>
+                            </thead>
+                            <tbody>';
+                ?>
+                <?php
+                $fecha="";
+                $color="";
+                $opentable = false;
+                foreach ($actividades as $v):
+                    $datetime = strtotime($v['fechahora']);
+                    $date = date("Y/m/d H:i", $datetime);
+                    $checked="";
+                    $disabled="";
+                    if( $fecha!= $v['fechahora']){
+                        $fecha = $v['fechahora'];
+                        $color = ($color =='#F0FBF8') ? '#FFFFFF' : '#F0FBF8';
+                        if($opentable)
+                        {
+                            echo "</tbody></table>";
+                        }
+                        echo '<hr /><h3>'.$v['bloque'].' '.$date.'</h3>';
+                        if($v['id']==2)
+                        {
+                            echo '<p>Seleccione el bloque de su preferencia</p>';
+                        }
+                        echo $table;
+                        $opentable = true;
+                    }
+                    if(isset($mis_actividades_ids)){
+                        $checked = in_array($v['id'], $mis_actividades_ids) ? 'checked' : '';
+                    }
+                    $v['inscritos']=0;
+                    foreach ($inscritos as $i)
+                    {
+                        if($v['id']==$i['id_actividad'])
+                        {
+                            $v['inscritos']=$i['inscritos'];
+                        }
+                    }
+                    if($v['cupo'] <= $v['inscritos'] && $checked == ''){
+                        $disabled = 'disabled';
+                    }
+                    if($guardado){
+                        $disabled = 'disabled';
+                    }
+                    ?>
+                    <tr style="background-color:<?php echo $color;?>">
+
+                        <td><?php echo $v['titulo']; ?></td>
+                        <td><?php echo $v['conferencista']; ?></td>
+                        <td><?php echo $v['nacionalidad']; ?></td>
+                        <td><?php echo $v['salon']; ?></td>
+                        <td><?php echo $v['enfoque']; ?></td>
+                        <td>
+                            <input data-actividadid="<?php echo $v['id'] ?>"
+                                   name="<?php echo $v['bloque']; ?>"
+                                   data-bloqueid="<?php echo $v['bloque_id'] ?>"
+                                   data-userid="<?php echo $session_id; ?>"
+                                   class="checkCurso"
+                                <?php echo $checked; ?>
+                                <?php echo $disabled; ?>
+                                   data-modal="#dialog"
+                                   type="radio"
+                                   onclick="checkCurso(this, <?php echo $session_id?>);"
+                            />
+                        </td>
+                    </tr>
+                <?php
+                endforeach;
+                ?>
+                </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-actividadid="99999" name="Guardar" data-bloqueid="0" data-userid="<?php echo $session_id?>" class="checkCurso" data-modal="#dialog" type="radio" onclick="Guardar(this,<?php echo $session_id?>);">Guardar</button>
+            </div>
+            <div>
+                <h2 style="font-weight: bold;">VISITAS</h2>
+                <table id="visitas" class="table">
+                    <thead>
+                    <tr>
+                        <th>Industria</th>
+                        <th>Hora de visita</th>
+                        <th>Cant de personas</th>
+                        <th>Dirección</th>
+                        <th>Contacto</th>
+                        <th>Teléfono</th>
+                        <th style="width: 40px;"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($visitas as $k => $v): ?>
+                        <?php
+                        $check_id = '';
+                        if(isset($visita_ids)){
+                            if(in_array($v['id'], $visita_ids))
+                            {
+                                echo "<tr>";
+                            }else
+                            {
+                                echo "<tr style='visibility: collapse'>";
+                            }
+                        }
+                        ?>
+
+                            <td><?php echo $v['lugar']; ?></td>
+                            <?php
+                            $datetime = strtotime($v['fecha']);
+                            $date = date("d/m/Y H:i", $datetime);
+                            ?>
+                            <td><?php echo $date; ?></td>
+                            <td><?php echo $v['cupo']; ?></td>
+                            <td><?php echo $v['direccion']; ?></td>
+                            <td><?php echo $v['contacto']; ?></td>
+                            <td><?php echo $v['telefono']; ?></td>
+                            <td rowspan="<?php echo $cant_c; ?>" style="text-align: center; vertical-align: middle;">
+                                <img id="v_img_<?php echo $v['id'] ?>" style="display:none;" src="images/loading.gif"/>
+                                <?php
+                                $check_id = '';
+                                if(isset($visita_ids)){
+                                    $check_id = in_array($v['id'], $visita_ids) ? 'checked' : '';
+                                }
+                                ?>
+                                <input data-visitaid="<?php echo $v['id'] ?>" data-modal="#dialog" type="checkbox" disabled onclick="checkVisitas(this, <?php echo $session_id?>);" <?php echo $check_id; ?> />
+                                <?php //endif ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-actividadid="99999" name="Guardar" data-bloqueid="0" data-userid="<?php echo $session_id?>" class="checkCurso" data-modal="#dialog" type="radio" onclick="Guardar(this,<?php echo $session_id?>);">Guardar</button>
+            </div>
+        </div>
+<hr>
         <div id="Perfil" class="card">
             <div class="card-header" id="headingPerfil">
                 <h1 class="mb-0"  class="btn btn-link collapse" data-toggle="collapse" data-target="#collapsePerfil" aria-expanded="false" aria-controls="collapsePerfil">
@@ -484,5 +569,15 @@ if (isset($_SESSION['user_id'])) {
         </nav>
     </div>
 
+    <div id="boxes">
+        <div id="dialog" class="window">
+            <a href="#"><button type="button" class="close" aria-label="Close">×</button></a>
+            <span class="boxspan">Ha ocurrido un error. Por favor vuelta a intentarlo.</span>
+        </div>
 
+        <!-- Mask to cover the whole screen -->
+        <div id="mask"></div>
+    </div>
+
+    <script src="js/actividadesDisponibles.js"></script>
 <?php include 'inc/footer.php'; ?>

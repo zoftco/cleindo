@@ -13,7 +13,7 @@
 			if(true){
 			    $query="INSERT INTO actividades_login_bloque(id_actividad,id_bloque,id_login)
 SELECT ".$actividad_id.",".$bloque_id.",".$user_id." FROM actividades WHERE actividades.id = ".$actividad_id." AND actividades.cupo >
-                (SELECT COUNT(actividades_login_bloque.id) FROM actividades_login_bloque WHERE actividades_login_bloque.id_bloque = ".$bloque_id.")";
+                (SELECT COUNT(actividades_login_bloque.id) FROM actividades_login_bloque WHERE actividades_login_bloque.id_actividad = ".$actividad_id.")";
                 $result = mysqli_query($conexion,$query);
 
 				$result = mysqli_affected_rows($conexion);

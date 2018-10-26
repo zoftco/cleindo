@@ -36,8 +36,13 @@
             }
           if($_SESSION['admin_rol']=="admin" OR $_SESSION['admin_rol']=="academica"){
           echo '<li><a href="visitas.php">Visitas</a></li>
-		        <li><a href="actividades.php">Actividades</a></li>
-		        <li><a href="adminconcurso.php">Concurso de Ponencias E&P</a></li>';
+		        <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actividades</a>
+		            <ul class="dropdown-menu" role="menu">
+                        <li><a href="actividadeslistado.php">Lista de Actividades</a></li>
+                        <li><a href="actividades.php">Actividades de cada Usuario</a></li>
+                    </ul>
+                </li>
 		        <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Asistencia</a>
 		            <ul class="dropdown-menu" role="menu">
@@ -45,6 +50,7 @@
                         <li><a href="asistenciaporusuario.php">Asistencia por Usuario</a></li>
                     </ul>
                 </li>
+		        <li><a href="adminconcurso.php">Concurso de ponencias e&p</a></li>';
             }
             ?>
         </ul>
