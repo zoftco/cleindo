@@ -1,7 +1,8 @@
 {
     "require": {
-        "phpoffice/phpspreadsheet": "^1.2",
-        "ext-mysqli":"@latest",
+      "phpoffice/phpspreadsheet": "^1.2",
+      "ziplr/php-qr-code":"*",
+      "ext-mysqli":"*",
       "ext-json": "*"
     }
 }

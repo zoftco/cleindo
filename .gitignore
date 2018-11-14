@@ -11,3 +11,5 @@ vendor/
 _cgi-bin/
 admin/usuario.php
 cgi-bin/
+admin/QR/
+admin/QR2/

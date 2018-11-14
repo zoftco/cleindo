@@ -229,50 +229,47 @@ while($row = mysqli_fetch_array($result)) {
                 <?php endforeach ?>
                 </tbody>
             </table>
-            <div class="clearfix"></div>
-            </br>
-            </br>
-            <h2 style="font-weight: bold;">VISITAS</h2>
-                <table id="visitas">
-                    <thead class="txtC">
-                    <tr>
-                        <th>Industria</th>
-                        <th>Hora de visita</th>
-                        <th>Cant de personas</th>
-                        <th>Dirección</th>
-                        <th>Contacto</th>
-                        <th>Teléfono</th>
-                        <th style="width: 40px;"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($visitas as $k => $v): ?>
-                        <tr>
-                            <td><?php echo $v['lugar']; ?></td>
-                            <?php
-                            $datetime = strtotime($v['fecha']);
-                            $date = date("d/m/Y H:i", $datetime);
-                            ?>
-                            <td><?php echo $date; ?></td>
-                            <td><?php echo $v['cupo']; ?></td>
-                            <td><?php echo $v['direccion']; ?></td>
-                            <td><?php echo $v['contacto']; ?></td>
-                            <td><?php echo $v['telefono']; ?></td>
-                            <td rowspan="<?php echo $cant_c; ?>" style="text-align: center; vertical-align: middle;">
-                                <img id="v_img_<?php echo $v['id'] ?>" style="display:none;" src="images/loading.gif"/>
-                                <?php
-                                $check_id = '';
-                                if(isset($visita_ids)){
-                                    $check_id = in_array($v['id'], $visita_ids) ? 'checked' : '';
-                                }
-                                ?>
-                                <input data-visitaid="<?php echo $v['id'] ?>" data-modal="#dialog" type="checkbox" onclick="checkVisitas(this, <?php echo $_SESSION['user_id']?>);" <?php echo $check_id; ?> />
-                                <?php //endif ?>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
-                    </tbody>
-                </table>
+<!--            <h2 style="font-weight: bold;">VISITAS</h2>-->
+<!--                <table id="visitas">-->
+<!--                    <thead class="txtC">-->
+<!--                    <tr>-->
+<!--                        <th>Industria</th>-->
+<!--                        <th>Hora de visita</th>-->
+<!--                        <th>Cant de personas</th>-->
+<!--                        <th>Dirección</th>-->
+<!--                        <th>Contacto</th>-->
+<!--                        <th>Teléfono</th>-->
+<!--                        <th style="width: 40px;"></th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    --><?php //foreach ($visitas as $k => $v): ?>
+<!--                        <tr>-->
+<!--                            <td>--><?php //echo $v['lugar']; ?><!--</td>-->
+<!--                            --><?php
+//                            $datetime = strtotime($v['fecha']);
+//                            $date = date("d/m/Y H:i", $datetime);
+//                            ?>
+<!--                            <td>--><?php //echo $date; ?><!--</td>-->
+<!--                            <td>--><?php //echo $v['cupo']; ?><!--</td>-->
+<!--                            <td>--><?php //echo $v['direccion']; ?><!--</td>-->
+<!--                            <td>--><?php //echo $v['contacto']; ?><!--</td>-->
+<!--                            <td>--><?php //echo $v['telefono']; ?><!--</td>-->
+<!--                            <td rowspan="--><?php //echo $cant_c; ?><!--" style="text-align: center; vertical-align: middle;">-->
+<!--                                <img id="v_img_--><?php //echo $v['id'] ?><!--" style="display:none;" src="images/loading.gif"/>-->
+<!--                                --><?php
+//                                $check_id = '';
+//                                if(isset($visita_ids)){
+//                                    $check_id = in_array($v['id'], $visita_ids) ? 'checked' : '';
+//                                }
+//                                ?>
+<!--                                <input data-visitaid="--><?php //echo $v['id'] ?><!--" data-modal="#dialog" type="checkbox" onclick="checkVisitas(this, --><?php //echo $_SESSION['user_id']?>//);" <?php //echo $check_id; ?><!-- />-->
+<!--                                --><?php ////endif ?>
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    --><?php //endforeach ?>
+<!--                    </tbody>-->
+<!--                </table>-->
     </div>
 </section>
 

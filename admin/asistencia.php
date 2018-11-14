@@ -10,9 +10,18 @@ if(!$session->isValid('admin_id')) {
     exit;
 }else
 {
+    if(isset($_GET['idactividad']))
+    {
+        $where = "AND `asistencia`.`id_actividad` = ".htmlspecialchars($_GET['idactividad']);
+
+        $asistencia = mysqli_query($conexion, "SELECT * FROM `asistencia` INNER JOIN actividades INNER JOIN login WHERE `asistencia`.id_login = login.id AND `asistencia`.`id_actividad` = actividades.id ".$where." ORDER BY actividades.fechahora, actividades.id,  asistencia.created");
+    }
+    else{
+        $where = "";
+    }
     $inscritos = mysqli_query($conexion, "SELECT id_actividad, COUNT(id) as inscritos FROM `actividades_login_bloque` GROUP BY id_actividad");
 
-    $asistencia = mysqli_query($conexion, "SELECT * FROM `asistencia` INNER JOIN actividades INNER JOIN login WHERE `asistencia`.id_login = login.id AND `asistencia`.`id_actividad` = actividades.id ORDER BY actividades.fechahora AND asistencia.created");
+    $actividades = mysqli_query($conexion, "SELECT * FROM `actividades` WHERE 1 ORDER BY actividades.fechahora DESC");
 }
 ?>
 
@@ -41,49 +50,34 @@ if(!$session->isValid('admin_id')) {
         <div class="col-sm-12">
             <div class="actividadpanel panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title"><span class="glyphicon glyphicon-user"></span> Asistencia  </h4>
+                    <h4 class="panel-title"><span class="glyphicon glyphicon-user"></span> Actividades  </h4>
                 </div>
                 <div class="panel-body">
                     <div>
                         <h2 style="font-weight: bold;">Asistencia de Actividades</h2>
-                        <?php
-                        $table='<table id="cursos-disponibles" class="table table-striped">
+                        <table id="cursos-disponibles" class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Marcado</th>
-                                <th>Participante</th>
-                                <th style="width: 40px;"></th>
+                                <th>FechaHora</th>
+                                <th>Título</th>
+                                <th>Listado</th>
                             </tr>
                             </thead>
-                            <tbody>';
+                            <tbody>
+                        <?php
+                        foreach ($actividades as $v):
                             ?>
-                                <?php
-                                $fecha="";
-                                $opentable = false;
-                                foreach ($asistencia as $v):
-                                    $datetime = strtotime($v['fechahora']);
-                                    $v['fechahora'] = date("d-m-Y", $datetime);
-                                    $datetime = strtotime($v['created']);
-                                    $v['created'] = date("H:i", $datetime);
-                                    if( $fecha!= $v['id_actividad']){
-                                        $fecha = $v['id_actividad'];
-                                        if($opentable)
-                                        {
-                                            echo "</tbody></table>";
-                                        }
-                                        echo '<hr /><p>'.$v['fechahora'].' '.$v['titulo'].' '.$v['conferencista'].'</p>';
-                                        echo $table;
-                                        $opentable = true;
-                                    }
-                                    ?>
-                                <tr>
-                                    <td><?php echo $v['created']; ?></td>
-                                    <td><?php echo $v['nombreyapellidoInput']; ?></td>
-                                </tr>
-                                <?php
-                                endforeach;
-                                ?>
-                            </tbody>
+                            <tr>
+                                <td><?php echo $v['fechahora']; ?></td>
+                                <td><?php echo $v['titulo']; ?></td>
+                                <td>
+                                <a type="button" class="btn btn-primary btn-lg btn-block" data-modal="#dialog" href="asistenciaporactividad.php?idactividad=<?php echo $v['id']?>">Asistencia</a>
+                                </td>
+                            </tr>
+                        <?php
+                        endforeach;
+                        ?>
+                        </tbody>
                         </table>
                     </div>
                 </div>

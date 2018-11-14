@@ -57,7 +57,8 @@ if(!$session->isValid('admin_id')) {
                                     <th>Conferencista</th>
                                     <th>Nacionalidad</th>
                                     <th>Salon</th>
-                                    <th>Seleccionar</th>
+                                    <th>Inscrito</th>
+                                    <th>Asistencia</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,6 +91,9 @@ if(!$session->isValid('admin_id')) {
                                     <td><?php echo $v['salon'].' '.$v['inscritos'].'/'.$v['cupo']; ?></td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-lg btn-block" data-modal="#dialog" href="participantesactividad.php?id=<?php echo $v['id']?>">Listado</a>
+                                    </td>
+                                    <td>
+                                        <a type="button" class="btn btn-primary btn-lg btn-block" data-modal="#dialog" href="asistencia.php?idactividad=<?php echo $v['id']?>">Asistencia</a>
                                     </td>
                                 </tr>
                             <?php

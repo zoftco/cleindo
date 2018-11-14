@@ -1,14 +1,14 @@
-function Pilarescontrol(table, pilarpanel){
+function Cursoscontrol(table, cursopanel){
 	var me = this;
 	me.table;
-	me.pilarpanel;
-	me.pilarrows;
+	me.cursopanel;
+	me.cursorows;
 	me.newadminform;
-	me.pilardata;
+	me.cursodata;
 
-	me.initialize = function(table, pilarpanel){
+	me.initialize = function(table, cursopanel){
 		me.table = table;
-		me.pilarpanel = pilarpanel;
+		me.cursopanel = cursopanel;
 		me.setMasked({
 			position: 'absolute',
 			maskMsg: 'Cargando...',
@@ -16,9 +16,9 @@ function Pilarescontrol(table, pilarpanel){
 		},false,me.table.parents('.panel-body'));
 
 		me.getData({
-			src: 'php/bloquecontrol.php',
+			src: 'php/ponenciascontrol.php',
 			params: {
-				operation: 'getpilares'
+				operation: 'getactividades'
 			},
 			success: function(data, message) {
 				setTimeout(function(){
@@ -28,10 +28,10 @@ function Pilarescontrol(table, pilarpanel){
 							return;
 						}
 
-						var rows = me.renderData(me.table.find('tbody'),'components/pilarrow.html',data);
+						var rows = me.renderData(me.table.find('tbody'),'components/actividadrow.html',data);
 
-						me.pilarrows = rows;
-						me.pilardata = data;
+						me.actividadrows = rows;
+						me.actividaddata = data;
 					});
 				},1500);
 			},
@@ -44,35 +44,49 @@ function Pilarescontrol(table, pilarpanel){
 			}
 		});
 
-		me.table.on('click','.deletepilarbtn',function(){
-			me.onPilardelete(me.select(this).attr('data-id'));
+		me.select(document).on('keypress',function(evento){
+			if(evento.keyCode == 13) {
+				if(me.select('.newadminform input:focus').length > 0) {
+					me.submitNewadmin();
+				} else if(me.select('#editusermodal input:focus').length > 0) {
+					me.select('#saveedited').click();
+				}
+			}
 		});
 
-		me.pilarpanel.on('click', '.addpilarbtn', function(e){
-		   me.onEditpilar(false);
+		// me.deleteAdmintpl = me.getTemplate('components/admindelete.html');
+
+		me.table.on('click','.deleteactividadnbtn',function(){
+			me.onactividaddelete(me.select(this).attr('data-id'));
 		});
 
-		me.table.on('click','.editpilarbtn',function(){
-			me.onEditpilar(me.select(this).attr('data-id'));
+		me.actividadpanel.on('click', '.addactividadbtn', function(e){
+		   me.onEditactividad(false);
+		});
+
+		me.table.on('click','.editactividadbtn',function(){
+			me.onEditactividad(me.select(this).attr('data-id'));
 		})
 	}
 
-	me.onEditpilar = function(idtoedit){
-		var pilartoeditdata = {};
+	me.onEditactividad = function(idtoedit){
+		var actividadtoeditdata = {};
 		if(idtoedit){
-			pilartoeditdata = me.searchInArray(me.pilardata,'id', idtoedit);
+			actividadtoeditdata = me.searchInArray(me.actividaddata,'id', idtoedit);
 		}else{
-			var pilar =[{
+			var actividad =[{
 				id: '',
-				pilar: '',
+				codigo: '',
+				conferencista: '',
+				enfoque: '',
 				fecha: '',
-				salon: '',
-				cupo: ''
+				nacionalidad: '',
+				titulo: ''
 			}];
-			pilartoeditdata = pilar;
+			actividadtoeditdata = actividad;
 		}
 
-		var editmodal = me.renderData(me.viewport,'components/pilaredit.html',pilartoeditdata);
+		var editmodal = me.renderData(me.viewport,'components/actividadedit.html',actividadtoeditdata);
 
 		editmodal[0].modal('show');
 
@@ -86,17 +100,8 @@ function Pilarescontrol(table, pilarpanel){
 
 		var editform = [
 			{
-				dom: 'input[name="cupo"]',
-				errordom: '#pilarEditCupo',
-				validation: function(value){
-					var regex = /^.+$/gi;
-					return regex.test(value);
-				},
-				errormessage: 'El campo cupo es requerido.'
-			},
-			{
-				dom: 'input[name="pilar"]',
-				errordom: '#pilarEditPilar',
+				dom: 'select[name="pilar"]',
+				errordom: '#actividadEditPilar',
 				validation: function(value){
 					var regex = /^.+$/gi;
 					return regex.test(value);
@@ -104,8 +109,8 @@ function Pilarescontrol(table, pilarpanel){
 				errormessage: 'El campo pilar es requerido.'
 			},
 			{
-				dom: 'input[name="salon"]',
-				errordom: '#pilarEditSalon',
+				dom: 'input[name="codigo"]',
+				errordom: '#actividadEditCodigo',
 				validation: function(value){
 					return true;
 				},
@@ -113,7 +118,7 @@ function Pilarescontrol(table, pilarpanel){
 			},
 			{
 				dom: 'input[name="fecha"]',
-				errordom: '#pilarEditFecha',
+				errordom: '#actividadEditFecha',
 				validation: function(value){
 					var regex = /^.+$/gi;
 					return regex.test(value);
@@ -121,29 +126,51 @@ function Pilarescontrol(table, pilarpanel){
 				errormessage: 'El campo fecha es requerido.'
 			},
 			{
-				dom: 'select[name="tipo"]',
-				errordom: '#pilarEditTipo',
+				dom: 'input[name="titulo"]',
+				errordom: '#actividadEditTitulo',
 				validation: function(value){
 					return true;
 				},
 				errormessage: ''
 			},
+			{
+				dom: 'input[name="conferencista"]',
+				errordom: '#actividadEditConferencista',
+				validation: function(value){
+					var regex = /^.+$/gi;
+					return regex.test(value);
+				},
+				errormessage: 'El campo conferencista es requerido.'
+			},
+			{
+				dom: 'input[name="nacionalidad"]',
+				errordom: '#actividadEditNacionalidad',
+				validation: function(value){
+					return true;
+				},
+				errormessage: ''
+			},
+			{
+				dom: 'input[name="enfoque"]',
+				errordom: '#actividadEditEnfoque',
+				validation: function(value){
+					return true;
+				},
+				errormessage: ''
+			}
 		];
 
 		me.editform = me.newForm(editform);
 
-		$("select[name='tipo']").append($('<option>', { 
-		        value: 0,
-		        text : 'Normal' 
-		}));
+		$.each(pilares, function (i, pilar) {
+		    $("select[name='pilar']").append($('<option>', { 
+		        value: pilar.id,
+		        text : pilar.fecha + ' ' + pilar.pilar 
+		    }));
+		});
 
-		$("select[name='tipo']").append($('<option>', { 
-		        value: 1,
-		        text : 'Magistral' 
-		}));
-
-		if(pilartoeditdata[0].tipo){
-			$("select[name='tipo']").val(pilartoeditdata[0].tipo);
+		if(actividadtoeditdata[0].pilar_id){
+			$("select[name='pilar']").val(actividadtoeditdata[0].pilar_id);
 		}
 
 		editmodal[0].on('click','#saveedited',function(){
@@ -166,22 +193,22 @@ function Pilarescontrol(table, pilarpanel){
 		});
 	}
 
-	me.onPilardelete = function(idtodelete){
-		var pilartodeletedata = me.searchInArray(me.pilardata,'id',idtodelete);
+	me.onactividaddelete = function(idtodelete){
+		var actividadtodeletedata = me.searchInArray(me.actividaddata,'id',idtodelete);
 
-		var deletemodal = me.renderData(me.viewport,'components/pilardelete.html', pilartodeletedata);
+		var deletemodal = me.renderData(me.viewport,'components/actividaddelete.html', actividadtodeletedata);
 
 		deletemodal[0].modal('show');
 		deletemodal[0].on('hidden.bs.modal', function(){
 			deletemodal[0].remove();
 		});
 
-		deletemodal[0].on('click','#dopilardelete',function(){
-			me.doPilardelete(idtodelete);
+		deletemodal[0].on('click','#doactividaddelete',function(){
+			me.doactividaddelete(idtodelete);
 		});
 	}
 
-	me.onSaveedited = function(pilarid,editmodal) {
+	me.onSaveedited = function(cupoid,editmodal) {
 		editmodal.modal('hide');
 		me.setMasked({maskMsg: 'Guardando'});
 
@@ -191,19 +218,19 @@ function Pilarescontrol(table, pilarpanel){
 			fields[me.editform[i].dom.attr('name')] = me.editform[i].dom.val();
 		};
 
-		var operation = 'newpilar';
+		var operation = 'newactividad';
 
-		if(pilarid){
-			operation = 'editpilar';
+		if(cupoid){
+			operation = 'editactividad';
 		}
 
 		me.ajax({
-			url: 'php/bloquecontrol.php',
+			url: 'php/actividadcontrol.php',
 			type: 'post',
 			data: {
 				operation: operation,
 				fields: JSON.stringify(fields),
-				id: pilarid
+				id: cupoid
 			},
 			success: function(response) {
 				setTimeout(function(){
@@ -220,10 +247,10 @@ function Pilarescontrol(table, pilarpanel){
 						me.popAlert({
 							type: 'alert-success',
 							icon: 'glyphicon glyphicon-ok-sign',
-							message: 'Los datos del pilar se editaron con éxito.'
+							message: 'Los datos del actividad se editaron con éxito.'
 						});
 						setTimeout(function(){
-							window.location.href = 'bloques.php';
+							window.location.href = 'actividads.php';
 						},1000);
 					});
 				},1500);
@@ -238,17 +265,17 @@ function Pilarescontrol(table, pilarpanel){
 		});
 	}
 
-	me.doPilardelete = function(cursoid){
+	me.doactividaddelete = function(actividadid){
 		me.setMasked({
 			maskMsg: 'Eliminando...'
 		});
 
 		me.ajax({
-			url: 'php/bloquecontrol.php',
+			url: 'php/actividadcontrol.php',
 			type: 'post',
 			data: {
-				operation: 'deletepilar',
-				id: cursoid
+				operation: 'deleteactividad',
+				id: actividadid
 			},
 			success: function(response){
 				setTimeout(function(){
@@ -264,7 +291,7 @@ function Pilarescontrol(table, pilarpanel){
 
 						me.popAlert({
 							type: 'alert-success',
-							message: 'El pilar se ha eliminado con éxito.',
+							message: 'La charla se ha eliminado con éxito.',
 							icon: 'glyphicon glyphicon-ok-sign'
 						});
 
@@ -274,7 +301,7 @@ function Pilarescontrol(table, pilarpanel){
 							}
 						});
 						setTimeout(function(){
-							window.location.href = 'bloques.php';
+							window.location.href = 'cursos.php';
 						},1000);
 					});
 				},1000);
@@ -293,15 +320,15 @@ function Pilarescontrol(table, pilarpanel){
 		})
 	}
 
-	me.initialize(table, pilarpanel);
+	me.initialize(table, cursopanel);
 }	
 
 //heredar todos los metodos del global controller
-Pilarescontrol.prototype = David.prototype;
-Pilarescontrol.prototype.constructor = Pilarescontrol;
+Cursoscontrol.prototype = David.prototype;
+Cursoscontrol.prototype.constructor = Cursoscontrol;
 
-var table = global.select('.pilarpanel table');
-var pilarpanel = global.select('.pilarpanel');
-var pilarview = new Pilarescontrol(table, pilarpanel);
+var table = global.select('.cursopanel table');
+var cursopanel = global.select('.cursopanel');
+var cursoview = new Cursoscontrol(table, cursopanel);
 
-pilarview.setMinheight(pilarview.select('.pilarpanel .panel-body'));
+cursoview.setMinheight(cursoview.select('.cursopanel .panel-body'));

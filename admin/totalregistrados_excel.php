@@ -9,7 +9,7 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 $query = mysqli_query($conexion, "SET @row_number=0;");
-$querytext="SELECT (@row_number:=@row_number + 1) AS num,nombreyapellidoInput,pais,estudiante,universidad,carrera,correoElectronico,telefono,facebook,instagram,fechaNacimiento,estado 
+$querytext="SELECT (@row_number:=@row_number + 1) AS num,id,nombreyapellidoInput,pais,estudiante,universidad,carrera,correoElectronico,telefono,facebook,instagram,fechaNacimiento,estado 
             FROM login";
 $query = mysqli_query($conexion, $querytext);
 $estado = array();
@@ -17,7 +17,7 @@ while($row = mysqli_fetch_assoc($query)) {
     $row['estado']=nuevoestado($row['estado']);
     $estado[] = $row;
 }
-$titulos = ["Codigo Usuario","Nombre","Nacionalidad","Nivel","Universidad","Carrera","Correo Electronico","Teléfono" ,"Facebook","Instagram","Fecha Nacimiento","Estado"];
+$titulos = ["Codigo Usuario","Id","Nombre","Nacionalidad","Nivel","Universidad","Carrera","Correo Electronico","Teléfono" ,"Facebook","Instagram","Fecha Nacimiento","Estado"];
 
 $spreadsheet = new Spreadsheet();
 // Set document properties

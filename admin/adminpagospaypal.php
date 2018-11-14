@@ -148,7 +148,7 @@ $id = $_GET['pago_id'];
 									<?php
                                     if($_SESSION['admin_rol']=="admin"||$_SESSION['admin_rol']=='finanzas')
                                     {
-										if($state == 'pendiente') {
+										if(true) {
 									?>
 										<form action="aceptarpago.php" method="post" style="display:inline-block">
 											<input type="hidden" name="user_id" value="<?php echo $id;?>">

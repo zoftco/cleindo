@@ -48,9 +48,9 @@
 		private $usuario = '';
 
 	   //Cabecera de página
-	   function Header() {
-	    	$this->Image('../resources/images/logolargo.png',10,0,190);
-	   }
+//	   function Header() {
+//	    	$this->Image('../resources/images/logolargo.png',10,0,190);
+//	   }
 
 	   function setUsuario($_usuario){
 	   		$this->usuario = $_usuario;
